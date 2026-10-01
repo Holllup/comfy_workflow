@@ -1,0 +1,7975 @@
+{
+  "id": "66850ddc-d2c6-500f-90da-302190157961",
+  "last_node_id": 102,
+  "last_link_id": 247,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CatStoryPlanner",
+      "title": "01 · 随机生成六镜剧情",
+      "pos": [
+        0,
+        -600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "links": [
+            11,
+            54,
+            91,
+            128,
+            165,
+            202,
+            246
+          ]
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "links": [
+            15,
+            36,
+            53,
+            74,
+            90,
+            111,
+            127,
+            148,
+            164,
+            185,
+            201,
+            222,
+            238,
+            247
+          ]
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "links": [
+            12,
+            55,
+            92,
+            129,
+            166,
+            203
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatStoryPlanner"
+      },
+      "widgets_values": [
+        "小猫的一天",
+        true,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        130.2638101844517,
+        435.2545050421948
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "CLIP名称",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "类型",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "设备",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_3_4b.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "qwen_3_4b.safetensors",
+        "lumina2",
+        "default"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        130.2638101844517,
+        585.2545050421948
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae名称",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "ae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        660.2638101844517,
+        725.2545050421948
+      ],
+      "size": [
+        197.712890625,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "ConditioningZeroOut",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "UNETLoader",
+      "pos": [
+        130.2638101844517,
+        305.2545050421948
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "UNet名称",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "数据类型",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "z_image_turbo_bf16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "z_image_turbo_bf16.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "VAEDecode",
+      "pos": [
+        1240,
+        170
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 3
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        900.2638101844517,
+        265.2545050421948
+      ],
+      "size": [
+        310,
+        60
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        },
+        {
+          "localized_name": "移位",
+          "name": "shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        130.2638101844517,
+        735.2545050421948
+      ],
+      "size": [
+        260,
+        110
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "批量大小",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        704,
+        1280,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncode",
+      "pos": [
+        450.2638101844517,
+        305.2545050421948
+      ],
+      "size": [
+        410,
+        370
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 9
+        },
+        {
+          "localized_name": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1,
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Photorealistic portrait of one small orange-and-white short-haired kitten, clear green eyes, narrow blue collar, recognizable white blaze on the nose and white front paws. The cat looks into a handheld selfie camera, natural feline anatomy, exactly four legs, one tail, soft daylight, no text."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "KSampler",
+      "pos": [
+        900.2638101844517,
+        375.2545050421948
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 5
+        },
+        {
+          "localized_name": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "localized_name": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "localized_name": "Latent图像",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 8
+        },
+        {
+          "localized_name": "种子",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "步数",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "采样器名称",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "调度器",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "降噪",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        8675309,
+        "fixed",
+        9,
+        1,
+        "res_multistep",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CatReference",
+      "title": "02 · 首次生成并锁定小猫定妆照",
+      "pos": [
+        850,
+        0
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "generated",
+          "type": "IMAGE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatReference"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "CatShotFields",
+      "title": "分镜 1 · 剧情与提示词",
+      "pos": [
+        1050,
+        1100
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 11
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            37
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CatImageGate",
+      "title": "分镜 1 · 首帧顺序门",
+      "pos": [
+        1700,
+        1100
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 13
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 14
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "CFGNorm",
+      "pos": [
+        2040,
+        1080
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL",
+          "links": [
+            21,
+            61,
+            98,
+            135,
+            172,
+            209
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "CFGNorm",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "strength": true
+          }
+        }
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 15,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        970
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 17
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "VAELoader",
+      "pos": [
+        1050,
+        1420
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            16,
+            19,
+            24,
+            25,
+            59,
+            64,
+            65,
+            96,
+            101,
+            102,
+            133,
+            138,
+            139,
+            170,
+            175,
+            176,
+            207,
+            212,
+            213
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "qwen_image_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_image_vae.safetensors"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CLIPLoader",
+      "pos": [
+        1050,
+        1260
+      ],
+      "size": [
+        330,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            22,
+            23,
+            62,
+            63,
+            99,
+            100,
+            136,
+            137,
+            173,
+            174,
+            210,
+            211
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "qwen_image",
+        "default"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        2040,
+        970
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 19,
+      "type": "VAEEncode",
+      "pos": [
+        1790,
+        2000
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 20
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            28,
+            68,
+            105,
+            142,
+            179,
+            216
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "VAEEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 20,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        1280
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 22
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 24
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 30
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 21,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        1065.6773376464844,
+        1996.3084106445312
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20,
+            29,
+            30,
+            69,
+            70,
+            106,
+            107,
+            143,
+            144,
+            180,
+            181,
+            217,
+            218
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "upscale_method": true,
+            "megapixels": true
+          }
+        }
+      },
+      "widgets_values": [
+        "lanczos",
+        1
+      ]
+    },
+    {
+      "id": 22,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        1190
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 21
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 27
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 26
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 28
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "NunchakuQwenImageDiTLoader",
+      "pos": [
+        1054.9684600830078,
+        1018.923698425293
+      ],
+      "size": [
+        320.1197204589844,
+        130
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-nunchaku",
+        "ver": "d9405a6305efc4dc758bdeec500fc5d695215b2b",
+        "Node name for S&R": "NunchakuQwenImageDiTLoader"
+      },
+      "widgets_values": [
+        "svdq-int4_r128-qwen-image-edit-2509-lightning-4steps-251115.safetensors",
+        "enable",
+        20,
+        "disable"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        1010
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 23
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 25
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 25,
+      "type": "CatSaveFrame",
+      "title": "分镜 1 · 保存首帧",
+      "pos": [
+        2800,
+        1100
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            49
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 26,
+      "type": "CatVideoGate",
+      "title": "分镜 1 · 视频顺序门",
+      "pos": [
+        3500,
+        1100
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 37
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 38
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 239
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            50
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "type": "UNETLoader",
+      "pos": [
+        3770,
+        1150
+      ],
+      "size": [
+        346.7470703125,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "wan2.2_ti2v_5B_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_ti2v_5B_fp16.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "CLIPLoader",
+      "pos": [
+        3770,
+        1290
+      ],
+      "size": [
+        350,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            42,
+            43,
+            81,
+            118,
+            155,
+            192,
+            229
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "wan",
+        "default"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "VAELoader",
+      "pos": [
+        3770,
+        1450
+      ],
+      "size": [
+        350,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            44,
+            48,
+            82,
+            85,
+            119,
+            122,
+            156,
+            159,
+            193,
+            196,
+            230,
+            233
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "wan2.2_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_vae.safetensors"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        1250
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 39
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            52
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 31,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        1640
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 48
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            47
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 32,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        1360
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            41,
+            80,
+            117,
+            154,
+            191,
+            228
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 33,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        1150
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 42
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            40
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 34,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        1230
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 46
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 40
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 41
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 47
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 35,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        4650,
+        1120
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            46,
+            83,
+            120,
+            157,
+            194,
+            231
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        8
+      ]
+    },
+    {
+      "id": 36,
+      "type": "CatSaveClip",
+      "title": "分镜 1 · 保存视频",
+      "pos": [
+        5400,
+        1100
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 52
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            77,
+            240
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 37,
+      "type": "CatShotFields",
+      "title": "分镜 2 · 剧情与提示词",
+      "pos": [
+        1050,
+        2200
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 54
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            56
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            75
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            57
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            76
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 38,
+      "type": "CatImageGate",
+      "title": "分镜 2 · 首帧顺序门",
+      "pos": [
+        1700,
+        2200
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 56
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 57
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            71
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            72
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 39,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        2070
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 60
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 40,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        2380
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 62
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 64
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 70
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 41,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        2290
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 61
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 67
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 66
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 68
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 42,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        2110
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 63
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 65
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 69
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 43,
+      "type": "CatSaveFrame",
+      "title": "分镜 2 · 保存首帧",
+      "pos": [
+        2800,
+        2200
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 73
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            86
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            95
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 44,
+      "type": "CatVideoGate",
+      "title": "分镜 2 · 视频顺序门",
+      "pos": [
+        3500,
+        2200
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 75
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 76
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            87
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            88
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 45,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        2350
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 78
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            89
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 46,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        2740
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 85
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 86
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 47,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        2250
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 81
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 87
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            79
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 48,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        2330
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 83
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 79
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 80
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 84
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 49,
+      "type": "CatSaveClip",
+      "title": "分镜 2 · 保存视频",
+      "pos": [
+        5400,
+        2200
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 89
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 90
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            114,
+            241
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 50,
+      "type": "CatShotFields",
+      "title": "分镜 3 · 剧情与提示词",
+      "pos": [
+        1050,
+        3300
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 91
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 92
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            93
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            112
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            94
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            113
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 51,
+      "type": "CatImageGate",
+      "title": "分镜 3 · 首帧顺序门",
+      "pos": [
+        1700,
+        3300
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 93
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 94
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 95
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            108
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            109
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 52,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        3170
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 97
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 96
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            110
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 53,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        3480
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 99
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 101
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 107
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 54,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        3390
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 98
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 104
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 103
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 105
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 109
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            97
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 55,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        3210
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 100
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 102
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 106
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 56,
+      "type": "CatSaveFrame",
+      "title": "分镜 3 · 保存首帧",
+      "pos": [
+        2800,
+        3300
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 110
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            123
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            132
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 57,
+      "type": "CatVideoGate",
+      "title": "分镜 3 · 视频顺序门",
+      "pos": [
+        3500,
+        3300
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 112
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 113
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 114
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            124
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            125
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 58,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        3450
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 115
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 119
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 59,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        3840
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 122
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 123
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            121
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 60,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        3350
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 118
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 124
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            116
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 61,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        3430
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 120
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 116
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 117
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 121
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 125
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            115
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 62,
+      "type": "CatSaveClip",
+      "title": "分镜 3 · 保存视频",
+      "pos": [
+        5400,
+        3300
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 126
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            151,
+            242
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        3
+      ]
+    },
+    {
+      "id": 63,
+      "type": "CatShotFields",
+      "title": "分镜 4 · 剧情与提示词",
+      "pos": [
+        1050,
+        4400
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 128
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 129
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            130
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            149
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            131
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            150
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 64,
+      "type": "CatImageGate",
+      "title": "分镜 4 · 首帧顺序门",
+      "pos": [
+        1700,
+        4400
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 130
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 131
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 132
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            145
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            146
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 65,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        4270
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 134
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 133
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            147
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 66,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        4580
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 136
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 138
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 144
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            140
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 67,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        4490
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 135
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 141
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 140
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 142
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 146
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            134
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 68,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        4310
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 137
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 139
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 143
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 145
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            141
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 69,
+      "type": "CatSaveFrame",
+      "title": "分镜 4 · 保存首帧",
+      "pos": [
+        2800,
+        4400
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 147
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 148
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            160
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            169
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 70,
+      "type": "CatVideoGate",
+      "title": "分镜 4 · 视频顺序门",
+      "pos": [
+        3500,
+        4400
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 149
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 150
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 151
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            161
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            162
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 71,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        4550
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 152
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 156
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            163
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 72,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        4940
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 159
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 160
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            158
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 73,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        4450
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 155
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 161
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            153
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 74,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        4530
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 157
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 153
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 154
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 158
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 162
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            152
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 75,
+      "type": "CatSaveClip",
+      "title": "分镜 4 · 保存视频",
+      "pos": [
+        5400,
+        4400
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 163
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 164
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            188,
+            243
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        4
+      ]
+    },
+    {
+      "id": 76,
+      "type": "CatShotFields",
+      "title": "分镜 5 · 剧情与提示词",
+      "pos": [
+        1050,
+        5500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 165
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 166
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            167
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            186
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            168
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            187
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 77,
+      "type": "CatImageGate",
+      "title": "分镜 5 · 首帧顺序门",
+      "pos": [
+        1700,
+        5500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 167
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 168
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 169
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            182
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            183
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 78,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        5370
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 171
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 170
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            184
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 79,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        5680
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 173
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 175
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 181
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            177
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 80,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        5590
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 172
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 178
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 177
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 179
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 183
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            171
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 81,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        5410
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 174
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 176
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 180
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 182
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            178
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 82,
+      "type": "CatSaveFrame",
+      "title": "分镜 5 · 保存首帧",
+      "pos": [
+        2800,
+        5500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 184
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 185
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            197
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            206
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 83,
+      "type": "CatVideoGate",
+      "title": "分镜 5 · 视频顺序门",
+      "pos": [
+        3500,
+        5500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 186
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 187
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 188
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            198
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            199
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 84,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        5650
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 189
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 193
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            200
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 85,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        6040
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 196
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 197
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            195
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 86,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        5550
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 192
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 198
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            190
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 87,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        5630
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 194
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 190
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 191
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 195
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 199
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            189
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 88,
+      "type": "CatSaveClip",
+      "title": "分镜 5 · 保存视频",
+      "pos": [
+        5400,
+        5500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 200
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 201
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            225,
+            244
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 89,
+      "type": "CatShotFields",
+      "title": "分镜 6 · 剧情与提示词",
+      "pos": [
+        1050,
+        6600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 202
+        },
+        {
+          "name": "run_seed",
+          "type": "INT",
+          "link": 203
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            204
+          ]
+        },
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            223
+          ]
+        },
+        {
+          "name": "image_seed",
+          "type": "INT",
+          "links": [
+            205
+          ]
+        },
+        {
+          "name": "video_seed",
+          "type": "INT",
+          "links": [
+            224
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatShotFields"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 90,
+      "type": "CatImageGate",
+      "title": "分镜 6 · 首帧顺序门",
+      "pos": [
+        1700,
+        6600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 204
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 205
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 206
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            219
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            220
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatImageGate"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 91,
+      "type": "VAEDecode",
+      "pos": [
+        2380,
+        6470
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 208
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 207
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            221
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 92,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        6780
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 210
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 212
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 218
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            214
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 93,
+      "type": "KSampler",
+      "pos": [
+        2040,
+        6690
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 209
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 215
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 214
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 216
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 220
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            208
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 94,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1520,
+        6510
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 211
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 213
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 217
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 219
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            215
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Let the man in image 1 lie on the sofa in image 3, and let the puppy in image 2 lie on the floor to sleep."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 95,
+      "type": "CatSaveFrame",
+      "title": "分镜 6 · 保存首帧",
+      "pos": [
+        2800,
+        6600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 221
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 222
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            234
+          ]
+        },
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            239
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveFrame"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 96,
+      "type": "CatVideoGate",
+      "title": "分镜 6 · 视频顺序门",
+      "pos": [
+        3500,
+        6600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 223
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 224
+        },
+        {
+          "name": "prior",
+          "type": "STRING",
+          "link": 225
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            235
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            236
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatVideoGate"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 97,
+      "type": "VAEDecode",
+      "pos": [
+        4990,
+        6750
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 226
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 230
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            237
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 98,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        4180,
+        7140
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 233
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            232
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        704,
+        1280,
+        121,
+        1
+      ]
+    },
+    {
+      "id": 99,
+      "type": "CLIPTextEncode",
+      "pos": [
+        4180,
+        6650
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 229
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            227
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Low contrast. In a retro 1970s-style subway station, a street musician plays in dim colors and rough textures. He wears an old jacket, playing guitar with focus. Commuters hurry by, and a small crowd gathers to listen. The camera slowly moves right, capturing the blend of music and city noise, with old subway signs and mottled walls in the background."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 100,
+      "type": "KSampler",
+      "pos": [
+        4650,
+        6730
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 231
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 227
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 228
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 232
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 236
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            226
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        898471028164125,
+        "randomize",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 101,
+      "type": "CatSaveClip",
+      "title": "分镜 6 · 保存视频",
+      "pos": [
+        5400,
+        6600
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 237
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 238
+        }
+      ],
+      "outputs": [
+        {
+          "name": "done",
+          "type": "STRING",
+          "links": [
+            245
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatSaveClip"
+      },
+      "widgets_values": [
+        6
+      ]
+    },
+    {
+      "id": 102,
+      "type": "CatFinish",
+      "title": "07 · 合成三十秒成片",
+      "pos": [
+        6500,
+        3500
+      ],
+      "size": [
+        330,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_1",
+          "type": "STRING",
+          "link": 240
+        },
+        {
+          "name": "clip_2",
+          "type": "STRING",
+          "link": 241
+        },
+        {
+          "name": "clip_3",
+          "type": "STRING",
+          "link": 242
+        },
+        {
+          "name": "clip_4",
+          "type": "STRING",
+          "link": 243
+        },
+        {
+          "name": "clip_5",
+          "type": "STRING",
+          "link": 244
+        },
+        {
+          "name": "clip_6",
+          "type": "STRING",
+          "link": 245
+        },
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 246
+        },
+        {
+          "name": "run_id",
+          "type": "STRING",
+          "link": 247
+        }
+      ],
+      "outputs": [
+        {
+          "name": "final_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CatFinish"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      9,
+      0,
+      4,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      2,
+      5,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      10,
+      0,
+      6,
+      0,
+      "LATENT"
+    ],
+    [
+      4,
+      3,
+      0,
+      6,
+      1,
+      "VAE"
+    ],
+    [
+      5,
+      7,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      6,
+      9,
+      0,
+      10,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      4,
+      0,
+      10,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      8,
+      0,
+      10,
+      3,
+      "LATENT"
+    ],
+    [
+      9,
+      2,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      10,
+      6,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      1,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      12,
+      1,
+      2,
+      12,
+      1,
+      "INT"
+    ],
+    [
+      13,
+      12,
+      0,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      12,
+      2,
+      13,
+      1,
+      "INT"
+    ],
+    [
+      15,
+      1,
+      1,
+      13,
+      2,
+      "STRING"
+    ],
+    [
+      16,
+      16,
+      0,
+      15,
+      1,
+      "VAE"
+    ],
+    [
+      17,
+      22,
+      0,
+      15,
+      0,
+      "LATENT"
+    ],
+    [
+      18,
+      18,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      19,
+      16,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      20,
+      21,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      14,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      22,
+      17,
+      0,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      23,
+      17,
+      0,
+      24,
+      0,
+      "CLIP"
+    ],
+    [
+      24,
+      16,
+      0,
+      20,
+      1,
+      "VAE"
+    ],
+    [
+      25,
+      16,
+      0,
+      24,
+      1,
+      "VAE"
+    ],
+    [
+      26,
+      20,
+      0,
+      22,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      27,
+      24,
+      0,
+      22,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      28,
+      19,
+      0,
+      22,
+      3,
+      "LATENT"
+    ],
+    [
+      29,
+      21,
+      0,
+      24,
+      2,
+      "IMAGE"
+    ],
+    [
+      30,
+      21,
+      0,
+      20,
+      2,
+      "IMAGE"
+    ],
+    [
+      31,
+      23,
+      0,
+      18,
+      0,
+      "MODEL"
+    ],
+    [
+      32,
+      11,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      13,
+      0,
+      24,
+      5,
+      "STRING"
+    ],
+    [
+      34,
+      13,
+      1,
+      22,
+      4,
+      "INT"
+    ],
+    [
+      35,
+      15,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      1,
+      1,
+      25,
+      1,
+      "STRING"
+    ],
+    [
+      37,
+      12,
+      1,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      38,
+      12,
+      3,
+      26,
+      1,
+      "INT"
+    ],
+    [
+      39,
+      34,
+      0,
+      30,
+      0,
+      "LATENT"
+    ],
+    [
+      40,
+      33,
+      0,
+      34,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      41,
+      32,
+      0,
+      34,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      42,
+      28,
+      0,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      43,
+      28,
+      0,
+      32,
+      0,
+      "CLIP"
+    ],
+    [
+      44,
+      29,
+      0,
+      30,
+      1,
+      "VAE"
+    ],
+    [
+      45,
+      27,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      46,
+      35,
+      0,
+      34,
+      0,
+      "MODEL"
+    ],
+    [
+      47,
+      31,
+      0,
+      34,
+      3,
+      "LATENT"
+    ],
+    [
+      48,
+      29,
+      0,
+      31,
+      0,
+      "VAE"
+    ],
+    [
+      49,
+      25,
+      0,
+      31,
+      1,
+      "IMAGE"
+    ],
+    [
+      50,
+      26,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      51,
+      26,
+      1,
+      34,
+      4,
+      "INT"
+    ],
+    [
+      52,
+      30,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      53,
+      1,
+      1,
+      36,
+      1,
+      "STRING"
+    ],
+    [
+      54,
+      1,
+      0,
+      37,
+      0,
+      "STRING"
+    ],
+    [
+      55,
+      1,
+      2,
+      37,
+      1,
+      "INT"
+    ],
+    [
+      56,
+      37,
+      0,
+      38,
+      0,
+      "STRING"
+    ],
+    [
+      57,
+      37,
+      2,
+      38,
+      1,
+      "INT"
+    ],
+    [
+      58,
+      25,
+      1,
+      38,
+      2,
+      "STRING"
+    ],
+    [
+      59,
+      16,
+      0,
+      39,
+      1,
+      "VAE"
+    ],
+    [
+      60,
+      41,
+      0,
+      39,
+      0,
+      "LATENT"
+    ],
+    [
+      61,
+      14,
+      0,
+      41,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      17,
+      0,
+      40,
+      0,
+      "CLIP"
+    ],
+    [
+      63,
+      17,
+      0,
+      42,
+      0,
+      "CLIP"
+    ],
+    [
+      64,
+      16,
+      0,
+      40,
+      1,
+      "VAE"
+    ],
+    [
+      65,
+      16,
+      0,
+      42,
+      1,
+      "VAE"
+    ],
+    [
+      66,
+      40,
+      0,
+      41,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      67,
+      42,
+      0,
+      41,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      68,
+      19,
+      0,
+      41,
+      3,
+      "LATENT"
+    ],
+    [
+      69,
+      21,
+      0,
+      42,
+      2,
+      "IMAGE"
+    ],
+    [
+      70,
+      21,
+      0,
+      40,
+      2,
+      "IMAGE"
+    ],
+    [
+      71,
+      38,
+      0,
+      42,
+      5,
+      "STRING"
+    ],
+    [
+      72,
+      38,
+      1,
+      41,
+      4,
+      "INT"
+    ],
+    [
+      73,
+      39,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      74,
+      1,
+      1,
+      43,
+      1,
+      "STRING"
+    ],
+    [
+      75,
+      37,
+      1,
+      44,
+      0,
+      "STRING"
+    ],
+    [
+      76,
+      37,
+      3,
+      44,
+      1,
+      "INT"
+    ],
+    [
+      77,
+      36,
+      0,
+      44,
+      2,
+      "STRING"
+    ],
+    [
+      78,
+      48,
+      0,
+      45,
+      0,
+      "LATENT"
+    ],
+    [
+      79,
+      47,
+      0,
+      48,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      80,
+      32,
+      0,
+      48,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      81,
+      28,
+      0,
+      47,
+      0,
+      "CLIP"
+    ],
+    [
+      82,
+      29,
+      0,
+      45,
+      1,
+      "VAE"
+    ],
+    [
+      83,
+      35,
+      0,
+      48,
+      0,
+      "MODEL"
+    ],
+    [
+      84,
+      46,
+      0,
+      48,
+      3,
+      "LATENT"
+    ],
+    [
+      85,
+      29,
+      0,
+      46,
+      0,
+      "VAE"
+    ],
+    [
+      86,
+      43,
+      0,
+      46,
+      1,
+      "IMAGE"
+    ],
+    [
+      87,
+      44,
+      0,
+      47,
+      1,
+      "STRING"
+    ],
+    [
+      88,
+      44,
+      1,
+      48,
+      4,
+      "INT"
+    ],
+    [
+      89,
+      45,
+      0,
+      49,
+      0,
+      "IMAGE"
+    ],
+    [
+      90,
+      1,
+      1,
+      49,
+      1,
+      "STRING"
+    ],
+    [
+      91,
+      1,
+      0,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      92,
+      1,
+      2,
+      50,
+      1,
+      "INT"
+    ],
+    [
+      93,
+      50,
+      0,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      94,
+      50,
+      2,
+      51,
+      1,
+      "INT"
+    ],
+    [
+      95,
+      43,
+      1,
+      51,
+      2,
+      "STRING"
+    ],
+    [
+      96,
+      16,
+      0,
+      52,
+      1,
+      "VAE"
+    ],
+    [
+      97,
+      54,
+      0,
+      52,
+      0,
+      "LATENT"
+    ],
+    [
+      98,
+      14,
+      0,
+      54,
+      0,
+      "MODEL"
+    ],
+    [
+      99,
+      17,
+      0,
+      53,
+      0,
+      "CLIP"
+    ],
+    [
+      100,
+      17,
+      0,
+      55,
+      0,
+      "CLIP"
+    ],
+    [
+      101,
+      16,
+      0,
+      53,
+      1,
+      "VAE"
+    ],
+    [
+      102,
+      16,
+      0,
+      55,
+      1,
+      "VAE"
+    ],
+    [
+      103,
+      53,
+      0,
+      54,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      104,
+      55,
+      0,
+      54,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      105,
+      19,
+      0,
+      54,
+      3,
+      "LATENT"
+    ],
+    [
+      106,
+      21,
+      0,
+      55,
+      2,
+      "IMAGE"
+    ],
+    [
+      107,
+      21,
+      0,
+      53,
+      2,
+      "IMAGE"
+    ],
+    [
+      108,
+      51,
+      0,
+      55,
+      5,
+      "STRING"
+    ],
+    [
+      109,
+      51,
+      1,
+      54,
+      4,
+      "INT"
+    ],
+    [
+      110,
+      52,
+      0,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      111,
+      1,
+      1,
+      56,
+      1,
+      "STRING"
+    ],
+    [
+      112,
+      50,
+      1,
+      57,
+      0,
+      "STRING"
+    ],
+    [
+      113,
+      50,
+      3,
+      57,
+      1,
+      "INT"
+    ],
+    [
+      114,
+      49,
+      0,
+      57,
+      2,
+      "STRING"
+    ],
+    [
+      115,
+      61,
+      0,
+      58,
+      0,
+      "LATENT"
+    ],
+    [
+      116,
+      60,
+      0,
+      61,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      117,
+      32,
+      0,
+      61,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      118,
+      28,
+      0,
+      60,
+      0,
+      "CLIP"
+    ],
+    [
+      119,
+      29,
+      0,
+      58,
+      1,
+      "VAE"
+    ],
+    [
+      120,
+      35,
+      0,
+      61,
+      0,
+      "MODEL"
+    ],
+    [
+      121,
+      59,
+      0,
+      61,
+      3,
+      "LATENT"
+    ],
+    [
+      122,
+      29,
+      0,
+      59,
+      0,
+      "VAE"
+    ],
+    [
+      123,
+      56,
+      0,
+      59,
+      1,
+      "IMAGE"
+    ],
+    [
+      124,
+      57,
+      0,
+      60,
+      1,
+      "STRING"
+    ],
+    [
+      125,
+      57,
+      1,
+      61,
+      4,
+      "INT"
+    ],
+    [
+      126,
+      58,
+      0,
+      62,
+      0,
+      "IMAGE"
+    ],
+    [
+      127,
+      1,
+      1,
+      62,
+      1,
+      "STRING"
+    ],
+    [
+      128,
+      1,
+      0,
+      63,
+      0,
+      "STRING"
+    ],
+    [
+      129,
+      1,
+      2,
+      63,
+      1,
+      "INT"
+    ],
+    [
+      130,
+      63,
+      0,
+      64,
+      0,
+      "STRING"
+    ],
+    [
+      131,
+      63,
+      2,
+      64,
+      1,
+      "INT"
+    ],
+    [
+      132,
+      56,
+      1,
+      64,
+      2,
+      "STRING"
+    ],
+    [
+      133,
+      16,
+      0,
+      65,
+      1,
+      "VAE"
+    ],
+    [
+      134,
+      67,
+      0,
+      65,
+      0,
+      "LATENT"
+    ],
+    [
+      135,
+      14,
+      0,
+      67,
+      0,
+      "MODEL"
+    ],
+    [
+      136,
+      17,
+      0,
+      66,
+      0,
+      "CLIP"
+    ],
+    [
+      137,
+      17,
+      0,
+      68,
+      0,
+      "CLIP"
+    ],
+    [
+      138,
+      16,
+      0,
+      66,
+      1,
+      "VAE"
+    ],
+    [
+      139,
+      16,
+      0,
+      68,
+      1,
+      "VAE"
+    ],
+    [
+      140,
+      66,
+      0,
+      67,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      141,
+      68,
+      0,
+      67,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      142,
+      19,
+      0,
+      67,
+      3,
+      "LATENT"
+    ],
+    [
+      143,
+      21,
+      0,
+      68,
+      2,
+      "IMAGE"
+    ],
+    [
+      144,
+      21,
+      0,
+      66,
+      2,
+      "IMAGE"
+    ],
+    [
+      145,
+      64,
+      0,
+      68,
+      5,
+      "STRING"
+    ],
+    [
+      146,
+      64,
+      1,
+      67,
+      4,
+      "INT"
+    ],
+    [
+      147,
+      65,
+      0,
+      69,
+      0,
+      "IMAGE"
+    ],
+    [
+      148,
+      1,
+      1,
+      69,
+      1,
+      "STRING"
+    ],
+    [
+      149,
+      63,
+      1,
+      70,
+      0,
+      "STRING"
+    ],
+    [
+      150,
+      63,
+      3,
+      70,
+      1,
+      "INT"
+    ],
+    [
+      151,
+      62,
+      0,
+      70,
+      2,
+      "STRING"
+    ],
+    [
+      152,
+      74,
+      0,
+      71,
+      0,
+      "LATENT"
+    ],
+    [
+      153,
+      73,
+      0,
+      74,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      154,
+      32,
+      0,
+      74,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      155,
+      28,
+      0,
+      73,
+      0,
+      "CLIP"
+    ],
+    [
+      156,
+      29,
+      0,
+      71,
+      1,
+      "VAE"
+    ],
+    [
+      157,
+      35,
+      0,
+      74,
+      0,
+      "MODEL"
+    ],
+    [
+      158,
+      72,
+      0,
+      74,
+      3,
+      "LATENT"
+    ],
+    [
+      159,
+      29,
+      0,
+      72,
+      0,
+      "VAE"
+    ],
+    [
+      160,
+      69,
+      0,
+      72,
+      1,
+      "IMAGE"
+    ],
+    [
+      161,
+      70,
+      0,
+      73,
+      1,
+      "STRING"
+    ],
+    [
+      162,
+      70,
+      1,
+      74,
+      4,
+      "INT"
+    ],
+    [
+      163,
+      71,
+      0,
+      75,
+      0,
+      "IMAGE"
+    ],
+    [
+      164,
+      1,
+      1,
+      75,
+      1,
+      "STRING"
+    ],
+    [
+      165,
+      1,
+      0,
+      76,
+      0,
+      "STRING"
+    ],
+    [
+      166,
+      1,
+      2,
+      76,
+      1,
+      "INT"
+    ],
+    [
+      167,
+      76,
+      0,
+      77,
+      0,
+      "STRING"
+    ],
+    [
+      168,
+      76,
+      2,
+      77,
+      1,
+      "INT"
+    ],
+    [
+      169,
+      69,
+      1,
+      77,
+      2,
+      "STRING"
+    ],
+    [
+      170,
+      16,
+      0,
+      78,
+      1,
+      "VAE"
+    ],
+    [
+      171,
+      80,
+      0,
+      78,
+      0,
+      "LATENT"
+    ],
+    [
+      172,
+      14,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      173,
+      17,
+      0,
+      79,
+      0,
+      "CLIP"
+    ],
+    [
+      174,
+      17,
+      0,
+      81,
+      0,
+      "CLIP"
+    ],
+    [
+      175,
+      16,
+      0,
+      79,
+      1,
+      "VAE"
+    ],
+    [
+      176,
+      16,
+      0,
+      81,
+      1,
+      "VAE"
+    ],
+    [
+      177,
+      79,
+      0,
+      80,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      178,
+      81,
+      0,
+      80,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      179,
+      19,
+      0,
+      80,
+      3,
+      "LATENT"
+    ],
+    [
+      180,
+      21,
+      0,
+      81,
+      2,
+      "IMAGE"
+    ],
+    [
+      181,
+      21,
+      0,
+      79,
+      2,
+      "IMAGE"
+    ],
+    [
+      182,
+      77,
+      0,
+      81,
+      5,
+      "STRING"
+    ],
+    [
+      183,
+      77,
+      1,
+      80,
+      4,
+      "INT"
+    ],
+    [
+      184,
+      78,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      185,
+      1,
+      1,
+      82,
+      1,
+      "STRING"
+    ],
+    [
+      186,
+      76,
+      1,
+      83,
+      0,
+      "STRING"
+    ],
+    [
+      187,
+      76,
+      3,
+      83,
+      1,
+      "INT"
+    ],
+    [
+      188,
+      75,
+      0,
+      83,
+      2,
+      "STRING"
+    ],
+    [
+      189,
+      87,
+      0,
+      84,
+      0,
+      "LATENT"
+    ],
+    [
+      190,
+      86,
+      0,
+      87,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      191,
+      32,
+      0,
+      87,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      192,
+      28,
+      0,
+      86,
+      0,
+      "CLIP"
+    ],
+    [
+      193,
+      29,
+      0,
+      84,
+      1,
+      "VAE"
+    ],
+    [
+      194,
+      35,
+      0,
+      87,
+      0,
+      "MODEL"
+    ],
+    [
+      195,
+      85,
+      0,
+      87,
+      3,
+      "LATENT"
+    ],
+    [
+      196,
+      29,
+      0,
+      85,
+      0,
+      "VAE"
+    ],
+    [
+      197,
+      82,
+      0,
+      85,
+      1,
+      "IMAGE"
+    ],
+    [
+      198,
+      83,
+      0,
+      86,
+      1,
+      "STRING"
+    ],
+    [
+      199,
+      83,
+      1,
+      87,
+      4,
+      "INT"
+    ],
+    [
+      200,
+      84,
+      0,
+      88,
+      0,
+      "IMAGE"
+    ],
+    [
+      201,
+      1,
+      1,
+      88,
+      1,
+      "STRING"
+    ],
+    [
+      202,
+      1,
+      0,
+      89,
+      0,
+      "STRING"
+    ],
+    [
+      203,
+      1,
+      2,
+      89,
+      1,
+      "INT"
+    ],
+    [
+      204,
+      89,
+      0,
+      90,
+      0,
+      "STRING"
+    ],
+    [
+      205,
+      89,
+      2,
+      90,
+      1,
+      "INT"
+    ],
+    [
+      206,
+      82,
+      1,
+      90,
+      2,
+      "STRING"
+    ],
+    [
+      207,
+      16,
+      0,
+      91,
+      1,
+      "VAE"
+    ],
+    [
+      208,
+      93,
+      0,
+      91,
+      0,
+      "LATENT"
+    ],
+    [
+      209,
+      14,
+      0,
+      93,
+      0,
+      "MODEL"
+    ],
+    [
+      210,
+      17,
+      0,
+      92,
+      0,
+      "CLIP"
+    ],
+    [
+      211,
+      17,
+      0,
+      94,
+      0,
+      "CLIP"
+    ],
+    [
+      212,
+      16,
+      0,
+      92,
+      1,
+      "VAE"
+    ],
+    [
+      213,
+      16,
+      0,
+      94,
+      1,
+      "VAE"
+    ],
+    [
+      214,
+      92,
+      0,
+      93,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      215,
+      94,
+      0,
+      93,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      216,
+      19,
+      0,
+      93,
+      3,
+      "LATENT"
+    ],
+    [
+      217,
+      21,
+      0,
+      94,
+      2,
+      "IMAGE"
+    ],
+    [
+      218,
+      21,
+      0,
+      92,
+      2,
+      "IMAGE"
+    ],
+    [
+      219,
+      90,
+      0,
+      94,
+      5,
+      "STRING"
+    ],
+    [
+      220,
+      90,
+      1,
+      93,
+      4,
+      "INT"
+    ],
+    [
+      221,
+      91,
+      0,
+      95,
+      0,
+      "IMAGE"
+    ],
+    [
+      222,
+      1,
+      1,
+      95,
+      1,
+      "STRING"
+    ],
+    [
+      223,
+      89,
+      1,
+      96,
+      0,
+      "STRING"
+    ],
+    [
+      224,
+      89,
+      3,
+      96,
+      1,
+      "INT"
+    ],
+    [
+      225,
+      88,
+      0,
+      96,
+      2,
+      "STRING"
+    ],
+    [
+      226,
+      100,
+      0,
+      97,
+      0,
+      "LATENT"
+    ],
+    [
+      227,
+      99,
+      0,
+      100,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      228,
+      32,
+      0,
+      100,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      229,
+      28,
+      0,
+      99,
+      0,
+      "CLIP"
+    ],
+    [
+      230,
+      29,
+      0,
+      97,
+      1,
+      "VAE"
+    ],
+    [
+      231,
+      35,
+      0,
+      100,
+      0,
+      "MODEL"
+    ],
+    [
+      232,
+      98,
+      0,
+      100,
+      3,
+      "LATENT"
+    ],
+    [
+      233,
+      29,
+      0,
+      98,
+      0,
+      "VAE"
+    ],
+    [
+      234,
+      95,
+      0,
+      98,
+      1,
+      "IMAGE"
+    ],
+    [
+      235,
+      96,
+      0,
+      99,
+      1,
+      "STRING"
+    ],
+    [
+      236,
+      96,
+      1,
+      100,
+      4,
+      "INT"
+    ],
+    [
+      237,
+      97,
+      0,
+      101,
+      0,
+      "IMAGE"
+    ],
+    [
+      238,
+      1,
+      1,
+      101,
+      1,
+      "STRING"
+    ],
+    [
+      239,
+      95,
+      1,
+      26,
+      2,
+      "STRING"
+    ],
+    [
+      240,
+      36,
+      0,
+      102,
+      0,
+      "STRING"
+    ],
+    [
+      241,
+      49,
+      0,
+      102,
+      1,
+      "STRING"
+    ],
+    [
+      242,
+      62,
+      0,
+      102,
+      2,
+      "STRING"
+    ],
+    [
+      243,
+      75,
+      0,
+      102,
+      3,
+      "STRING"
+    ],
+    [
+      244,
+      88,
+      0,
+      102,
+      4,
+      "STRING"
+    ],
+    [
+      245,
+      101,
+      0,
+      102,
+      5,
+      "STRING"
+    ],
+    [
+      246,
+      1,
+      0,
+      102,
+      6,
+      "STRING"
+    ],
+    [
+      247,
+      1,
+      1,
+      102,
+      7,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "分镜 01",
+      "bounding": [
+        950,
+        770,
+        5100,
+        980
+      ],
+      "color": "#446a87",
+      "font_size": 30,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "分镜 02",
+      "bounding": [
+        950,
+        1870,
+        5100,
+        980
+      ],
+      "color": "#655787",
+      "font_size": 30,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "分镜 03",
+      "bounding": [
+        950,
+        2970,
+        5100,
+        980
+      ],
+      "color": "#446a87",
+      "font_size": 30,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "分镜 04",
+      "bounding": [
+        950,
+        4070,
+        5100,
+        980
+      ],
+      "color": "#655787",
+      "font_size": 30,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "分镜 05",
+      "bounding": [
+        950,
+        5170,
+        5100,
+        980
+      ],
+      "color": "#446a87",
+      "font_size": 30,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "分镜 06",
+      "bounding": [
+        950,
+        6270,
+        5100,
+        980
+      ],
+      "color": "#655787",
+      "font_size": 30,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
