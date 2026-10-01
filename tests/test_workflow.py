@@ -13,6 +13,16 @@ class WorkflowGraphTests(unittest.TestCase):
         self.assertEqual(len(groups), 6)
         self.assertEqual([group["title"] for group in groups], [f"分镜 {index:02}" for index in range(1, 7)])
 
+    def test_previews_master_reference_and_each_saved_keyframe(self):
+        graph = build_workflow()
+        nodes = {node["id"]: node for node in graph["nodes"]}
+        links = {link[0]: link for link in graph["links"]}
+        previews = [node for node in nodes.values() if node["type"] == "PreviewImage"]
+        self.assertEqual(len(previews), 7)
+        source_types = [nodes[links[preview["inputs"][0]["link"]][1]]["type"] for preview in previews]
+        self.assertEqual(source_types.count("CatReference"), 1)
+        self.assertEqual(source_types.count("CatSaveFrame"), 6)
+
     def test_contains_six_portrait_keyframes_and_six_five_second_videos(self):
         graph = build_workflow()
         nodes = graph["nodes"]

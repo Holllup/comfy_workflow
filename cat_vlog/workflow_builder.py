@@ -97,6 +97,12 @@ def build_workflow():
         [("generated", "IMAGE")], [("image", "IMAGE")], [], 850, 0,
     )
     graph.connect(z_nodes[43], 0, reference, 0, "IMAGE")
+    reference_preview = graph.custom(
+        "PreviewImage", "主角定妆照预览",
+        [("images", "IMAGE")], [], [], 1180, 300,
+    )
+    reference_preview["size"] = [360, 280]
+    graph.connect(reference, 0, reference_preview, 0, "IMAGE")
     qwen_reuse = {}
     wan_reuse = {}
     saved_frames = []
@@ -150,6 +156,12 @@ def build_workflow():
         )
         graph.connect(image_nodes[8], 0, save_frame, 0, "IMAGE")
         graph.connect(planner, 1, save_frame, 1, "STRING")
+        frame_preview = graph.custom(
+            "PreviewImage", f"分镜 {index} · 首帧预览",
+            [("images", "IMAGE")], [], [], 3100, y + 180,
+        )
+        frame_preview["size"] = [360, 280]
+        graph.connect(save_frame, 0, frame_preview, 0, "IMAGE")
         saved_frames.append(save_frame)
         video_gate = graph.custom(
             "CatVideoGate", f"分镜 {index} · 视频顺序门",
