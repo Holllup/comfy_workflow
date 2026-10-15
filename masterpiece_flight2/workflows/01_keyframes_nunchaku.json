@@ -1,0 +1,2922 @@
+{
+  "id": "33ab4908-b7dd-5788-94da-b60dfdb60990",
+  "revision": 0,
+  "last_node_id": 39,
+  "last_link_id": 89,
+  "nodes": [
+    {
+      "type": "LoadImage",
+      "size": [
+        390,
+        410
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "starry_night.jpg",
+        "image"
+      ],
+      "id": 1,
+      "title": "01 上传原画",
+      "pos": [
+        0,
+        0
+      ],
+      "order": 0,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtPrepare",
+      "size": [
+        450,
+        430
+      ],
+      "inputs": [
+        {
+          "name": "painting",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "canvas",
+          "type": "IMAGE",
+          "links": [
+            9,
+            10,
+            12,
+            31,
+            32,
+            53,
+            54,
+            75,
+            76
+          ]
+        },
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "links": [
+            4,
+            24,
+            46,
+            68
+          ]
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "links": [
+            22,
+            44,
+            66,
+            88
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtPrepare",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "starry_night",
+        "{\n  \"schema_version\": 2,\n  \"artwork\": {\n    \"title\": \"The Starry Night\",\n    \"artist\": \"Vincent van Gogh\",\n    \"year\": \"1889\",\n    \"place\": \"Saint-Rémy-de-Provence, France\"\n  },\n  \"source_links\": [\n    {\n      \"label\": \"MoMA collection record\",\n      \"url\": \"https://www.moma.org/collection/works/79802\"\n    },\n    {\n      \"label\": \"Wikimedia Commons image file\",\n      \"url\": \"https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg\"\n    }\n  ],\n  \"verified_context\": [\n    \"The painting was inspired by the view from the artist's room at Saint-Paul-de-Mausole in Saint-Rémy.\",\n    \"The village in the painting could not be seen from the artist's window.\"\n  ],\n  \"imagined_context\": [\n    \"The village streets, small rural figures, blue-hill flight route, church orbit and star-halo passage are invented for this film. They are not a documented 1889 route.\"\n  ],\n  \"visual_anchors\": [\n    \"left-side dark cypress\",\n    \"low village and recognizable church steeple below a blue ridge\",\n    \"central cobalt spiral, white-yellow circular star halos and upper-right moon\"\n  ],\n  \"keyframes\": [\n    {\n      \"id\": 1,\n      \"beat_zh\": \"低空村庄街道，建立飞行方向与时代氛围。\",\n      \"camera_position\": \"eye-level to low drone height over a narrow painted village lane\",\n      \"camera_direction\": \"forward toward a tiny distant church steeple and blue ridge\",\n      \"camera_path_from_next_frame\": \"reverse down from the hill and rooftops into this street\",\n      \"shared_landmarks\": [\n        \"same distant church\",\n        \"same blue ridge\",\n        \"warm yellow village windows\"\n      ],\n      \"transition_object\": \"street vanishing point\",\n      \"transition_object_screen_position\": \"near center, with blue hill small beyond roofs\",\n      \"entry_state\": \"low unobstructed lane\",\n      \"exit_state\": \"beginning of a climb above roofs\",\n      \"end_frame_constraints\": [\n        \"clear forward vanishing line\",\n        \"three to six tiny rural figures without readable faces\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"An imagined late-19th-century village street inside the oil-painted world. Cobalt houses on both sides, warm yellow windows, three to six tiny people, no face closeups. Rooftops lead toward a tiny church and the same distant blue ridge. Wide horizontal painted composition.\"\n    },\n    {\n      \"id\": 2,\n      \"beat_zh\": \"第一镜蓝色山体遮挡后的自然出口。\",\n      \"camera_position\": \"very close to the near side of the blue mountain shoulder, just above village roofs\",\n      \"camera_direction\": \"along the hill toward the village on its far side\",\n      \"camera_path_from_next_frame\": \"reverse away from the church along the same blue hill until the hill obscures the view\",\n      \"shared_landmarks\": [\n        \"same cobalt mountain shoulder\",\n        \"same village roof pattern\",\n        \"same visible church steeple\"\n      ],\n      \"transition_object\": \"blue mountain shoulder\",\n      \"transition_object_screen_position\": \"hill covers about 35%–55% of image, mostly right and center; village and church visible at left\",\n      \"entry_state\": \"emerging from shot 1 hill occlusion\",\n      \"exit_state\": \"hill starts to clear so the church is reachable\",\n      \"end_frame_constraints\": [\n        \"retain large hill foreground\",\n        \"church recognizable and unobstructed\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"Interface frame: the same blue hill is still a large foreground occluder, not a clean panorama. Its far side reveals only part of the painted village; the church steeple is recognizable and can be approached next.\"\n    },\n    {\n      \"id\": 3,\n      \"beat_zh\": \"从同侧抵达教堂尖塔近景，塔尖可与一颗星晕对齐。\",\n      \"camera_position\": \"close beside the church steeple on the same approach side as shot 2\",\n      \"camera_direction\": \"past the spire toward a white-yellow halo star above it\",\n      \"camera_path_from_next_frame\": \"reverse downward and backward from the selected star halo to the steeple side\",\n      \"shared_landmarks\": [\n        \"strong steeple foreground\",\n        \"roofs behind\",\n        \"same ridge\",\n        \"one selected star above spire\"\n      ],\n      \"transition_object\": \"steeple silhouette and selected star halo\",\n      \"transition_object_screen_position\": \"spire near center-right in strong foreground; chosen white-yellow halo visibly above spire tip\",\n      \"entry_state\": \"spire already close on same side as shot 2\",\n      \"exit_state\": \"clear upward path from tip into halo\",\n      \"end_frame_constraints\": [\n        \"spire remains recognizable\",\n        \"village and ridge visible behind\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"The painted church steeple is near the camera from the same side as the previous approach. Roofs and ridge remain behind it. One bright circular white-yellow star halo sits above its tip, ready for a short camera rise and alignment. It is a painted star, not a portal.\"\n    },\n    {\n      \"id\": 4,\n      \"beat_zh\": \"刚从同一星晕穿出，边缘仍受光晕遮挡。\",\n      \"camera_position\": \"a short retreat and slight lateral correction before the exact final painting view\",\n      \"camera_direction\": \"toward final composition: cypress left, village low, spiral center, moon upper right\",\n      \"camera_path_from_next_frame\": \"reverse forward into the same halo from the exact original painting viewpoint\",\n      \"shared_landmarks\": [\n        \"left cypress\",\n        \"low village and church\",\n        \"blue ridge\",\n        \"central spiral\",\n        \"upper-right moon\"\n      ],\n      \"transition_object\": \"same circular painted star halo as shot 3\",\n      \"transition_object_screen_position\": \"large white-yellow halo arc still occludes one frame edge; the rest reveals near-final layout\",\n      \"entry_state\": \"emerging from halo with shared curved edge\",\n      \"exit_state\": \"only a small retreat and lateral correction remain\",\n      \"end_frame_constraints\": [\n        \"not a clean copy of the painting\",\n        \"all major landmarks in approximately correct screen regions\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"Just beyond the selected painted star halo. Its large curved white-yellow brushstroke rim still occupies one frame edge. Beyond it, the original arrangement begins to resolve: left cypress, village and church low, blue ridge, central spiral, moon upper right. Keep a little camera distance for the last shot; do not output the exact painting yet.\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"id\": 1,\n      \"beat_zh\": \"街道低飞、抬升越屋顶、俯瞰村庄，主动冲向蓝色山肩。\",\n      \"start_state\": \"KF1: low street toward church and hill\",\n      \"camera_path\": \"0–35% low forward street flight; 35–65% climb smoothly over roofs; 65–80% overview village; 80–100% approach blue mountain shoulder\",\n      \"speed_profile\": \"brisk then rising, slow near hill\",\n      \"parallax\": \"near walls move fastest, roofs slower, distant church and ridge slowest\",\n      \"environment_motion\": \"tiny people move subtly and warm windows glow within thick blue paint\",\n      \"transition_approach\": \"blue hill progressively covers most of view from the same side as KF2\",\n      \"final_quarter_target_state\": \"the same blue mountain shoulder occupies much of the last view, with village beginning to appear beyond it\",\n      \"transition_type\": \"hill_occlusion\",\n      \"motion_prompt_en\": \"One continuous drone-like subjective flight in thick cobalt and yellow oil paint. No cut, modern object, visible drone, readable text or photorealism.\",\n      \"transition_zh\": \"蓝山肩近景遮挡，再从同一山肩另一侧显露。\"\n    },\n    {\n      \"id\": 2,\n      \"beat_zh\": \"沿山肩约 100～140 度弧线滑出，再俯瞰村庄并下降到尖塔。\",\n      \"start_state\": \"same blue shoulder still covers 35%–55%, village beginning to show\",\n      \"camera_path\": \"0–20% slide out from hill; 20–65% travel a 100–140 degree arc along shoulder, not a 360 orbit; 65–100% lock church and descend on one side\",\n      \"speed_profile\": \"steady lateral arc then smooth descent and ease-in\",\n      \"parallax\": \"hill slides quickly against slower village and ridge; steeple grows continuously\",\n      \"environment_motion\": \"painted sky and village lights move subtly without geography changes\",\n      \"transition_approach\": \"approach the same side of the spire shown in KF3 and preserve its outline\",\n      \"final_quarter_target_state\": \"spire is large, close and on the same approach side, with roofs and ridge behind\",\n      \"transition_type\": \"steeple_match\",\n      \"motion_prompt_en\": \"Keep one uninterrupted camera move, stable steeple geometry and the original village layout. No architecture melting or teleportation.\",\n      \"transition_zh\": \"尖塔轮廓匹配，保持同侧抵达。\"\n    },\n    {\n      \"id\": 3,\n      \"beat_zh\": \"围绕尖塔小弧线运动，沿塔尖对齐星晕并飞入。\",\n      \"start_state\": \"close to same side of steeple, roofs and ridge behind\",\n      \"camera_path\": \"0–55% limited arc beside spire; 55–75% rise along tip and align to one painted star halo; 75–100% fly straight into that halo\",\n      \"speed_profile\": \"controlled orbit, short rise, steady entry\",\n      \"parallax\": \"spire shifts against slower roofs, village and ridge; star stays fixed in sky\",\n      \"environment_motion\": \"white-yellow circular brushstrokes shimmer like paint, not digital effects\",\n      \"transition_approach\": \"the chosen star halo fills frame; next shot exits through same curved edge\",\n      \"final_quarter_target_state\": \"painted halo dominates as a natural occluder and KF4 retains its rim\",\n      \"transition_type\": \"radial_star_halo\",\n      \"motion_prompt_en\": \"A single poetic camera move through the painting's own circular star brushstrokes. No science-fiction portal, cut, text or distorted church.\",\n      \"transition_zh\": \"以原画星晕笔触遮挡并从同一笔触中穿出。\"\n    },\n    {\n      \"id\": 4,\n      \"beat_zh\": \"从星晕中飞出，建立原画空间关系，减速抵达原画。\",\n      \"start_state\": \"same oversized halo arc touches edge at opening\",\n      \"camera_path\": \"0–20% emerge; 20–70% establish left cypress, low village and steeple, ridge, central spiral and upper-right moon; 70–100% slow retreat and tiny lateral correction\",\n      \"speed_profile\": \"moderate exit, progressively slower, nearly still at end\",\n      \"parallax\": \"near halo edge recedes fastest while cypress, village and sky settle\",\n      \"environment_motion\": \"painterly sky remains gently alive until the original painting freeze\",\n      \"transition_approach\": \"align with the canonical uploaded painting; exact original follows for 24 frames\",\n      \"final_quarter_target_state\": \"match the original viewpoint and stop without changing its landmarks\",\n      \"transition_type\": \"final_artwork_alignment\",\n      \"motion_prompt_en\": \"The painted world resolves into The Starry Night. Preserve every major original shape and finish on supplied last-frame painting. No extra object, text or cut.\",\n      \"transition_zh\": \"细微后退横移，对齐同一原画后进入 24 帧静止。\"\n    }\n  ]\n}\n",
+        "legacy_1280x720"
+      ],
+      "id": 2,
+      "title": "02 项目与已审分镜",
+      "pos": [
+        470,
+        0
+      ],
+      "order": 1,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 3,
+      "type": "NunchakuQwenImageDiTLoader",
+      "pos": [
+        1020,
+        -650
+      ],
+      "size": [
+        320.1197204589844,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-nunchaku",
+        "ver": "d9405a6305efc4dc758bdeec500fc5d695215b2b",
+        "Node name for S&R": "NunchakuQwenImageDiTLoader"
+      },
+      "widgets_values": [
+        "svdq-int4_r128-qwen-image-edit-2509-lightning-4steps-251115.safetensors",
+        "enable",
+        20,
+        "disable"
+      ],
+      "title": "已安装的 Nunchaku Qwen 2509 模型"
+    },
+    {
+      "id": 4,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        1410,
+        -650
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        3
+      ],
+      "title": "Qwen 采样配置"
+    },
+    {
+      "id": 5,
+      "type": "CFGNorm",
+      "pos": [
+        1790,
+        -650
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "patched_model",
+          "type": "MODEL",
+          "links": [
+            14,
+            36,
+            58,
+            80
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "CFGNorm",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "strength": true
+          }
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "title": "Qwen CFG 校正"
+    },
+    {
+      "id": 6,
+      "type": "CLIPLoader",
+      "pos": [
+        1020,
+        -380
+      ],
+      "size": [
+        330,
+        110
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            5,
+            6,
+            25,
+            26,
+            47,
+            48,
+            69,
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "qwen_image",
+        "default"
+      ],
+      "title": "已安装的 Qwen 文本编码器"
+    },
+    {
+      "id": 7,
+      "type": "VAELoader",
+      "pos": [
+        1410,
+        -380
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            7,
+            8,
+            13,
+            20,
+            27,
+            28,
+            35,
+            42,
+            49,
+            50,
+            57,
+            64,
+            71,
+            72,
+            79,
+            86
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "qwen_image_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "qwen_image_vae.safetensors"
+      ],
+      "title": "已安装的 Qwen VAE"
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        4,
+        487201,
+        false
+      ],
+      "id": 8,
+      "title": "关键帧 04 提示词",
+      "pos": [
+        1020,
+        0
+      ],
+      "order": 7,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 9,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        0
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 7
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Use connected ArtFrameText prompt for this painting."
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "title": "关键帧 04 正向提示词"
+    },
+    {
+      "id": 10,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        300
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 6
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 8
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "No modern objects, text, logos, or visible drone."
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "title": "关键帧 04 反向提示词"
+    },
+    {
+      "id": 11,
+      "type": "VAEEncode",
+      "pos": [
+        1980,
+        360
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "VAEEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "关键帧 04 编码输入图"
+    },
+    {
+      "id": 12,
+      "type": "KSampler",
+      "pos": [
+        2360,
+        0
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 17
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "title": "关键帧 04 Nunchaku 采样"
+    },
+    {
+      "id": 13,
+      "type": "VAEDecode",
+      "pos": [
+        2810,
+        0
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 19
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [],
+      "title": "关键帧 04 图像解码"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 21
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            23,
+            29,
+            30,
+            34
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 14,
+      "title": "保存草稿与选定帧 04",
+      "pos": [
+        3200,
+        0
+      ],
+      "order": 13,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 15,
+      "title": "预览关键帧 04",
+      "pos": [
+        3650,
+        0
+      ],
+      "order": 14,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        3,
+        487201,
+        false
+      ],
+      "id": 16,
+      "title": "关键帧 03 提示词",
+      "pos": [
+        1020,
+        960
+      ],
+      "order": 15,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 17,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        960
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 25
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 27
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 31
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Use connected ArtFrameText prompt for this painting."
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "title": "关键帧 03 正向提示词"
+    },
+    {
+      "id": 18,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        1260
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 26
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 28
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 30
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "No modern objects, text, logos, or visible drone."
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "title": "关键帧 03 反向提示词"
+    },
+    {
+      "id": 19,
+      "type": "VAEEncode",
+      "pos": [
+        1980,
+        1320
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "VAEEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "关键帧 03 编码输入图"
+    },
+    {
+      "id": 20,
+      "type": "KSampler",
+      "pos": [
+        2360,
+        960
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 36
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 37
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 38
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 39
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "title": "关键帧 03 Nunchaku 采样"
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        2810,
+        960
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 41
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            43
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [],
+      "title": "关键帧 03 图像解码"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 43
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            45,
+            51,
+            52,
+            56
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        3
+      ],
+      "id": 22,
+      "title": "保存草稿与选定帧 03",
+      "pos": [
+        3200,
+        960
+      ],
+      "order": 21,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 45
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 23,
+      "title": "预览关键帧 03",
+      "pos": [
+        3650,
+        960
+      ],
+      "order": 22,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            55
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        2,
+        487201,
+        false
+      ],
+      "id": 24,
+      "title": "关键帧 02 提示词",
+      "pos": [
+        1020,
+        1920
+      ],
+      "order": 23,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 25,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        1920
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 47
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 49
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 51
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 53
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Use connected ArtFrameText prompt for this painting."
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "title": "关键帧 02 正向提示词"
+    },
+    {
+      "id": 26,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        2220
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 48
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 50
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 52
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 54
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "No modern objects, text, logos, or visible drone."
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "title": "关键帧 02 反向提示词"
+    },
+    {
+      "id": 27,
+      "type": "VAEEncode",
+      "pos": [
+        1980,
+        2280
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 56
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "VAEEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "关键帧 02 编码输入图"
+    },
+    {
+      "id": 28,
+      "type": "KSampler",
+      "pos": [
+        2360,
+        1920
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 58
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 59
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 60
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 61
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "title": "关键帧 02 Nunchaku 采样"
+    },
+    {
+      "id": 29,
+      "type": "VAEDecode",
+      "pos": [
+        2810,
+        1920
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 63
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [],
+      "title": "关键帧 02 图像解码"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 65
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            67,
+            73,
+            74,
+            78
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        2
+      ],
+      "id": 30,
+      "title": "保存草稿与选定帧 02",
+      "pos": [
+        3200,
+        1920
+      ],
+      "order": 29,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 67
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 31,
+      "title": "预览关键帧 02",
+      "pos": [
+        3650,
+        1920
+      ],
+      "order": 30,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            77
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        1,
+        487201,
+        false
+      ],
+      "id": 32,
+      "title": "关键帧 01 提示词",
+      "pos": [
+        1020,
+        2880
+      ],
+      "order": 31,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 33,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        2880
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 69
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 71
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 73
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 75
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Use connected ArtFrameText prompt for this painting."
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "title": "关键帧 01 正向提示词"
+    },
+    {
+      "id": 34,
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        1510,
+        3180
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 70
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 72
+        },
+        {
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 74
+        },
+        {
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 76
+        },
+        {
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "No modern objects, text, logos, or visible drone."
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "title": "关键帧 01 反向提示词"
+    },
+    {
+      "id": 35,
+      "type": "VAEEncode",
+      "pos": [
+        1980,
+        3240
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 78
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            83
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.50",
+        "Node name for S&R": "VAEEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "ue_properties": {
+          "widget_ue_connectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "关键帧 01 编码输入图"
+    },
+    {
+      "id": 36,
+      "type": "KSampler",
+      "pos": [
+        2360,
+        2880
+      ],
+      "size": [
+        300,
+        474
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 80
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 81
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 82
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 83
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "KSampler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        550743918249140,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "title": "关键帧 01 Nunchaku 采样"
+    },
+    {
+      "id": 37,
+      "type": "VAEDecode",
+      "pos": [
+        2810,
+        2880
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 85
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 86
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            87
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.48",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [],
+      "title": "关键帧 01 图像解码"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 87
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            89
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        1
+      ],
+      "id": 38,
+      "title": "保存草稿与选定帧 01",
+      "pos": [
+        3200,
+        2880
+      ],
+      "order": 37,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 89
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 39,
+      "title": "预览关键帧 01",
+      "pos": [
+        3650,
+        2880
+      ],
+      "order": 38,
+      "flags": {},
+      "mode": 0
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      3,
+      0,
+      4,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      4,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      4,
+      2,
+      1,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      5,
+      6,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      6,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      7,
+      7,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      7,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      2,
+      0,
+      9,
+      2,
+      "IMAGE"
+    ],
+    [
+      10,
+      2,
+      0,
+      10,
+      2,
+      "IMAGE"
+    ],
+    [
+      11,
+      8,
+      0,
+      9,
+      5,
+      "STRING"
+    ],
+    [
+      12,
+      2,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      7,
+      0,
+      11,
+      1,
+      "VAE"
+    ],
+    [
+      14,
+      5,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      15,
+      9,
+      0,
+      12,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      16,
+      10,
+      0,
+      12,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      11,
+      0,
+      12,
+      3,
+      "LATENT"
+    ],
+    [
+      18,
+      8,
+      1,
+      12,
+      4,
+      "INT"
+    ],
+    [
+      19,
+      12,
+      0,
+      13,
+      0,
+      "LATENT"
+    ],
+    [
+      20,
+      7,
+      0,
+      13,
+      1,
+      "VAE"
+    ],
+    [
+      21,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      2,
+      2,
+      14,
+      1,
+      "STRING"
+    ],
+    [
+      23,
+      14,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      2,
+      1,
+      16,
+      0,
+      "STRING"
+    ],
+    [
+      25,
+      6,
+      0,
+      17,
+      0,
+      "CLIP"
+    ],
+    [
+      26,
+      6,
+      0,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      27,
+      7,
+      0,
+      17,
+      1,
+      "VAE"
+    ],
+    [
+      28,
+      7,
+      0,
+      18,
+      1,
+      "VAE"
+    ],
+    [
+      29,
+      14,
+      0,
+      17,
+      2,
+      "IMAGE"
+    ],
+    [
+      30,
+      14,
+      0,
+      18,
+      2,
+      "IMAGE"
+    ],
+    [
+      31,
+      2,
+      0,
+      17,
+      3,
+      "IMAGE"
+    ],
+    [
+      32,
+      2,
+      0,
+      18,
+      3,
+      "IMAGE"
+    ],
+    [
+      33,
+      16,
+      0,
+      17,
+      5,
+      "STRING"
+    ],
+    [
+      34,
+      14,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      7,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      36,
+      5,
+      0,
+      20,
+      0,
+      "MODEL"
+    ],
+    [
+      37,
+      17,
+      0,
+      20,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      18,
+      0,
+      20,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      39,
+      19,
+      0,
+      20,
+      3,
+      "LATENT"
+    ],
+    [
+      40,
+      16,
+      1,
+      20,
+      4,
+      "INT"
+    ],
+    [
+      41,
+      20,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      42,
+      7,
+      0,
+      21,
+      1,
+      "VAE"
+    ],
+    [
+      43,
+      21,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      2,
+      2,
+      22,
+      1,
+      "STRING"
+    ],
+    [
+      45,
+      22,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      2,
+      1,
+      24,
+      0,
+      "STRING"
+    ],
+    [
+      47,
+      6,
+      0,
+      25,
+      0,
+      "CLIP"
+    ],
+    [
+      48,
+      6,
+      0,
+      26,
+      0,
+      "CLIP"
+    ],
+    [
+      49,
+      7,
+      0,
+      25,
+      1,
+      "VAE"
+    ],
+    [
+      50,
+      7,
+      0,
+      26,
+      1,
+      "VAE"
+    ],
+    [
+      51,
+      22,
+      0,
+      25,
+      2,
+      "IMAGE"
+    ],
+    [
+      52,
+      22,
+      0,
+      26,
+      2,
+      "IMAGE"
+    ],
+    [
+      53,
+      2,
+      0,
+      25,
+      3,
+      "IMAGE"
+    ],
+    [
+      54,
+      2,
+      0,
+      26,
+      3,
+      "IMAGE"
+    ],
+    [
+      55,
+      24,
+      0,
+      25,
+      5,
+      "STRING"
+    ],
+    [
+      56,
+      22,
+      0,
+      27,
+      0,
+      "IMAGE"
+    ],
+    [
+      57,
+      7,
+      0,
+      27,
+      1,
+      "VAE"
+    ],
+    [
+      58,
+      5,
+      0,
+      28,
+      0,
+      "MODEL"
+    ],
+    [
+      59,
+      25,
+      0,
+      28,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      60,
+      26,
+      0,
+      28,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      61,
+      27,
+      0,
+      28,
+      3,
+      "LATENT"
+    ],
+    [
+      62,
+      24,
+      1,
+      28,
+      4,
+      "INT"
+    ],
+    [
+      63,
+      28,
+      0,
+      29,
+      0,
+      "LATENT"
+    ],
+    [
+      64,
+      7,
+      0,
+      29,
+      1,
+      "VAE"
+    ],
+    [
+      65,
+      29,
+      0,
+      30,
+      0,
+      "IMAGE"
+    ],
+    [
+      66,
+      2,
+      2,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      67,
+      30,
+      0,
+      31,
+      0,
+      "IMAGE"
+    ],
+    [
+      68,
+      2,
+      1,
+      32,
+      0,
+      "STRING"
+    ],
+    [
+      69,
+      6,
+      0,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      70,
+      6,
+      0,
+      34,
+      0,
+      "CLIP"
+    ],
+    [
+      71,
+      7,
+      0,
+      33,
+      1,
+      "VAE"
+    ],
+    [
+      72,
+      7,
+      0,
+      34,
+      1,
+      "VAE"
+    ],
+    [
+      73,
+      30,
+      0,
+      33,
+      2,
+      "IMAGE"
+    ],
+    [
+      74,
+      30,
+      0,
+      34,
+      2,
+      "IMAGE"
+    ],
+    [
+      75,
+      2,
+      0,
+      33,
+      3,
+      "IMAGE"
+    ],
+    [
+      76,
+      2,
+      0,
+      34,
+      3,
+      "IMAGE"
+    ],
+    [
+      77,
+      32,
+      0,
+      33,
+      5,
+      "STRING"
+    ],
+    [
+      78,
+      30,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      79,
+      7,
+      0,
+      35,
+      1,
+      "VAE"
+    ],
+    [
+      80,
+      5,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      81,
+      33,
+      0,
+      36,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      82,
+      34,
+      0,
+      36,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      83,
+      35,
+      0,
+      36,
+      3,
+      "LATENT"
+    ],
+    [
+      84,
+      32,
+      1,
+      36,
+      4,
+      "INT"
+    ],
+    [
+      85,
+      36,
+      0,
+      37,
+      0,
+      "LATENT"
+    ],
+    [
+      86,
+      7,
+      0,
+      37,
+      1,
+      "VAE"
+    ],
+    [
+      87,
+      37,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      88,
+      2,
+      2,
+      38,
+      1,
+      "STRING"
+    ],
+    [
+      89,
+      38,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": []
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        120,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

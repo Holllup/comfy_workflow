@@ -1,0 +1,4 @@
+interface:
+  display_name: "小猫创意编剧"
+  short_description: "与用户共创拟人猫与真人的短故事，打磨人物欲望、冲突、互动、对白和结尾"
+  default_prompt: "使用 $cat-vlog-writer 和我共创一个拟人猫与真人互动的小故事，先给三个真正不同的方向并推荐，再一起打磨完整剧情。"

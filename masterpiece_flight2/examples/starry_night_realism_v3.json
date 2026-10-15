@@ -1,0 +1,263 @@
+{
+  "artwork": {
+    "title": "The Starry Night",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "place": "Saint-Rémy-de-Provence, France"
+  },
+  "source_links": [
+    {
+      "label": "MoMA collection record",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    {
+      "label": "Wikimedia Commons image file",
+      "url": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+    }
+  ],
+  "verified_context": [
+    "The painting was inspired by the view from the artist's room at Saint-Paul-de-Mausole in Saint-Rémy.",
+    "The village in the painting could not be seen from the artist's window."
+  ],
+  "imagined_context": [
+    "The compact village lane, nearby hill shoulder, cypress passage and connected camera route are an imagined spatial reconstruction, not a verified historical site."
+  ],
+  "schema_version": 3,
+  "conditioning_mode": "photoreal_to_artwork",
+  "review_status": "example_requires_user_confirmation",
+  "visual_anchors": [
+    "One dark cypress on the left of the final view",
+    "One church steeple in the lower central village",
+    "A low ridge behind the village",
+    "The moon in the upper right",
+    "Cobalt night light and warm yellow windows; real materials during flight"
+  ],
+  "artwork_extension": {
+    "prompt_en": "Continue the original nocturnal landscape into both side extensions. Extend the existing ridge, village outskirts and blue swirling sky with the same oil-paint medium and scale. Keep the complete source rectangle at its exact position and size. Make seams continuous. Do not duplicate the cypress, church, moon or central swirl. No frame, flat color bars, text or new centerpiece."
+  },
+  "keyframes": [
+    {
+      "id": 1,
+      "beat_zh": "在窄巷中低飞，房屋遮住大部分天空。",
+      "camera_position": "1.8 metres above a short village lane",
+      "camera_direction": "forward toward a low hill opening",
+      "camera_path_from_next_frame": "From R2 move backward and down along the same short lane, keeping the church beyond the roofs.",
+      "shared_landmarks": [
+        "same cypress",
+        "same church and roof cluster",
+        "same ridge"
+      ],
+      "transition_object": "near house wall",
+      "transition_object_screen_position": "walls occupy both outer thirds; only a narrow irregular strip of sky",
+      "entry_state": "1.8 metres above a short village lane; walls occupy both outer thirds; only a narrow irregular strip of sky",
+      "exit_state": "1.8 metres above a short village lane; walls occupy both outer thirds; only a narrow irregular strip of sky",
+      "end_frame_constraints": [
+        "Preserve the stated occluder side, size and camera approach",
+        "Keep the same landmark arrangement as the adjacent realistic reference"
+      ],
+      "must_preserve": [
+        "cinematic photoreal materials",
+        "one coherent village and ridge",
+        "cobalt night light and yellow windows"
+      ],
+      "must_not_generate": [
+        "flat painting or photographic backdrop",
+        "canvas edges or a frame",
+        "extra moon or duplicate church",
+        "visible drone or modern objects"
+      ],
+      "image_prompt_en": "A cinematic night photograph from inside a compact nineteenth-century village lane. Rough stone walls and tiled roofs fill the near sides, warm windows illuminate cobbles, and a small distant steeple appears through a roof gap. Natural material detail, deep occlusion and a narrow view of luminous blue clouds. No broad panorama."
+    },
+    {
+      "id": 2,
+      "beat_zh": "贴近山肩，近处坡面遮挡右侧，远处村庄仍有深度。",
+      "camera_position": "just above the nearby hill shoulder",
+      "camera_direction": "forward and slightly left toward the cypress",
+      "camera_path_from_next_frame": "From R3 back away from the cypress toward the adjacent low hill shoulder; do not change which side the village occupies.",
+      "shared_landmarks": [
+        "same cypress",
+        "same church and roof cluster",
+        "same ridge"
+      ],
+      "transition_object": "rounded hill shoulder",
+      "transition_object_screen_position": "solid hill fills right 40%; village visible through the left and middle opening",
+      "entry_state": "just above the nearby hill shoulder; solid hill fills right 40%; village visible through the left and middle opening",
+      "exit_state": "just above the nearby hill shoulder; solid hill fills right 40%; village visible through the left and middle opening",
+      "end_frame_constraints": [
+        "Preserve the stated occluder side, size and camera approach",
+        "Keep the same landmark arrangement as the adjacent realistic reference"
+      ],
+      "must_preserve": [
+        "cinematic photoreal materials",
+        "one coherent village and ridge",
+        "cobalt night light and yellow windows"
+      ],
+      "must_not_generate": [
+        "flat painting or photographic backdrop",
+        "canvas edges or a frame",
+        "extra moon or duplicate church",
+        "visible drone or modern objects"
+      ],
+      "image_prompt_en": "Photographic close flight beside a rounded blue-lit hill shoulder. Near grass, rock and soil occupy the right 40 percent and obscure part of the village. The left opening shows layered rooftops and the same steeple below; a nearby tall cypress is ahead-left. Solid terrain with believable scale and atmospheric distance."
+    },
+    {
+      "id": 3,
+      "beat_zh": "到达柏树旁，树干和枝叶形成实体遮挡。",
+      "camera_position": "two metres beside the cypress on its right side",
+      "camera_direction": "toward the opening between branches and village",
+      "camera_path_from_next_frame": "From R4 reverse a few metres toward the same cypress trunk, leaving the village visible on the right.",
+      "shared_landmarks": [
+        "same cypress",
+        "same church and roof cluster",
+        "same ridge"
+      ],
+      "transition_object": "cypress trunk and branches",
+      "transition_object_screen_position": "trunk fills left 35%; branches cover upper-left 20%; open right-hand passage",
+      "entry_state": "two metres beside the cypress on its right side; trunk fills left 35%; branches cover upper-left 20%; open right-hand passage",
+      "exit_state": "two metres beside the cypress on its right side; trunk fills left 35%; branches cover upper-left 20%; open right-hand passage",
+      "end_frame_constraints": [
+        "Preserve the stated occluder side, size and camera approach",
+        "Keep the same landmark arrangement as the adjacent realistic reference"
+      ],
+      "must_preserve": [
+        "cinematic photoreal materials",
+        "one coherent village and ridge",
+        "cobalt night light and yellow windows"
+      ],
+      "must_not_generate": [
+        "flat painting or photographic backdrop",
+        "canvas edges or a frame",
+        "extra moon or duplicate church",
+        "visible drone or modern objects"
+      ],
+      "image_prompt_en": "Photographic view close to a cypress trunk at night. Rough bark fills the left 35 percent, separate needle clusters overlap at different depths, and the village is visible through a safe open passage to the right. The same church and ridge remain farther away. Real branches with depth, not a silhouette pasted on the sky."
+    },
+    {
+      "id": 4,
+      "beat_zh": "从树枝间的空隙飞出，原画对应全景逐渐展开。",
+      "camera_position": "a few metres ahead of the final hillside viewpoint",
+      "camera_direction": "toward the same village and ridge",
+      "camera_path_from_next_frame": "From R5 move slightly forward toward the cypress edge; keep the same horizon and avoid a large camera rotation.",
+      "shared_landmarks": [
+        "same cypress",
+        "same church and roof cluster",
+        "same ridge"
+      ],
+      "transition_object": "last cypress branches",
+      "transition_object_screen_position": "remaining branches cover upper-left 25%; most village geometry is visible",
+      "entry_state": "a few metres ahead of the final hillside viewpoint; remaining branches cover upper-left 25%; most village geometry is visible",
+      "exit_state": "a few metres ahead of the final hillside viewpoint; remaining branches cover upper-left 25%; most village geometry is visible",
+      "end_frame_constraints": [
+        "Preserve the stated occluder side, size and camera approach",
+        "Keep the same landmark arrangement as the adjacent realistic reference"
+      ],
+      "must_preserve": [
+        "cinematic photoreal materials",
+        "one coherent village and ridge",
+        "cobalt night light and yellow windows"
+      ],
+      "must_not_generate": [
+        "flat painting or photographic backdrop",
+        "canvas edges or a frame",
+        "extra moon or duplicate church",
+        "visible drone or modern objects"
+      ],
+      "image_prompt_en": "Cinematic photoreal night panorama just beyond the cypress passage. A few nearby cypress branches still cover the upper-left quarter. Below are the same village and small church, with the ridge behind and a moon upper-right. The final arrangement is almost established, but the nearest branches remain larger because the camera has not yet backed into its final position."
+    },
+    {
+      "id": 5,
+      "beat_zh": "在原画对应视角停稳；仍是完整的写实空间。",
+      "camera_position": "the final fixed hillside viewpoint corresponding to the supplied artwork",
+      "camera_direction": "exactly aligned with the extended artwork",
+      "camera_path_from_next_frame": "Convert the extended artwork into the same scene as a cinematic photograph at the same camera pose; no reverse movement for this endpoint.",
+      "shared_landmarks": [
+        "same cypress",
+        "same church and roof cluster",
+        "same ridge"
+      ],
+      "transition_object": "cypress at the left edge",
+      "transition_object_screen_position": "match the supplied reference positions and sizes across the full canvas",
+      "entry_state": "the final fixed hillside viewpoint corresponding to the supplied artwork; match the supplied reference positions and sizes across the full canvas",
+      "exit_state": "the final fixed hillside viewpoint corresponding to the supplied artwork; match the supplied reference positions and sizes across the full canvas",
+      "end_frame_constraints": [
+        "Preserve the stated occluder side, size and camera approach",
+        "Keep the same landmark arrangement as the adjacent realistic reference"
+      ],
+      "must_preserve": [
+        "cinematic photoreal materials",
+        "one coherent village and ridge",
+        "cobalt night light and yellow windows"
+      ],
+      "must_not_generate": [
+        "flat painting or photographic backdrop",
+        "canvas edges or a frame",
+        "extra moon or duplicate church",
+        "visible drone or modern objects"
+      ],
+      "image_prompt_en": "Reconstruct the entire extended artwork as a cinematic photograph of a coherent nocturnal landscape. Keep the cypress silhouette on the left, the village and church below, the ridge behind, the moon upper-right, and the broad luminous cloud arc in corresponding positions. Render stone, roof tiles, bark, foliage and clouds as real materials with physical volume. Preserve dreamy cobalt and yellow lighting, but do not retain impasto, canvas texture, painted outlines, a flat picture plane or a rectangular insert."
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "beat_zh": "巷道低飞后轻升，接近近处山肩。",
+      "start_state": "R1 lane between walls",
+      "camera_path": "0–50% move forward through the short lane; 50–75% rise just above the low roof; 75–100% approach the nearby hill shoulder on the right",
+      "speed_profile": "steady modest speed, ease slightly near the hill",
+      "parallax": "walls slide fastest; roofs and distant ridge move progressively more slowly",
+      "environment_motion": "subtle leaf movement and warm window light",
+      "transition_approach": "The right-hand terrain grows to the R2 coverage and hides part of the village",
+      "final_quarter_target_state": "Exact R2 hill coverage and left opening",
+      "transition_type": "generic_occlusion",
+      "motion_prompt_en": "Follow one continuous physically plausible route through the lane and over one low roof to the nearby hill. Preserve real materials and near/far parallax.",
+      "transition_zh": "以右侧山肩遮挡接入下一镜。"
+    },
+    {
+      "id": 2,
+      "beat_zh": "沿山肩绕出，靠近柏树右侧空隙。",
+      "start_state": "R2 close hill shoulder on the right",
+      "camera_path": "0–45% skim beside the hill; 45–75% bank gently toward the nearby cypress; 75–100% settle beside its trunk on the right approach side",
+      "speed_profile": "smooth moderate speed, no sudden acceleration",
+      "parallax": "near hill sweeps fastest, trunk grows as it approaches, village stays farther away",
+      "environment_motion": "grass and cypress needles move slightly",
+      "transition_approach": "The hill clears while the cypress trunk enters the left side",
+      "final_quarter_target_state": "Exact R3 trunk on left 35% with open passage on the right",
+      "transition_type": "generic_occlusion",
+      "motion_prompt_en": "Move from the same hill shoulder toward the nearby cypress, using natural terrain and trunk occlusion. Do not orbit the whole town or teleport across the valley.",
+      "transition_zh": "山肩移出后由柏树接力遮挡。"
+    },
+    {
+      "id": 3,
+      "beat_zh": "掠过树干，从真实枝叶空隙中穿出。",
+      "start_state": "R3 beside cypress, safe opening on right",
+      "camera_path": "0–60% move through the open right-hand branch gap without touching wood; 60–100% emerge toward the village view",
+      "speed_profile": "slow precise glide through the gap",
+      "parallax": "individual branches pass at different speeds and uncover distant roofs",
+      "environment_motion": "needles move gently in the breeze",
+      "transition_approach": "Keep the trunk and final branches on the left as the view opens",
+      "final_quarter_target_state": "Exact R4 partial upper-left branch coverage and same horizon",
+      "transition_type": "generic_occlusion",
+      "motion_prompt_en": "Fly through an actual open gap between branches. Near foliage occludes the distant village and reveals it again. Maintain real depth, no painted panel and no branch melting.",
+      "transition_zh": "以枝叶遮挡揭开全景。"
+    },
+    {
+      "id": 4,
+      "beat_zh": "小幅后退校正构图，平稳停在原画对应视角。",
+      "start_state": "R4 panorama with enlarged near-left branches",
+      "camera_path": "0–60% drift backward a few metres; 60–75% make a small lateral framing correction; 75–95% progressively brake into the exact R5 pose; 95–100% hold the camera completely fixed",
+      "speed_profile": "progressive deceleration to a complete stop",
+      "parallax": "near cypress changes fastest while village and ridge barely shift",
+      "environment_motion": "faint cloud drift and gentle foliage motion",
+      "transition_approach": "Branches retreat to the final left silhouette without crossing the full image",
+      "final_quarter_target_state": "Complete alignment and deceleration into R5, with approximately the final six frames already stationary; remain fully photoreal",
+      "transition_type": "landmark_match",
+      "motion_prompt_en": "Finish the physical camera move and stop on the photoreal endpoint. Do not begin painting transformation, add brushstrokes or reveal a canvas during this flight.",
+      "transition_zh": "停稳后由独立画作化段接续。"
+    }
+  ],
+  "morph": {
+    "camera_locked": true,
+    "material_progression_en": "0–20% keep the photographic pose fixed as colors begin to organize; 20–65% stone, foliage and clouds develop coherent pigment and brushstroke structure on their surfaces; 65–95% the cloud arc and light halos settle into the artwork shapes; 95–100% converge to the supplied extended artwork. Both sides transform together.",
+    "motion_prompt_en": "The camera has already stopped. Maintain the same perspective, horizon and major landmark positions throughout. Physical materials progressively become the exact visual language of the last frame. Transform the scene itself; do not slide a painting in front of it, crossfade transparent duplicate buildings, grow a picture frame or perform another camera move."
+  }
+}

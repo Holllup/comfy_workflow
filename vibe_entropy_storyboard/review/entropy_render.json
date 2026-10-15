@@ -1,0 +1,13 @@
+{
+  "video": "/Users/zhwh/Desktop/sd_workflow/vibe_entropy_storyboard/output/entropy.mp4",
+  "source_sha256": "61ab7ece6167d4b93579a08202924f000660fe0d4b73a8e67386bff9f33c8251",
+  "start_frame": 0,
+  "end_frame_exclusive": 4500,
+  "fps": 30,
+  "frames": 4500,
+  "audio_streams": 0,
+  "render_elapsed_s": 210.94,
+  "software": "Authored Canvas 2D; isolated headless Chrome via Playwright; FFmpeg/libx264",
+  "final_video_sha256": "d6cce7c41821ede3f184c2d68ff8beaffea77b31ad60ee56aeb1e18ec34ab9ce",
+  "color_metadata_postprocess": "lossless; decoded pixels unchanged; see color_metadata_fix.json"
+}

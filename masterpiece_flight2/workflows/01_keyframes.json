@@ -1,0 +1,3294 @@
+{
+  "id": "6f09b8e5-bbcf-5893-94a0-b8572bb0ddc2",
+  "revision": 0,
+  "last_node_id": 18,
+  "last_link_id": 32,
+  "nodes": [
+    {
+      "type": "LoadImage",
+      "size": [
+        390,
+        410
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "starry_night.jpg",
+        "image"
+      ],
+      "id": 1,
+      "title": "01 上传原画",
+      "pos": [
+        0,
+        0
+      ],
+      "order": 0,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtPrepare",
+      "size": [
+        450,
+        430
+      ],
+      "inputs": [
+        {
+          "name": "painting",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "canvas",
+          "type": "IMAGE",
+          "links": [
+            3,
+            11,
+            19,
+            27
+          ]
+        },
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "links": [
+            2,
+            9,
+            17,
+            25
+          ]
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "links": [
+            7,
+            15,
+            23,
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtPrepare",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "starry_night",
+        "{\n  \"schema_version\": 2,\n  \"artwork\": {\n    \"title\": \"The Starry Night\",\n    \"artist\": \"Vincent van Gogh\",\n    \"year\": \"1889\",\n    \"place\": \"Saint-Rémy-de-Provence, France\"\n  },\n  \"source_links\": [\n    {\n      \"label\": \"MoMA collection record\",\n      \"url\": \"https://www.moma.org/collection/works/79802\"\n    },\n    {\n      \"label\": \"Wikimedia Commons image file\",\n      \"url\": \"https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg\"\n    }\n  ],\n  \"verified_context\": [\n    \"The painting was inspired by the view from the artist's room at Saint-Paul-de-Mausole in Saint-Rémy.\",\n    \"The village in the painting could not be seen from the artist's window.\"\n  ],\n  \"imagined_context\": [\n    \"The village streets, small rural figures, blue-hill flight route, church orbit and star-halo passage are invented for this film. They are not a documented 1889 route.\"\n  ],\n  \"visual_anchors\": [\n    \"left-side dark cypress\",\n    \"low village and recognizable church steeple below a blue ridge\",\n    \"central cobalt spiral, white-yellow circular star halos and upper-right moon\"\n  ],\n  \"keyframes\": [\n    {\n      \"id\": 1,\n      \"beat_zh\": \"低空村庄街道，建立飞行方向与时代氛围。\",\n      \"camera_position\": \"eye-level to low drone height over a narrow painted village lane\",\n      \"camera_direction\": \"forward toward a tiny distant church steeple and blue ridge\",\n      \"camera_path_from_next_frame\": \"reverse down from the hill and rooftops into this street\",\n      \"shared_landmarks\": [\n        \"same distant church\",\n        \"same blue ridge\",\n        \"warm yellow village windows\"\n      ],\n      \"transition_object\": \"street vanishing point\",\n      \"transition_object_screen_position\": \"near center, with blue hill small beyond roofs\",\n      \"entry_state\": \"low unobstructed lane\",\n      \"exit_state\": \"beginning of a climb above roofs\",\n      \"end_frame_constraints\": [\n        \"clear forward vanishing line\",\n        \"three to six tiny rural figures without readable faces\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"An imagined late-19th-century village street inside the oil-painted world. Cobalt houses on both sides, warm yellow windows, three to six tiny people, no face closeups. Rooftops lead toward a tiny church and the same distant blue ridge. Wide horizontal painted composition.\"\n    },\n    {\n      \"id\": 2,\n      \"beat_zh\": \"第一镜蓝色山体遮挡后的自然出口。\",\n      \"camera_position\": \"very close to the near side of the blue mountain shoulder, just above village roofs\",\n      \"camera_direction\": \"along the hill toward the village on its far side\",\n      \"camera_path_from_next_frame\": \"reverse away from the church along the same blue hill until the hill obscures the view\",\n      \"shared_landmarks\": [\n        \"same cobalt mountain shoulder\",\n        \"same village roof pattern\",\n        \"same visible church steeple\"\n      ],\n      \"transition_object\": \"blue mountain shoulder\",\n      \"transition_object_screen_position\": \"hill covers about 35%–55% of image, mostly right and center; village and church visible at left\",\n      \"entry_state\": \"emerging from shot 1 hill occlusion\",\n      \"exit_state\": \"hill starts to clear so the church is reachable\",\n      \"end_frame_constraints\": [\n        \"retain large hill foreground\",\n        \"church recognizable and unobstructed\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"Interface frame: the same blue hill is still a large foreground occluder, not a clean panorama. Its far side reveals only part of the painted village; the church steeple is recognizable and can be approached next.\"\n    },\n    {\n      \"id\": 3,\n      \"beat_zh\": \"从同侧抵达教堂尖塔近景，塔尖可与一颗星晕对齐。\",\n      \"camera_position\": \"close beside the church steeple on the same approach side as shot 2\",\n      \"camera_direction\": \"past the spire toward a white-yellow halo star above it\",\n      \"camera_path_from_next_frame\": \"reverse downward and backward from the selected star halo to the steeple side\",\n      \"shared_landmarks\": [\n        \"strong steeple foreground\",\n        \"roofs behind\",\n        \"same ridge\",\n        \"one selected star above spire\"\n      ],\n      \"transition_object\": \"steeple silhouette and selected star halo\",\n      \"transition_object_screen_position\": \"spire near center-right in strong foreground; chosen white-yellow halo visibly above spire tip\",\n      \"entry_state\": \"spire already close on same side as shot 2\",\n      \"exit_state\": \"clear upward path from tip into halo\",\n      \"end_frame_constraints\": [\n        \"spire remains recognizable\",\n        \"village and ridge visible behind\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"The painted church steeple is near the camera from the same side as the previous approach. Roofs and ridge remain behind it. One bright circular white-yellow star halo sits above its tip, ready for a short camera rise and alignment. It is a painted star, not a portal.\"\n    },\n    {\n      \"id\": 4,\n      \"beat_zh\": \"刚从同一星晕穿出，边缘仍受光晕遮挡。\",\n      \"camera_position\": \"a short retreat and slight lateral correction before the exact final painting view\",\n      \"camera_direction\": \"toward final composition: cypress left, village low, spiral center, moon upper right\",\n      \"camera_path_from_next_frame\": \"reverse forward into the same halo from the exact original painting viewpoint\",\n      \"shared_landmarks\": [\n        \"left cypress\",\n        \"low village and church\",\n        \"blue ridge\",\n        \"central spiral\",\n        \"upper-right moon\"\n      ],\n      \"transition_object\": \"same circular painted star halo as shot 3\",\n      \"transition_object_screen_position\": \"large white-yellow halo arc still occludes one frame edge; the rest reveals near-final layout\",\n      \"entry_state\": \"emerging from halo with shared curved edge\",\n      \"exit_state\": \"only a small retreat and lateral correction remain\",\n      \"end_frame_constraints\": [\n        \"not a clean copy of the painting\",\n        \"all major landmarks in approximately correct screen regions\"\n      ],\n      \"must_preserve\": [\n        \"The Starry Night cobalt and warm yellow palette\",\n        \"thick visible oil brushstrokes\",\n        \"same village, ridge and church geography\"\n      ],\n      \"must_not_generate\": [\n        \"modern vehicles\",\n        \"visible drone\",\n        \"large faces\",\n        \"text or logos\",\n        \"photorealism\",\n        \"unrelated modern landmarks\"\n      ],\n      \"image_prompt_en\": \"Just beyond the selected painted star halo. Its large curved white-yellow brushstroke rim still occupies one frame edge. Beyond it, the original arrangement begins to resolve: left cypress, village and church low, blue ridge, central spiral, moon upper right. Keep a little camera distance for the last shot; do not output the exact painting yet.\"\n    }\n  ],\n  \"shots\": [\n    {\n      \"id\": 1,\n      \"beat_zh\": \"街道低飞、抬升越屋顶、俯瞰村庄，主动冲向蓝色山肩。\",\n      \"start_state\": \"KF1: low street toward church and hill\",\n      \"camera_path\": \"0–35% low forward street flight; 35–65% climb smoothly over roofs; 65–80% overview village; 80–100% approach blue mountain shoulder\",\n      \"speed_profile\": \"brisk then rising, slow near hill\",\n      \"parallax\": \"near walls move fastest, roofs slower, distant church and ridge slowest\",\n      \"environment_motion\": \"tiny people move subtly and warm windows glow within thick blue paint\",\n      \"transition_approach\": \"blue hill progressively covers most of view from the same side as KF2\",\n      \"final_quarter_target_state\": \"the same blue mountain shoulder occupies much of the last view, with village beginning to appear beyond it\",\n      \"transition_type\": \"hill_occlusion\",\n      \"motion_prompt_en\": \"One continuous drone-like subjective flight in thick cobalt and yellow oil paint. No cut, modern object, visible drone, readable text or photorealism.\",\n      \"transition_zh\": \"蓝山肩近景遮挡，再从同一山肩另一侧显露。\"\n    },\n    {\n      \"id\": 2,\n      \"beat_zh\": \"沿山肩约 100～140 度弧线滑出，再俯瞰村庄并下降到尖塔。\",\n      \"start_state\": \"same blue shoulder still covers 35%–55%, village beginning to show\",\n      \"camera_path\": \"0–20% slide out from hill; 20–65% travel a 100–140 degree arc along shoulder, not a 360 orbit; 65–100% lock church and descend on one side\",\n      \"speed_profile\": \"steady lateral arc then smooth descent and ease-in\",\n      \"parallax\": \"hill slides quickly against slower village and ridge; steeple grows continuously\",\n      \"environment_motion\": \"painted sky and village lights move subtly without geography changes\",\n      \"transition_approach\": \"approach the same side of the spire shown in KF3 and preserve its outline\",\n      \"final_quarter_target_state\": \"spire is large, close and on the same approach side, with roofs and ridge behind\",\n      \"transition_type\": \"steeple_match\",\n      \"motion_prompt_en\": \"Keep one uninterrupted camera move, stable steeple geometry and the original village layout. No architecture melting or teleportation.\",\n      \"transition_zh\": \"尖塔轮廓匹配，保持同侧抵达。\"\n    },\n    {\n      \"id\": 3,\n      \"beat_zh\": \"围绕尖塔小弧线运动，沿塔尖对齐星晕并飞入。\",\n      \"start_state\": \"close to same side of steeple, roofs and ridge behind\",\n      \"camera_path\": \"0–55% limited arc beside spire; 55–75% rise along tip and align to one painted star halo; 75–100% fly straight into that halo\",\n      \"speed_profile\": \"controlled orbit, short rise, steady entry\",\n      \"parallax\": \"spire shifts against slower roofs, village and ridge; star stays fixed in sky\",\n      \"environment_motion\": \"white-yellow circular brushstrokes shimmer like paint, not digital effects\",\n      \"transition_approach\": \"the chosen star halo fills frame; next shot exits through same curved edge\",\n      \"final_quarter_target_state\": \"painted halo dominates as a natural occluder and KF4 retains its rim\",\n      \"transition_type\": \"radial_star_halo\",\n      \"motion_prompt_en\": \"A single poetic camera move through the painting's own circular star brushstrokes. No science-fiction portal, cut, text or distorted church.\",\n      \"transition_zh\": \"以原画星晕笔触遮挡并从同一笔触中穿出。\"\n    },\n    {\n      \"id\": 4,\n      \"beat_zh\": \"从星晕中飞出，建立原画空间关系，减速抵达原画。\",\n      \"start_state\": \"same oversized halo arc touches edge at opening\",\n      \"camera_path\": \"0–20% emerge; 20–70% establish left cypress, low village and steeple, ridge, central spiral and upper-right moon; 70–100% slow retreat and tiny lateral correction\",\n      \"speed_profile\": \"moderate exit, progressively slower, nearly still at end\",\n      \"parallax\": \"near halo edge recedes fastest while cypress, village and sky settle\",\n      \"environment_motion\": \"painterly sky remains gently alive until the original painting freeze\",\n      \"transition_approach\": \"align with the canonical uploaded painting; exact original follows for 24 frames\",\n      \"final_quarter_target_state\": \"match the original viewpoint and stop without changing its landmarks\",\n      \"transition_type\": \"final_artwork_alignment\",\n      \"motion_prompt_en\": \"The painted world resolves into The Starry Night. Preserve every major original shape and finish on supplied last-frame painting. No extra object, text or cut.\",\n      \"transition_zh\": \"细微后退横移，对齐同一原画后进入 24 帧静止。\"\n    }\n  ]\n}\n",
+        "legacy_1280x720"
+      ],
+      "id": 2,
+      "title": "02 项目与已审分镜",
+      "pos": [
+        470,
+        0
+      ],
+      "order": 1,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        4,
+        487201
+      ],
+      "id": 3,
+      "title": "关键帧 04 提示词",
+      "pos": [
+        1030,
+        0
+      ],
+      "order": 2,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 4,
+      "type": "eba40a3a-f6c5-48ac-b58e-55525d06b373",
+      "pos": [
+        1510,
+        0
+      ],
+      "size": [
+        460,
+        650
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "label": "image2 (optional)",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "image3 (optional)",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "positive_prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 4
+        },
+        {
+          "name": "lora_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "prompt_1",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed_1",
+          "type": "INT",
+          "widget": {
+            "name": "seed_1"
+          },
+          "link": 5
+        },
+        {
+          "label": "unet_name",
+          "name": "unet_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "clip_name",
+          "name": "clip_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_name",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "enable_turbo_mode",
+          "name": "value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        },
+        {
+          "label": "lightning_lora",
+          "name": "lora_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name_1"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "111",
+            "prompt"
+          ],
+          [
+            "110",
+            "prompt"
+          ],
+          [
+            "3",
+            "seed"
+          ],
+          [
+            "37",
+            "unet_name"
+          ],
+          [
+            "38",
+            "clip_name"
+          ],
+          [
+            "39",
+            "vae_name"
+          ],
+          [
+            "443",
+            "value"
+          ],
+          [
+            "89",
+            "lora_name"
+          ],
+          [
+            "3",
+            "control_after_generate"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.3.62"
+      },
+      "widgets_values": [],
+      "title": "关键帧 04 Qwen 画外空间"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            8,
+            10
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 5,
+      "title": "保存草稿与选定帧 04",
+      "pos": [
+        2080,
+        0
+      ],
+      "order": 4,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 6,
+      "title": "预览关键帧 04",
+      "pos": [
+        2540,
+        0
+      ],
+      "order": 5,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            12
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        3,
+        487201
+      ],
+      "id": 7,
+      "title": "关键帧 03 提示词",
+      "pos": [
+        1030,
+        850
+      ],
+      "order": 6,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 8,
+      "type": "eba40a3a-f6c5-48ac-b58e-55525d06b373",
+      "pos": [
+        1510,
+        850
+      ],
+      "size": [
+        460,
+        650
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "label": "image2 (optional)",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "label": "image3 (optional)",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "positive_prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 12
+        },
+        {
+          "name": "lora_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "prompt_1",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed_1",
+          "type": "INT",
+          "widget": {
+            "name": "seed_1"
+          },
+          "link": 13
+        },
+        {
+          "label": "unet_name",
+          "name": "unet_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "clip_name",
+          "name": "clip_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_name",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "enable_turbo_mode",
+          "name": "value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        },
+        {
+          "label": "lightning_lora",
+          "name": "lora_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name_1"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "111",
+            "prompt"
+          ],
+          [
+            "110",
+            "prompt"
+          ],
+          [
+            "3",
+            "seed"
+          ],
+          [
+            "37",
+            "unet_name"
+          ],
+          [
+            "38",
+            "clip_name"
+          ],
+          [
+            "39",
+            "vae_name"
+          ],
+          [
+            "443",
+            "value"
+          ],
+          [
+            "89",
+            "lora_name"
+          ],
+          [
+            "3",
+            "control_after_generate"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.3.62"
+      },
+      "widgets_values": [],
+      "title": "关键帧 03 Qwen 画外空间"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            16,
+            18
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        3
+      ],
+      "id": 9,
+      "title": "保存草稿与选定帧 03",
+      "pos": [
+        2080,
+        850
+      ],
+      "order": 8,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 16
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 10,
+      "title": "预览关键帧 03",
+      "pos": [
+        2540,
+        850
+      ],
+      "order": 9,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        2,
+        487201
+      ],
+      "id": 11,
+      "title": "关键帧 02 提示词",
+      "pos": [
+        1030,
+        1700
+      ],
+      "order": 10,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 12,
+      "type": "eba40a3a-f6c5-48ac-b58e-55525d06b373",
+      "pos": [
+        1510,
+        1700
+      ],
+      "size": [
+        460,
+        650
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "label": "image2 (optional)",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "label": "image3 (optional)",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "positive_prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 20
+        },
+        {
+          "name": "lora_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "prompt_1",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed_1",
+          "type": "INT",
+          "widget": {
+            "name": "seed_1"
+          },
+          "link": 21
+        },
+        {
+          "label": "unet_name",
+          "name": "unet_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "clip_name",
+          "name": "clip_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_name",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "enable_turbo_mode",
+          "name": "value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        },
+        {
+          "label": "lightning_lora",
+          "name": "lora_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name_1"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "111",
+            "prompt"
+          ],
+          [
+            "110",
+            "prompt"
+          ],
+          [
+            "3",
+            "seed"
+          ],
+          [
+            "37",
+            "unet_name"
+          ],
+          [
+            "38",
+            "clip_name"
+          ],
+          [
+            "39",
+            "vae_name"
+          ],
+          [
+            "443",
+            "value"
+          ],
+          [
+            "89",
+            "lora_name"
+          ],
+          [
+            "3",
+            "control_after_generate"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.3.62"
+      },
+      "widgets_values": [],
+      "title": "关键帧 02 Qwen 画外空间"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 22
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            24,
+            26
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        2
+      ],
+      "id": 13,
+      "title": "保存草稿与选定帧 02",
+      "pos": [
+        2080,
+        1700
+      ],
+      "order": 12,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 14,
+      "title": "预览关键帧 02",
+      "pos": [
+        2540,
+        1700
+      ],
+      "order": 13,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtFrameText",
+      "size": [
+        380,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_prompt",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtFrameText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        1,
+        487201
+      ],
+      "id": 15,
+      "title": "关键帧 01 提示词",
+      "pos": [
+        1030,
+        2550
+      ],
+      "order": 14,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 16,
+      "type": "eba40a3a-f6c5-48ac-b58e-55525d06b373",
+      "pos": [
+        1510,
+        2550
+      ],
+      "size": [
+        460,
+        650
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 26
+        },
+        {
+          "label": "image2 (optional)",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 27
+        },
+        {
+          "label": "image3 (optional)",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "positive_prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 28
+        },
+        {
+          "name": "lora_name",
+          "type": "COMBO",
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "prompt_1",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed_1",
+          "type": "INT",
+          "widget": {
+            "name": "seed_1"
+          },
+          "link": 29
+        },
+        {
+          "label": "unet_name",
+          "name": "unet_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "clip_name",
+          "name": "clip_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "vae_name",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        },
+        {
+          "label": "enable_turbo_mode",
+          "name": "value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        },
+        {
+          "label": "lightning_lora",
+          "name": "lora_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name_1"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "111",
+            "prompt"
+          ],
+          [
+            "110",
+            "prompt"
+          ],
+          [
+            "3",
+            "seed"
+          ],
+          [
+            "37",
+            "unet_name"
+          ],
+          [
+            "38",
+            "clip_name"
+          ],
+          [
+            "39",
+            "vae_name"
+          ],
+          [
+            "443",
+            "value"
+          ],
+          [
+            "89",
+            "lora_name"
+          ],
+          [
+            "3",
+            "control_after_generate"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.3.62"
+      },
+      "widgets_values": [],
+      "title": "关键帧 01 Qwen 画外空间"
+    },
+    {
+      "type": "ArtSaveKeyframe",
+      "size": [
+        400,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "draft_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtSaveKeyframe",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        1
+      ],
+      "id": 17,
+      "title": "保存草稿与选定帧 01",
+      "pos": [
+        2080,
+        2550
+      ],
+      "order": 16,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        360,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 18,
+      "title": "预览关键帧 01",
+      "pos": [
+        2540,
+        2550
+      ],
+      "order": 17,
+      "flags": {},
+      "mode": 0
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      1,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      3,
+      0,
+      4,
+      3,
+      "STRING"
+    ],
+    [
+      5,
+      3,
+      1,
+      4,
+      6,
+      "INT"
+    ],
+    [
+      6,
+      4,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      2,
+      2,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      8,
+      5,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      2,
+      1,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      10,
+      5,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      2,
+      0,
+      8,
+      1,
+      "IMAGE"
+    ],
+    [
+      12,
+      7,
+      0,
+      8,
+      3,
+      "STRING"
+    ],
+    [
+      13,
+      7,
+      1,
+      8,
+      6,
+      "INT"
+    ],
+    [
+      14,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      2,
+      2,
+      9,
+      1,
+      "STRING"
+    ],
+    [
+      16,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      17,
+      2,
+      1,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      18,
+      9,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      2,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      20,
+      11,
+      0,
+      12,
+      3,
+      "STRING"
+    ],
+    [
+      21,
+      11,
+      1,
+      12,
+      6,
+      "INT"
+    ],
+    [
+      22,
+      12,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      2,
+      2,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      24,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      2,
+      1,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      26,
+      13,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      2,
+      0,
+      16,
+      1,
+      "IMAGE"
+    ],
+    [
+      28,
+      15,
+      0,
+      16,
+      3,
+      "STRING"
+    ],
+    [
+      29,
+      15,
+      1,
+      16,
+      6,
+      "INT"
+    ],
+    [
+      30,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      2,
+      2,
+      17,
+      1,
+      "STRING"
+    ],
+    [
+      32,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "eba40a3a-f6c5-48ac-b58e-55525d06b373",
+        "version": 1,
+        "state": {
+          "lastGroupId": 51,
+          "lastNodeId": 469,
+          "lastLinkId": 743,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Image Edit (Qwen 2509)",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -1160,
+            280,
+            159.744140625,
+            288
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2030,
+            -20,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "d5089bd3-63bc-4a24-b478-6565ed2364e3",
+            "name": "image",
+            "type": "IMAGE",
+            "linkIds": [
+              248
+            ],
+            "label": "image",
+            "pos": [
+              -1024.255859375,
+              304
+            ]
+          },
+          {
+            "id": "9e80fff0-ed0a-439f-a16e-a4a6cc1eb601",
+            "name": "image2",
+            "type": "IMAGE",
+            "linkIds": [
+              235,
+              236
+            ],
+            "label": "image2 (optional)",
+            "pos": [
+              -1024.255859375,
+              324
+            ]
+          },
+          {
+            "id": "49d98fd6-01b5-440b-8603-579252fd7fef",
+            "name": "image3",
+            "type": "IMAGE",
+            "linkIds": [
+              237,
+              238
+            ],
+            "label": "image3 (optional)",
+            "pos": [
+              -1024.255859375,
+              344
+            ]
+          },
+          {
+            "id": "5de32f24-a7b5-4423-b772-72824005f585",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              244
+            ],
+            "label": "positive_prompt",
+            "pos": [
+              -1024.255859375,
+              364
+            ]
+          },
+          {
+            "id": "efdf572f-032d-437d-85af-5951db7a621a",
+            "name": "lora_name",
+            "type": "COMBO",
+            "linkIds": [],
+            "pos": [
+              -1024.255859375,
+              384
+            ]
+          },
+          {
+            "id": "4648a8d2-0beb-4159-be03-81a05b056d0d",
+            "name": "prompt_1",
+            "type": "STRING",
+            "linkIds": [
+              735
+            ],
+            "label": "negative_prompt",
+            "pos": [
+              -1024.255859375,
+              404
+            ]
+          },
+          {
+            "id": "5990933b-c965-41a4-bec4-8ddfdc7fb4c0",
+            "name": "seed_1",
+            "type": "INT",
+            "linkIds": [
+              736
+            ],
+            "label": "seed",
+            "pos": [
+              -1024.255859375,
+              424
+            ]
+          },
+          {
+            "id": "e697447c-54eb-4268-afad-b657e6f34474",
+            "name": "unet_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              737
+            ],
+            "label": "unet_name",
+            "pos": [
+              -1024.255859375,
+              444
+            ]
+          },
+          {
+            "id": "d230cd55-3de8-4326-ba22-844bac68292d",
+            "name": "clip_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              738
+            ],
+            "label": "clip_name",
+            "pos": [
+              -1024.255859375,
+              464
+            ]
+          },
+          {
+            "id": "4c936a5f-1b6f-429d-8049-3c6ad783cf59",
+            "name": "vae_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              739
+            ],
+            "label": "vae_name",
+            "pos": [
+              -1024.255859375,
+              484
+            ]
+          },
+          {
+            "id": "63197b14-6f54-4097-bddc-91267d21b4c7",
+            "name": "value",
+            "type": "BOOLEAN",
+            "linkIds": [
+              740
+            ],
+            "label": "enable_turbo_mode",
+            "pos": [
+              -1024.255859375,
+              504
+            ]
+          },
+          {
+            "id": "28003019-9145-4e52-b466-7615c77a592f",
+            "name": "lora_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              742
+            ],
+            "label": "lightning_lora",
+            "pos": [
+              -1024.255859375,
+              524
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "c4ebfc18-de83-4361-8e42-767c3c8c25c0",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              110
+            ],
+            "localized_name": "IMAGE",
+            "pos": [
+              2054,
+              4
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 75,
+            "type": "CFGNorm",
+            "pos": [
+              1080,
+              30
+            ],
+            "size": [
+              290,
+              132
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 141
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "patched_model",
+                "name": "patched_model",
+                "type": "MODEL",
+                "links": [
+                  186
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CFGNorm",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.50",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "strength": true
+                }
+              }
+            },
+            "widgets_values": [
+              1,
+              false
+            ]
+          },
+          {
+            "id": 39,
+            "type": "VAELoader",
+            "pos": [
+              -730,
+              410
+            ],
+            "size": [
+              330,
+              110
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 739
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "slot_index": 0,
+                "links": [
+                  76,
+                  168,
+                  206,
+                  207
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "models": [
+                {
+                  "name": "qwen_image_vae.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors",
+                  "directory": "vae"
+                }
+              ],
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": [
+              "qwen_image_vae.safetensors"
+            ]
+          },
+          {
+            "id": 38,
+            "type": "CLIPLoader",
+            "pos": [
+              -730,
+              150
+            ],
+            "size": [
+              330,
+              168
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 738
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "slot_index": 0,
+                "links": [
+                  204,
+                  205
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "models": [
+                {
+                  "name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors",
+                  "directory": "text_encoders"
+                }
+              ],
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": [
+              "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+              "qwen_image",
+              "default"
+            ]
+          },
+          {
+            "id": 37,
+            "type": "UNETLoader",
+            "pos": [
+              -730,
+              -60
+            ],
+            "size": [
+              330,
+              136
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 737
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "slot_index": 0,
+                "links": [
+                  184,
+                  710
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UNETLoader",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "models": [
+                {
+                  "name": "qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+                  "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+                  "directory": "diffusion_models"
+                }
+              ],
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": [
+              "qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": 110,
+            "type": "TextEncodeQwenImageEditPlus",
+            "pos": [
+              -240,
+              320
+            ],
+            "size": [
+              400,
+              240
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 204
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 206
+              },
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 251
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 236
+              },
+              {
+                "localized_name": "image3",
+                "name": "image3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 238
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 735
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  210
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "TextEncodeQwenImageEditPlus",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.59"
+            },
+            "widgets_values": [
+              ""
+            ],
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 66,
+            "type": "ModelSamplingAuraFlow",
+            "pos": [
+              1070,
+              -120
+            ],
+            "size": [
+              290,
+              110
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 708
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  141
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ModelSamplingAuraFlow",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": [
+              3
+            ]
+          },
+          {
+            "id": 111,
+            "type": "TextEncodeQwenImageEditPlus",
+            "pos": [
+              -250,
+              -70
+            ],
+            "size": [
+              410,
+              330
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 205
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 207
+              },
+              {
+                "localized_name": "image1",
+                "name": "image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 250
+              },
+              {
+                "localized_name": "image2",
+                "name": "image2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 235
+              },
+              {
+                "localized_name": "image3",
+                "name": "image3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 237
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 244
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  211
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "TextEncodeQwenImageEditPlus",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.59"
+            },
+            "widgets_values": [
+              "Replace the cat with a dalmatian, keeping the environment and scene consistent"
+            ],
+            "color": "#232",
+            "bgcolor": "#353"
+          },
+          {
+            "id": 88,
+            "type": "VAEEncode",
+            "pos": [
+              -70,
+              640
+            ],
+            "size": [
+              230,
+              100
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pixels",
+                "name": "pixels",
+                "type": "IMAGE",
+                "link": 249
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 168
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  246
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEEncode",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.50",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 8,
+            "type": "VAEDecode",
+            "pos": [
+              1590,
+              -60
+            ],
+            "size": [
+              230,
+              100
+            ],
+            "flags": {
+              "collapsed": false
+            },
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 128
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 76
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "slot_index": 0,
+                "links": [
+                  110
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 89,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              320,
+              300
+            ],
+            "size": [
+              300,
+              140
+            ],
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 184
+              },
+              {
+                "localized_name": "lora_name",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 742
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  709
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoraLoaderModelOnly",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.50",
+              "models": [
+                {
+                  "name": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+                  "url": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+                  "directory": "loras"
+                }
+              ],
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "lora_name": true,
+                  "strength_model": true
+                }
+              }
+            },
+            "widgets_values": [
+              "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+              1
+            ]
+          },
+          {
+            "id": 117,
+            "type": "FluxKontextImageScale",
+            "pos": [
+              -680,
+              630
+            ],
+            "size": [
+              230,
+              80
+            ],
+            "flags": {},
+            "order": 16,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 248
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  249,
+                  250,
+                  251
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "FluxKontextImageScale"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 3,
+            "type": "KSampler",
+            "pos": [
+              1070,
+              210
+            ],
+            "size": [
+              300,
+              590
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 186
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 211
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 210
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 246
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 736
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 707
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 706
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "slot_index": 0,
+                "links": [
+                  128
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSampler",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.48",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65,
+              "widget_ue_connectable": {}
+            },
+            "widgets_values": [
+              362225868152841,
+              "randomize",
+              4,
+              1,
+              "euler",
+              "simple",
+              1
+            ]
+          },
+          {
+            "id": 436,
+            "type": "PrimitiveInt",
+            "pos": [
+              320,
+              500
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  713
+                ]
+              }
+            ],
+            "title": "Stpes",
+            "properties": {
+              "Node name for S&R": "PrimitiveInt"
+            },
+            "widgets_values": [
+              4,
+              "fixed"
+            ]
+          },
+          {
+            "id": 437,
+            "type": "PrimitiveFloat",
+            "pos": [
+              320,
+              670
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  714
+                ]
+              }
+            ],
+            "title": "CFG",
+            "properties": {
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "id": 438,
+            "type": "PrimitiveInt",
+            "pos": [
+              320,
+              -100
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  711
+                ]
+              }
+            ],
+            "title": "Steps",
+            "properties": {
+              "Node name for S&R": "PrimitiveInt"
+            },
+            "widgets_values": [
+              20,
+              "fixed"
+            ]
+          },
+          {
+            "id": 439,
+            "type": "PrimitiveFloat",
+            "pos": [
+              320,
+              70
+            ],
+            "size": [
+              270,
+              110
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  712
+                ]
+              }
+            ],
+            "title": "CFG",
+            "properties": {
+              "Node name for S&R": "PrimitiveFloat"
+            },
+            "widgets_values": [
+              4
+            ]
+          },
+          {
+            "id": 440,
+            "type": "ComfySwitchNode",
+            "pos": [
+              750,
+              -80
+            ],
+            "size": [
+              270,
+              130
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "MODEL",
+                "link": 710
+              },
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "MODEL",
+                "link": 709
+              },
+              {
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                },
+                "link": 715
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "MODEL",
+                "links": [
+                  708
+                ]
+              }
+            ],
+            "title": "Switch (Model)",
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode"
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 441,
+            "type": "ComfySwitchNode",
+            "pos": [
+              730,
+              340
+            ],
+            "size": [
+              270,
+              130
+            ],
+            "flags": {},
+            "order": 18,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "INT",
+                "link": 711
+              },
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "INT",
+                "link": 713
+              },
+              {
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                },
+                "link": 716
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "INT",
+                "links": [
+                  707
+                ]
+              }
+            ],
+            "title": "Switch (Steps)",
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode"
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 442,
+            "type": "ComfySwitchNode",
+            "pos": [
+              730,
+              520
+            ],
+            "size": [
+              270,
+              130
+            ],
+            "flags": {},
+            "order": 19,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "FLOAT",
+                "link": 712
+              },
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "FLOAT",
+                "link": 714
+              },
+              {
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                },
+                "link": 717
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "FLOAT",
+                "links": [
+                  706
+                ]
+              }
+            ],
+            "title": "Switch (CFG)",
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode"
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 443,
+            "type": "PrimitiveBoolean",
+            "pos": [
+              330,
+              850
+            ],
+            "size": [
+              270,
+              100
+            ],
+            "flags": {},
+            "order": 20,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 740
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN",
+                "links": [
+                  715,
+                  716,
+                  717
+                ]
+              }
+            ],
+            "title": "Enable Lightning LoRA",
+            "properties": {
+              "Node name for S&R": "PrimitiveBoolean"
+            },
+            "widgets_values": [
+              true
+            ]
+          },
+          {
+            "id": 444,
+            "type": "MarkdownNote",
+            "pos": [
+              260,
+              -530
+            ],
+            "size": [
+              450,
+              310
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [],
+            "title": "Note: KSampler settings",
+            "properties": {},
+            "widgets_values": [
+              "You can test and find the best setting by yourself. The following table is for reference.\n| Parameters   | Qwen Team | Comfy Original | with 4steps LoRA |\n|--------|---------|------------|---------------------------|\n| Steps  | 50      | 20         | 4                         |\n| CFG    | 4.0     | 2.5        | 1.0                       |"
+            ],
+            "color": "#432",
+            "bgcolor": "#000"
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "title": "Step1 - Load models",
+            "bounding": [
+              -770,
+              -170,
+              410,
+              750
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          },
+          {
+            "id": 3,
+            "title": "Step 4 - Prompt",
+            "bounding": [
+              -330,
+              -170,
+              570,
+              750
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          },
+          {
+            "id": 50,
+            "title": "Ligtning LoRA",
+            "bounding": [
+              270,
+              220,
+              390,
+              570
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          },
+          {
+            "id": 51,
+            "title": "Original Settings",
+            "bounding": [
+              270,
+              -170,
+              390,
+              360
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 141,
+            "origin_id": 66,
+            "origin_slot": 0,
+            "target_id": 75,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 128,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 76,
+            "origin_id": 39,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 184,
+            "origin_id": 37,
+            "origin_slot": 0,
+            "target_id": 89,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 186,
+            "origin_id": 75,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 211,
+            "origin_id": 111,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 210,
+            "origin_id": 110,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 168,
+            "origin_id": 39,
+            "origin_slot": 0,
+            "target_id": 88,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 204,
+            "origin_id": 38,
+            "origin_slot": 0,
+            "target_id": 110,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 206,
+            "origin_id": 39,
+            "origin_slot": 0,
+            "target_id": 110,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 205,
+            "origin_id": 38,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 207,
+            "origin_id": 39,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 110,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 235,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 111,
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 236,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 110,
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 237,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 111,
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 238,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 110,
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 244,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 111,
+            "target_slot": 5,
+            "type": "STRING"
+          },
+          {
+            "id": 246,
+            "origin_id": 88,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 248,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 117,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 249,
+            "origin_id": 117,
+            "origin_slot": 0,
+            "target_id": 88,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 250,
+            "origin_id": 117,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 251,
+            "origin_id": 117,
+            "origin_slot": 0,
+            "target_id": 110,
+            "target_slot": 2,
+            "type": "IMAGE"
+          },
+          {
+            "id": 706,
+            "origin_id": 442,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": 707,
+            "origin_id": 441,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 708,
+            "origin_id": 440,
+            "origin_slot": 0,
+            "target_id": 66,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 709,
+            "origin_id": 89,
+            "origin_slot": 0,
+            "target_id": 440,
+            "target_slot": 1,
+            "type": "MODEL"
+          },
+          {
+            "id": 710,
+            "origin_id": 37,
+            "origin_slot": 0,
+            "target_id": 440,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 711,
+            "origin_id": 438,
+            "origin_slot": 0,
+            "target_id": 441,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 712,
+            "origin_id": 439,
+            "origin_slot": 0,
+            "target_id": 442,
+            "target_slot": 0,
+            "type": "FLOAT"
+          },
+          {
+            "id": 713,
+            "origin_id": 436,
+            "origin_slot": 0,
+            "target_id": 441,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 714,
+            "origin_id": 437,
+            "origin_slot": 0,
+            "target_id": 442,
+            "target_slot": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": 715,
+            "origin_id": 443,
+            "origin_slot": 0,
+            "target_id": 440,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 716,
+            "origin_id": 443,
+            "origin_slot": 0,
+            "target_id": 441,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 717,
+            "origin_id": 443,
+            "origin_slot": 0,
+            "target_id": 442,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 735,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 110,
+            "target_slot": 5,
+            "type": "STRING"
+          },
+          {
+            "id": 736,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 3,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 737,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 37,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 738,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 38,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 739,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 39,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 740,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 443,
+            "target_slot": 0,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 742,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 89,
+            "target_slot": 1,
+            "type": "COMBO"
+          }
+        ],
+        "extra": {
+          "workflowRendererVersion": "LG"
+        }
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        120,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

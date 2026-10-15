@@ -1,0 +1,1157 @@
+{
+  "id": "fe18dc39-8e6a-5d65-9217-5916ec82c756",
+  "revision": 0,
+  "last_node_id": 20,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "type": "ArtLoadApproved",
+      "size": [
+        430,
+        380
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "frame_01",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "frame_02",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "frame_03",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "frame_04",
+          "type": "IMAGE",
+          "links": [
+            7,
+            15
+          ]
+        },
+        {
+          "name": "ending",
+          "type": "IMAGE",
+          "links": [
+            16,
+            21
+          ]
+        },
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "links": [
+            18,
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtLoadApproved",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "starry_night",
+        "Wan2.2 5B TI2V"
+      ],
+      "id": 1,
+      "title": "01 读取确认后的关键帧",
+      "pos": [
+        0,
+        0
+      ],
+      "order": 0,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 2,
+      "type": "UNETLoader",
+      "pos": [
+        530,
+        -680
+      ],
+      "size": [
+        346.7470703125,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "wan2.2_ti2v_5B_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_ti2v_5B_fp16.safetensors",
+        "default"
+      ],
+      "title": "已安装的 Wan 2.2 5B 模型"
+    },
+    {
+      "id": 3,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        900,
+        -680
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "ModelSamplingSD3"
+      },
+      "widgets_values": [
+        8
+      ],
+      "title": "Wan 采样配置"
+    },
+    {
+      "id": 4,
+      "type": "CLIPLoader",
+      "pos": [
+        530,
+        -400
+      ],
+      "size": [
+        350,
+        110
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            2,
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "wan",
+        "default"
+      ],
+      "title": "已安装的 UMT5 编码器"
+    },
+    {
+      "id": 5,
+      "type": "VAELoader",
+      "pos": [
+        900,
+        -400
+      ],
+      "size": [
+        350,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            6,
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "wan2.2_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_vae.safetensors"
+      ],
+      "title": "已安装的 Wan VAE"
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1290,
+        -400
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            10
+          ]
+        }
+      ],
+      "title": "所有镜头通用反向提示词",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "modern objects, visible drone, photorealistic live action, subtitles, text, hard cut, chaotic camera shake, flicker, low quality, distorted architecture"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "type": "ArtMotionText",
+      "size": [
+        390,
+        230
+      ],
+      "inputs": [
+        {
+          "name": "story_json",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "motion_prompt",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtMotionText",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 7,
+      "title": "镜头 04 飞行与转场",
+      "pos": [
+        540,
+        0
+      ],
+      "order": 6,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 8,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1000,
+        0
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 4
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        }
+      ],
+      "title": "镜头 04 Wan 提示词",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Use connected ArtMotionText prompt for this painting."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 9,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        1440,
+        0
+      ],
+      "size": [
+        271.9126892089844,
+        150
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "Wan22ImageToVideoLatent"
+      },
+      "widgets_values": [
+        1280,
+        704,
+        121,
+        1
+      ],
+      "title": "镜头 04 由首帧生成 5 秒"
+    },
+    {
+      "id": 10,
+      "type": "KSampler",
+      "pos": [
+        1870,
+        0
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 10
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        932504,
+        "fixed",
+        20,
+        5,
+        "uni_pc",
+        "simple",
+        1
+      ],
+      "title": "镜头 04 Wan 采样"
+    },
+    {
+      "id": 11,
+      "type": "VAEDecode",
+      "pos": [
+        2310,
+        0
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 12
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "title": "镜头 04 解码画面"
+    },
+    {
+      "type": "ArtBridgeFrames",
+      "size": [
+        420,
+        220
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "start",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "target",
+          "type": "IMAGE",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            17,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtBridgeFrames",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        8
+      ],
+      "id": 12,
+      "title": "镜头 04 接到下一关键帧",
+      "pos": [
+        2730,
+        0
+      ],
+      "order": 11,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        330,
+        160
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24
+      ],
+      "id": 13,
+      "title": "无声 Wan 镜头 04",
+      "pos": [
+        3220,
+        0
+      ],
+      "order": 12,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        330,
+        150
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "wan_shot_04"
+      ],
+      "id": 14,
+      "title": "Wan 镜头 04 输出路径",
+      "pos": [
+        3600,
+        210
+      ],
+      "order": 13,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 15,
+      "type": "SaveVideo",
+      "pos": [
+        3600,
+        0
+      ],
+      "size": [
+        660,
+        450
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 19
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/wan_shot",
+        "auto",
+        "auto"
+      ],
+      "title": "保存 Wan 镜头 04"
+    },
+    {
+      "type": "ArtHoldFrames",
+      "size": [
+        330,
+        160
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtHoldFrames",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        24
+      ],
+      "id": 16,
+      "title": "原画定格 1 秒",
+      "pos": [
+        1000,
+        930
+      ],
+      "order": 15,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtJoinFrames",
+      "size": [
+        450,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "clip1",
+          "type": "IMAGE",
+          "link": 22
+        },
+        {
+          "name": "still",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtJoinFrames",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [],
+      "id": 17,
+      "title": "拼接 Wan 飞行与原画定格",
+      "pos": [
+        4100,
+        0
+      ],
+      "order": 16,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        330,
+        160
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 24
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24
+      ],
+      "id": 18,
+      "title": "Wan 无声成片视频",
+      "pos": [
+        4590,
+        0
+      ],
+      "order": 17,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        330,
+        150
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "wan_pilot"
+      ],
+      "id": 19,
+      "title": "Wan 成片输出路径",
+      "pos": [
+        5010,
+        230
+      ],
+      "order": 18,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "id": 20,
+      "type": "SaveVideo",
+      "pos": [
+        5010,
+        0
+      ],
+      "size": [
+        660,
+        450
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 26
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 27
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/wan_final",
+        "auto",
+        "auto"
+      ],
+      "title": "最终 Wan MP4 保存"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      4,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      1,
+      5,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      4,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      5,
+      7,
+      0,
+      8,
+      1,
+      "STRING"
+    ],
+    [
+      6,
+      5,
+      0,
+      9,
+      0,
+      "VAE"
+    ],
+    [
+      7,
+      1,
+      3,
+      9,
+      1,
+      "IMAGE"
+    ],
+    [
+      8,
+      3,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      9,
+      8,
+      0,
+      10,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      10,
+      6,
+      0,
+      10,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      11,
+      9,
+      0,
+      10,
+      3,
+      "LATENT"
+    ],
+    [
+      12,
+      10,
+      0,
+      11,
+      0,
+      "LATENT"
+    ],
+    [
+      13,
+      5,
+      0,
+      11,
+      1,
+      "VAE"
+    ],
+    [
+      14,
+      11,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      1,
+      3,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      16,
+      1,
+      4,
+      12,
+      2,
+      "IMAGE"
+    ],
+    [
+      17,
+      12,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      1,
+      6,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      19,
+      13,
+      0,
+      15,
+      0,
+      "VIDEO"
+    ],
+    [
+      20,
+      14,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      21,
+      1,
+      4,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      12,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      16,
+      0,
+      17,
+      1,
+      "IMAGE"
+    ],
+    [
+      24,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      1,
+      6,
+      19,
+      0,
+      "STRING"
+    ],
+    [
+      26,
+      18,
+      0,
+      20,
+      0,
+      "VIDEO"
+    ],
+    [
+      27,
+      19,
+      0,
+      20,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": []
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        120,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

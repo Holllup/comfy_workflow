@@ -1,0 +1,16 @@
+{
+  "protagonist": {
+    "front": "character/front.png",
+    "side": "character/side.png",
+    "back": "character/back.png",
+    "left45": "character/left45.png",
+    "right45": "character/right45.png",
+    "face": "character/face.png"
+  },
+  "roommate": {
+    "front": "roommate/front.png",
+    "side": "roommate/side.png",
+    "back": "roommate/back.png",
+    "face": "roommate/face.png"
+  }
+}

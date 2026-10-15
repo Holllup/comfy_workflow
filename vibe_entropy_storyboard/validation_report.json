@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-15",
+  "contract": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "duration_s": 150,
+  "planned_frames_at_30fps": 4500,
+  "shot_count": 14,
+  "phase_count": 5,
+  "subtitle_cues": 21,
+  "audio_mode": "silent",
+  "full_timeline_coverage": true,
+  "subtitle_max_concurrent_lines": 2,
+  "human_json_subtitle_and_action_match": true,
+  "combinations": {
+    "balanced": 20,
+    "unique": 20,
+    "all_left": 1,
+    "all_assignments": 64,
+    "other_assignments": 43,
+    "checked_by": "Independent enumeration over all six-bit masks; right-side complements and unique card IDs also verified."
+  },
+  "reading_diagnostics": {
+    "max_characters_per_stable_second": 3.65,
+    "min_stable_hold_s": 3.1,
+    "method": "字母数字计数，不含标点；每条保守扣除0.4秒过渡。这只是诊断，不是观众可读性的实验保证。",
+    "cues": [
+      {
+        "shot": "s01",
+        "start_s": 0.8,
+        "end_s": 5.7,
+        "readable_characters": 7,
+        "conservative_stable_hold_s": 4.5,
+        "characters_per_stable_second": 1.56
+      },
+      {
+        "shot": "s02",
+        "start_s": 6.3,
+        "end_s": 11.7,
+        "readable_characters": 13,
+        "conservative_stable_hold_s": 5.0,
+        "characters_per_stable_second": 2.6
+      },
+      {
+        "shot": "s03",
+        "start_s": 16,
+        "end_s": 21.7,
+        "readable_characters": 15,
+        "conservative_stable_hold_s": 5.3,
+        "characters_per_stable_second": 2.83
+      },
+      {
+        "shot": "s04",
+        "start_s": 22.7,
+        "end_s": 26.2,
+        "readable_characters": 9,
+        "conservative_stable_hold_s": 3.1,
+        "characters_per_stable_second": 2.9
+      },
+      {
+        "shot": "s04",
+        "start_s": 26.6,
+        "end_s": 32.7,
+        "readable_characters": 16,
+        "conservative_stable_hold_s": 5.7,
+        "characters_per_stable_second": 2.81
+      },
+      {
+        "shot": "s05",
+        "start_s": 33.3,
+        "end_s": 37.6,
+        "readable_characters": 8,
+        "conservative_stable_hold_s": 3.9,
+        "characters_per_stable_second": 2.05
+      },
+      {
+        "shot": "s05",
+        "start_s": 38,
+        "end_s": 43.7,
+        "readable_characters": 11,
+        "conservative_stable_hold_s": 5.3,
+        "characters_per_stable_second": 2.08
+      },
+      {
+        "shot": "s06",
+        "start_s": 44.4,
+        "end_s": 51.2,
+        "readable_characters": 13,
+        "conservative_stable_hold_s": 6.4,
+        "characters_per_stable_second": 2.03
+      },
+      {
+        "shot": "s06",
+        "start_s": 51.6,
+        "end_s": 57.7,
+        "readable_characters": 5,
+        "conservative_stable_hold_s": 5.7,
+        "characters_per_stable_second": 0.88
+      },
+      {
+        "shot": "s07",
+        "start_s": 58.5,
+        "end_s": 62.7,
+        "readable_characters": 12,
+        "conservative_stable_hold_s": 3.8,
+        "characters_per_stable_second": 3.16
+      },
+      {
+        "shot": "s07",
+        "start_s": 63.1,
+        "end_s": 68.7,
+        "readable_characters": 11,
+        "conservative_stable_hold_s": 5.2,
+        "characters_per_stable_second": 2.12
+      },
+      {
+        "shot": "s08",
+        "start_s": 69.4,
+        "end_s": 75,
+        "readable_characters": 19,
+        "conservative_stable_hold_s": 5.2,
+        "characters_per_stable_second": 3.65
+      },
+      {
+        "shot": "s08",
+        "start_s": 75.5,
+        "end_s": 81.7,
+        "readable_characters": 12,
+        "conservative_stable_hold_s": 5.8,
+        "characters_per_stable_second": 2.07
+      },
+      {
+        "shot": "s09",
+        "start_s": 86.2,
+        "end_s": 93.7,
+        "readable_characters": 14,
+        "conservative_stable_hold_s": 7.1,
+        "characters_per_stable_second": 1.97
+      },
+      {
+        "shot": "s10",
+        "start_s": 97.7,
+        "end_s": 105.7,
+        "readable_characters": 16,
+        "conservative_stable_hold_s": 7.6,
+        "characters_per_stable_second": 2.11
+      },
+      {
+        "shot": "s11",
+        "start_s": 106.4,
+        "end_s": 111.7,
+        "readable_characters": 11,
+        "conservative_stable_hold_s": 4.9,
+        "characters_per_stable_second": 2.24
+      },
+      {
+        "shot": "s11",
+        "start_s": 112,
+        "end_s": 117.7,
+        "readable_characters": 9,
+        "conservative_stable_hold_s": 5.3,
+        "characters_per_stable_second": 1.7
+      },
+      {
+        "shot": "s12",
+        "start_s": 118.3,
+        "end_s": 122.4,
+        "readable_characters": 10,
+        "conservative_stable_hold_s": 3.7,
+        "characters_per_stable_second": 2.7
+      },
+      {
+        "shot": "s12",
+        "start_s": 122.8,
+        "end_s": 132.7,
+        "readable_characters": 18,
+        "conservative_stable_hold_s": 9.5,
+        "characters_per_stable_second": 1.89
+      },
+      {
+        "shot": "s13",
+        "start_s": 136,
+        "end_s": 141.7,
+        "readable_characters": 13,
+        "conservative_stable_hold_s": 5.3,
+        "characters_per_stable_second": 2.45
+      },
+      {
+        "shot": "s14",
+        "start_s": 142.2,
+        "end_s": 150,
+        "readable_characters": 20,
+        "conservative_stable_hold_s": 7.4,
+        "characters_per_stable_second": 2.7
+      }
+    ]
+  },
+  "director_review_entries": 7,
+  "review_scope": "已审查源资料、叙事衔接、镜头状态、文字时序、组合数据、冷热/功/熵区分与记账区间。尚未制作视频，未做实际成片播放或视觉效果验收。",
+  "rendering_performed": false,
+  "files": {
+    "storyboard.md": {
+      "bytes": 45825,
+      "sha256": "cc991382fc07a9a18f61c03d9ce917f84c554f5789eb654c21e5c722c5e12ea1"
+    },
+    "storyboard.json": {
+      "bytes": 68991,
+      "sha256": "61ab7ece6167d4b93579a08202924f000660fe0d4b73a8e67386bff9f33c8251"
+    }
+  }
+}

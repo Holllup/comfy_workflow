@@ -1,0 +1,2215 @@
+{
+  "schema_version": 1,
+  "brief": {
+    "title": "熵增定律",
+    "topic": "冰回来了，一切都回到原样了吗？",
+    "core_question": "冰可以恢复原样，为什么这不违背熵增定律？",
+    "takeaway": "给定宏观约束下，熵与微观可能性有关；局部熵可以降低，但孤立整体的总熵不会减少。",
+    "example": "同一份水样在室温下由冰融成水，再放进冷冻室重新结冰；理解其外观复原与整体不可逆过程的差别。",
+    "audience": "已有科普兴趣和一定知识基础的普通成年人；不预设熟悉本片术语。",
+    "duration_s": 150,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "audio": "silent",
+    "style": "深蓝黑底、近白文字、青色重点；琥珀色只用于热量路径，电能以白色折线区别。细线、连续对象、稳定讲解字幕；无旁白、音乐或音效。",
+    "selected_hook": "用户已选方案三并确认正文先解释熵再回到冰箱：从冰融化、放进冷冻室、重新结冰这些基本生活经验进入，用“冰是回来了，那一切都回到原样了吗？”建立好奇。",
+    "ending_payoff": "回到同一杯冰，保留用电和排热留下的环境变化，回答恢复固态不等于撤销整个过程；落到局部与整体总熵的区别。",
+    "scope": "一个生活例子、一段统计教学模型、一次整体记账。不扩展到热寂、生命、自律、社会秩序或完整热力学推导。",
+    "authoring_date": "2026-10-15"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "name": "一块冰",
+      "order": 1
+    },
+    {
+      "id": "p2",
+      "name": "拆开看",
+      "order": 2
+    },
+    {
+      "id": "p3",
+      "name": "数可能",
+      "order": 3
+    },
+    {
+      "id": "p4",
+      "name": "看整体",
+      "order": 4
+    },
+    {
+      "id": "p5",
+      "name": "回到冰",
+      "order": 5
+    }
+  ],
+  "objects": [
+    {
+      "id": "cup",
+      "description": "贯穿首尾的同一只透明线框杯子。外形和识别特征一致，随镜头整体移动。"
+    },
+    {
+      "id": "water_sample",
+      "description": "杯中同一份水样，状态依次为冰、液态水、再结冰；身份不变。再次结冰只表示恢复固态，不声称复原全部微观状态。"
+    },
+    {
+      "id": "table_line",
+      "description": "日常室内桌面的一条水平细线，首尾构图对应。"
+    },
+    {
+      "id": "room",
+      "description": "冰箱之外的室内环境，早期只作留白背景，后半段展开。"
+    },
+    {
+      "id": "fridge",
+      "description": "同一台线框冰箱的外壳；中段缩成次要锚点，后段重新展开。"
+    },
+    {
+      "id": "freezer",
+      "description": "冰箱内部的冷冻室边界与托架，不能画成普通冷藏室。"
+    },
+    {
+      "id": "context_label",
+      "description": "跟随主要生活场景显示的环境温度标签；缩成锚点时隐藏，不保留难读的小字。"
+    },
+    {
+      "id": "time_note",
+      "description": "仅在融化和结冰的压缩过程旁出现。",
+      "text": "过程示意 · 时间压缩"
+    },
+    {
+      "id": "navigation",
+      "description": "左上角五阶段导航；只随 phase_id 改变当前项，不为每镜另起大标题。"
+    },
+    {
+      "id": "model_box",
+      "description": "左右等大的教学盒子，中央细线只用于分区，不是粒子运动的物理隔板。"
+    },
+    {
+      "id": "model_note",
+      "description": "始终把中段统计模型与杯中水的实际分子过程区分开。",
+      "text": "教学模型 · 仅统计左右分配"
+    },
+    {
+      "id": "particle_a",
+      "description": "教学标记 A，身份固定；在配置演示中改变左右归属。",
+      "text": "A"
+    },
+    {
+      "id": "particle_b",
+      "description": "教学标记 B，身份固定；在配置演示中改变左右归属。",
+      "text": "B"
+    },
+    {
+      "id": "particle_c",
+      "description": "教学标记 C，身份固定；在配置演示中改变左右归属。",
+      "text": "C"
+    },
+    {
+      "id": "particle_d",
+      "description": "教学标记 D，身份固定；在配置演示中改变左右归属。",
+      "text": "D"
+    },
+    {
+      "id": "particle_e",
+      "description": "教学标记 E，身份固定；在配置演示中改变左右归属。",
+      "text": "E"
+    },
+    {
+      "id": "particle_f",
+      "description": "教学标记 F，身份固定；在配置演示中改变左右归属。",
+      "text": "F"
+    },
+    {
+      "id": "all_left_card",
+      "description": "全部在左的分配快照，不是另一群正在运动的物理粒子。"
+    },
+    {
+      "id": "balanced_cards",
+      "description": "20 张三左三右的分配快照；子项使用 counting_model 中的稳定 card_id。每张只是一个可能配置。"
+    },
+    {
+      "id": "count_labels",
+      "description": "比较分配数的标签，内容由动作显式指定；不显示未经计算的概率或熵值。"
+    },
+    {
+      "id": "macro_group",
+      "description": "将多个不同分配圈入同一宏观类别的包围线和分类标签。"
+    },
+    {
+      "id": "entropy_word",
+      "description": "图形旁在观众理解分类关系后才出现的术语，不能成为左上角大标题。",
+      "text": "熵"
+    },
+    {
+      "id": "macro_cloud",
+      "description": "大量粒子的尺度示意，不是六粒子模拟的真实扩展轨迹；不附逐帧单调熵曲线。"
+    },
+    {
+      "id": "isolated_boundary",
+      "description": "围住宏观示意的孤立边界，表示没有物质或能量与外部交换。"
+    },
+    {
+      "id": "isolation_label",
+      "description": "在完整语句介绍孤立系统时保持可读的条件说明。",
+      "text": "不与外界交换物质和能量"
+    },
+    {
+      "id": "cooling_unit",
+      "description": "简化制冷系统符号，接收来自冷冻室的热和电能输入，再向室内排热。",
+      "text": "制冷系统"
+    },
+    {
+      "id": "power_input",
+      "description": "白色折线路径和插头，表示电能输入；与热量路线形状不同。",
+      "text": "电能输入"
+    },
+    {
+      "id": "heat_from_inside",
+      "description": "从水样/冷冻室指向制冷系统的琥珀色曲线，表示吸收的热量，不是输送冷量。",
+      "text": "从内部吸热"
+    },
+    {
+      "id": "heat_to_room",
+      "description": "从制冷系统指向室内环境的琥珀色曲线，表示对外排热。",
+      "text": "向环境排热"
+    },
+    {
+      "id": "local_boundary",
+      "description": "仅圈住水样的局部观察边界，与更大的统计整体边界区别明显。"
+    },
+    {
+      "id": "whole_boundary",
+      "description": "水、冰箱及相关环境的整体记账边界示意；相关电力来源也在整体说明之内。"
+    },
+    {
+      "id": "entropy_account",
+      "description": "文字与方向符号构成的定性熵记账，不使用流动粒子或假想数值柱。"
+    },
+    {
+      "id": "process_trace",
+      "description": "终段保留的用电/排热记录性线条，表示外界发生过变化，不表示可见的热物质。",
+      "text": "用过电 · 向环境排过热"
+    },
+    {
+      "id": "film_title",
+      "description": "片尾出现的片名，不作为每镜常驻标题。",
+      "text": "熵增定律"
+    }
+  ],
+  "shots": [
+    {
+      "id": "s01",
+      "phase_id": "p1",
+      "start_s": 0,
+      "end_s": 6,
+      "goal": "从人人熟悉的融冰现象进入，不要求任何专业知识。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "table_line",
+        "room",
+        "context_label",
+        "time_note"
+      ],
+      "initial_state": "杯子位于主体区，杯中是一块可辨认的冰，桌面线条建立生活场景；无阶段导航和专业名词。",
+      "actions": [
+        {
+          "start_s": 0,
+          "end_s": 0.5,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "table_line",
+            "room"
+          ],
+          "description": "柔和显现杯子、冰和桌面，不先播放片头。"
+        },
+        {
+          "start_s": 0.5,
+          "end_s": 5.1,
+          "object_ids": [
+            "water_sample"
+          ],
+          "description": "用固态轮廓逐步缩小、液面逐步上升表现融化；同一份水样保持身份，不凭空消失或增多。"
+        },
+        {
+          "start_s": 0.5,
+          "end_s": 5.7,
+          "object_ids": [
+            "context_label",
+            "time_note"
+          ],
+          "description": "在画面次要位置稳定显示环境设定和时间压缩说明；避免与主字幕同区域。",
+          "on_screen_text": "室温示意：25℃\n过程示意 · 时间压缩"
+        },
+        {
+          "start_s": 5.1,
+          "end_s": 6,
+          "object_ids": [
+            "cup",
+            "water_sample"
+          ],
+          "description": "保留化成的水，留出观察结果的时间。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 0.8,
+          "end_s": 5.7,
+          "text": "冰放在桌上，化了。",
+          "emphasis": [
+            "化了"
+          ]
+        }
+      ],
+      "end_state": "同一只杯子中保留液态水；室温标签即将退出，桌面线仍在。",
+      "acceptance": [
+        "无需字幕也能辨认冰变为水。",
+        "温度明确高于常压熔点；冰水过程已标为压缩示意。"
+      ],
+      "source_ids": [
+        "src_phase"
+      ],
+      "transition": {
+        "to_shot_id": "s02",
+        "description": "镜头跟随这只杯子向冷冻室移动，不清空后重画另一只杯子。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "table_line",
+          "room",
+          "context_label",
+          "time_note"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "phase_id": "p1",
+      "start_s": 6,
+      "end_s": 12,
+      "goal": "用日常操作唤起观众已有经验，并准确指定冷冻室。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "table_line",
+        "room",
+        "fridge",
+        "freezer",
+        "context_label",
+        "time_note"
+      ],
+      "initial_state": "继承上一镜的杯子和液态水；冰箱轮廓尚未出现。",
+      "actions": [
+        {
+          "start_s": 6,
+          "end_s": 7.7,
+          "object_ids": [
+            "fridge",
+            "freezer",
+            "table_line"
+          ],
+          "description": "桌面线向侧方延伸，引出冰箱和冷冻室；不展示完整冰箱机械结构。"
+        },
+        {
+          "start_s": 7.7,
+          "end_s": 10.7,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "freezer"
+          ],
+          "description": "整只杯子连同水平稳进入冷冻室托架，不把水样瞬间变为新对象。"
+        },
+        {
+          "start_s": 8,
+          "end_s": 11.7,
+          "object_ids": [
+            "context_label"
+          ],
+          "description": "室温标签退出后，在冷冻室附近显示温度设定。",
+          "on_screen_text": "冷冻室示意：−18℃"
+        },
+        {
+          "start_s": 10.7,
+          "end_s": 12,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "fridge",
+            "freezer",
+            "time_note"
+          ],
+          "description": "杯子在冷冻室中停稳；保留时间压缩说明，下一镜才开始明显结冰。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 6.3,
+          "end_s": 11.7,
+          "text": "想让它变回去？\n放进冷冻室就行。",
+          "emphasis": [
+            "冷冻室"
+          ]
+        }
+      ],
+      "end_state": "杯子和液态水位于同一冰箱冷冻室内，温度标签清楚可读。",
+      "acceptance": [
+        "字幕和图形都明确是冷冻室，不是4℃冷藏室。",
+        "移动时先保持字幕稳定，杯子路径避开阅读区。"
+      ],
+      "source_ids": [
+        "src_refrigerator",
+        "src_phase"
+      ],
+      "transition": {
+        "to_shot_id": "s03",
+        "description": "保持视点和托架，直接进入同一水样的结冰过程。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "room",
+          "fridge",
+          "freezer",
+          "context_label",
+          "time_note"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "phase_id": "p1",
+      "start_s": 12,
+      "end_s": 22,
+      "goal": "让“外观回来了”与“整个过程撤销了吗”形成疑问。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "room",
+        "fridge",
+        "freezer",
+        "context_label",
+        "time_note"
+      ],
+      "initial_state": "液态水处于冷冻室中，冰箱外部的电能和排热信息尚未展开。",
+      "actions": [
+        {
+          "start_s": 12,
+          "end_s": 15.8,
+          "object_ids": [
+            "water_sample"
+          ],
+          "description": "水样逐步出现固态轮廓并形成冰；保持量的连续，不宣称回到完全相同的微观结构。"
+        },
+        {
+          "start_s": 12,
+          "end_s": 16.4,
+          "object_ids": [
+            "time_note",
+            "context_label"
+          ],
+          "description": "保留冷冻室温度和时间压缩说明。"
+        },
+        {
+          "start_s": 15.8,
+          "end_s": 17.3,
+          "object_ids": [
+            "cup",
+            "water_sample"
+          ],
+          "description": "结冰结果稳定后略微强调冰的轮廓，让观众有时间认出“又是冰”。"
+        },
+        {
+          "start_s": 17.3,
+          "end_s": 22,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "fridge",
+            "freezer",
+            "room"
+          ],
+          "description": "视野缓慢松开少许，保留冰箱边缘但暂不揭示电源和排热；问句出现后不再增加信息。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 16,
+          "end_s": 21.7,
+          "text": "冰是回来了。\n那一切，都回到原样了吗？",
+          "emphasis": [
+            "冰",
+            "一切"
+          ]
+        }
+      ],
+      "end_state": "冰和杯子仍在冷冻室里，问题尚未回答；下一段保留这组物体作为视觉锚点。",
+      "acceptance": [
+        "“一切”在文案中突出，建立后半段扩大边界的伏笔。",
+        "不提前显示答案、公式或目录；引子内不出现“熵”。"
+      ],
+      "source_ids": [
+        "src_phase",
+        "src_secondlaw"
+      ],
+      "transition": {
+        "to_shot_id": "s04",
+        "description": "将杯子与冰箱一起缩到次要区域，明确开启一个独立教学模型。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "phase_id": "p2",
+      "start_s": 22,
+      "end_s": 33,
+      "goal": "说明接下来使用独立的统计模型，而非把杯中水直接变成六颗粒子。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f"
+      ],
+      "initial_state": "冰、杯子和冰箱继承上一镜；教学模型及六个身份标记尚未出现。",
+      "actions": [
+        {
+          "start_s": 22,
+          "end_s": 24.2,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "fridge",
+            "freezer"
+          ],
+          "description": "将同一组生活对象缩成次要锚点，保留可辨认的形状，隐藏难读的小温度字。"
+        },
+        {
+          "start_s": 22.6,
+          "end_s": 25.2,
+          "object_ids": [
+            "navigation"
+          ],
+          "description": "首次展开五个阶段，当前“拆开看”变亮；随后缩成低调小导航，不遮挡主体。"
+        },
+        {
+          "start_s": 25.2,
+          "end_s": 28.5,
+          "object_ids": [
+            "model_box",
+            "model_note"
+          ],
+          "description": "在中央独立画出左右等大的盒子与分区线，明确它是新出现的教学模型。",
+          "on_screen_text": "教学模型 · 仅统计左右分配"
+        },
+        {
+          "start_s": 28.5,
+          "end_s": 30.7,
+          "object_ids": [
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "逐个显现A至F六个身份标记，全部位于左侧；颜色和字母身份后续不变。"
+        },
+        {
+          "start_s": 30.7,
+          "end_s": 33,
+          "object_ids": [
+            "model_box",
+            "model_note",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "保持模型，留出读完字幕并观察的时间。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 22.7,
+          "end_s": 26.2,
+          "text": "先借一个简单的模型，",
+          "emphasis": [
+            "模型"
+          ]
+        },
+        {
+          "start_s": 26.6,
+          "end_s": 32.7,
+          "text": "看看“同一个样子”背后，\n能有多少种情况。",
+          "emphasis": [
+            "同一个样子"
+          ]
+        }
+      ],
+      "end_state": "中央是六个标记全在左侧的教学盒子；右侧空；生活锚点保持静止。",
+      "acceptance": [
+        "观众不会误以为六个标记是杯中六个真实水分子。",
+        "导航只因进入p2展开，后续同阶段换镜不再展开。"
+      ],
+      "source_ids": [
+        "src_statistical",
+        "src_counting"
+      ],
+      "transition": {
+        "to_shot_id": "s05",
+        "description": "延续同一盒子和六个标记，直接开始数左右分配。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "model_box",
+          "model_note",
+          "particle_a",
+          "particle_b",
+          "particle_c",
+          "particle_d",
+          "particle_e",
+          "particle_f"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "phase_id": "p2",
+      "start_s": 33,
+      "end_s": 44,
+      "goal": "明确计数对象是每个标记的左右归属，而不是精确位置或真实运动。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f",
+        "all_left_card",
+        "count_labels"
+      ],
+      "initial_state": "A至F全在模型左侧，分区面积相同，生活锚点和阶段小导航保持。",
+      "actions": [
+        {
+          "start_s": 33,
+          "end_s": 35.3,
+          "object_ids": [
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "依次轻亮A至F，强调身份可分辨；不使用不同亮度来暗示不同物理能量。"
+        },
+        {
+          "start_s": 35.3,
+          "end_s": 37.3,
+          "object_ids": [
+            "model_box",
+            "all_left_card",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "保留当前配置的一个小快照，标记“全部在左”；快照与主模型在外框上有区别。",
+          "on_screen_text": "全部在左"
+        },
+        {
+          "start_s": 38,
+          "end_s": 40.3,
+          "object_ids": [
+            "all_left_card",
+            "count_labels"
+          ],
+          "description": "在快照旁揭示分配数1，并与“只有一种”同步。",
+          "on_screen_text": "全部在左：1种"
+        },
+        {
+          "start_s": 40.3,
+          "end_s": 44,
+          "object_ids": [
+            "model_box",
+            "model_note",
+            "all_left_card",
+            "count_labels",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "保持对照；模型注释持续可见，不再变动粒子位置。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 33.3,
+          "end_s": 37.6,
+          "text": "六颗粒子，全在左边。",
+          "emphasis": [
+            "全在左边"
+          ]
+        },
+        {
+          "start_s": 38,
+          "end_s": 43.7,
+          "text": "这样的左右分配，只有一种。",
+          "emphasis": [
+            "左右分配",
+            "一种"
+          ]
+        }
+      ],
+      "end_state": "主模型仍全在左；已生成稳定的“全部在左”快照与计数，供后续比较。",
+      "acceptance": [
+        "不能称“只有一种精确位置”或“只有一个完整物理微观态”。",
+        "全左快照保存后不随主模型的移动一起改变。"
+      ],
+      "source_ids": [
+        "src_counting"
+      ],
+      "transition": {
+        "to_shot_id": "s06",
+        "description": "保留全左快照，将主模型中的部分标记移到右侧，开始比较另一种宏观分布。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "model_box",
+          "model_note",
+          "particle_a",
+          "particle_b",
+          "particle_c",
+          "particle_d",
+          "particle_e",
+          "particle_f",
+          "all_left_card",
+          "count_labels"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "phase_id": "p2",
+      "start_s": 44,
+      "end_s": 58,
+      "goal": "建立同样三左三右可以由不同身份组合实现的直觉。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f",
+        "all_left_card",
+        "balanced_cards",
+        "count_labels"
+      ],
+      "initial_state": "主模型六个标记全在左侧；全左快照与计数在旁边保留。",
+      "actions": [
+        {
+          "start_s": 44.2,
+          "end_s": 47.2,
+          "object_ids": [
+            "model_box",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "将D、E、F移到右侧，得到左ABC、右DEF；运动只是分配关系的演示，不画速度或碰撞轨迹。"
+        },
+        {
+          "start_s": 47.2,
+          "end_s": 49.5,
+          "object_ids": [
+            "count_labels",
+            "model_box"
+          ],
+          "description": "显示当前宏观分布，数清左右各三颗。",
+          "on_screen_text": "三左三右"
+        },
+        {
+          "start_s": 49.5,
+          "end_s": 51.2,
+          "object_ids": [
+            "balanced_cards",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "把当前配置存成cfg_01快照；随后将C与D交换左右归属，成为左ABD、右CEF。"
+        },
+        {
+          "start_s": 52,
+          "end_s": 54,
+          "object_ids": [
+            "balanced_cards",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "保存cfg_02，再将D与E交换左右归属，成为左ABE、右CDF，保存cfg_03。"
+        },
+        {
+          "start_s": 54,
+          "end_s": 58,
+          "object_ids": [
+            "model_box",
+            "balanced_cards",
+            "count_labels",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "展示三个不同快照都满足三左三右；主模型最后保持左ABE、右CDF。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 44.4,
+          "end_s": 51.2,
+          "text": "如果只要求三颗在左、三颗在右，",
+          "emphasis": [
+            "三颗在左",
+            "三颗在右"
+          ]
+        },
+        {
+          "start_s": 51.6,
+          "end_s": 57.7,
+          "text": "情况就多了。",
+          "emphasis": [
+            "多了"
+          ]
+        }
+      ],
+      "end_state": "三个快照已形成；主模型保持ABE在左、CDF在右；全左快照未改变。",
+      "acceptance": [
+        "交换前后均保持六个身份各出现一次。",
+        "快照是可能配置，不能误画为多份粒子同时真实存在于同一盒子。"
+      ],
+      "source_ids": [
+        "src_counting"
+      ],
+      "transition": {
+        "to_shot_id": "s07",
+        "description": "将已有三个快照延展成完整20种组合，主模型作为参考而非另一组正在运动的粒子。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "model_box",
+          "model_note",
+          "particle_a",
+          "particle_b",
+          "particle_c",
+          "particle_d",
+          "particle_e",
+          "particle_f",
+          "all_left_card",
+          "balanced_cards",
+          "count_labels"
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "phase_id": "p3",
+      "start_s": 58,
+      "end_s": 69,
+      "goal": "让20种组合的数量差异可见，同时保留“全左1种”的比较基准。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f",
+        "all_left_card",
+        "balanced_cards",
+        "count_labels"
+      ],
+      "initial_state": "已有cfg_01至cfg_03快照；主模型为cfg_03；全左快照保留。",
+      "actions": [
+        {
+          "start_s": 58,
+          "end_s": 60.4,
+          "object_ids": [
+            "navigation"
+          ],
+          "description": "展开完整阶段列表，突出“数可能”，随后缩小。"
+        },
+        {
+          "start_s": 58.4,
+          "end_s": 62,
+          "object_ids": [
+            "balanced_cards"
+          ],
+          "description": "按counting_model.balanced_assignments补齐cfg_04至cfg_20，快照形成整齐的集合；建议4行5列并保留可辨认的当前卡片，不要求观众逐张读小字；不能随机重复凑够20张。"
+        },
+        {
+          "start_s": 62,
+          "end_s": 64,
+          "object_ids": [
+            "count_labels",
+            "all_left_card",
+            "balanced_cards"
+          ],
+          "description": "在集合旁显示真实总数，与全左1种并排比较。",
+          "on_screen_text": "全部在左：1种\n三左三右：20种"
+        },
+        {
+          "start_s": 64,
+          "end_s": 69,
+          "object_ids": [
+            "balanced_cards",
+            "all_left_card",
+            "model_box",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f"
+          ],
+          "description": "停止卡片运动，允许观众观察两个集合的数量差异；主模型和粒子作为低强调参考保留。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 58.5,
+          "end_s": 62.7,
+          "text": "换三颗过去，仍然是“三左三右”。",
+          "emphasis": [
+            "三左三右"
+          ]
+        },
+        {
+          "start_s": 63.1,
+          "end_s": 68.7,
+          "text": "这样的分配，一共有20种。",
+          "emphasis": [
+            "20种"
+          ]
+        }
+      ],
+      "end_state": "20个不同快照稳定显示，旁边一个全左快照；未暗示所有情况只有这两类。",
+      "acceptance": [
+        "20个三元素左侧组合无重复无遗漏，右侧总是其补集。",
+        "不把1与20直接写成全部概率；全部左右分配共有64种。"
+      ],
+      "source_ids": [
+        "src_counting"
+      ],
+      "transition": {
+        "to_shot_id": "s08",
+        "description": "沿20张快照外缘形成分类包围线，引出“同一宏观分布”的概念。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "model_box",
+          "model_note",
+          "particle_a",
+          "particle_b",
+          "particle_c",
+          "particle_d",
+          "particle_e",
+          "particle_f",
+          "all_left_card",
+          "balanced_cards",
+          "count_labels"
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "phase_id": "p3",
+      "start_s": 69,
+      "end_s": 82,
+      "goal": "从多个配置归为同一分布的画面，引入熵的统计含义。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f",
+        "all_left_card",
+        "balanced_cards",
+        "count_labels",
+        "macro_group",
+        "entropy_word"
+      ],
+      "initial_state": "20张三左三右快照与1张全左快照稳定；已有计数说明；无数学公式。",
+      "actions": [
+        {
+          "start_s": 69,
+          "end_s": 71,
+          "object_ids": [
+            "macro_group",
+            "balanced_cards"
+          ],
+          "description": "沿20张不同快照画出统一包围线，强调它们都属于同一宏观分布。",
+          "on_screen_text": "同一种宏观分布"
+        },
+        {
+          "start_s": 71,
+          "end_s": 74.6,
+          "object_ids": [
+            "balanced_cards",
+            "macro_group"
+          ],
+          "description": "短暂点亮两个不同的微观配置，包围线和分类名称不变。"
+        },
+        {
+          "start_s": 75.3,
+          "end_s": 77.3,
+          "object_ids": [
+            "entropy_word",
+            "count_labels"
+          ],
+          "description": "在比较图旁引出“熵”字；不把它放成左上角大标题，不展示公式推导。",
+          "on_screen_text": "熵"
+        },
+        {
+          "start_s": 77.3,
+          "end_s": 82,
+          "object_ids": [
+            "macro_group",
+            "entropy_word",
+            "all_left_card",
+            "balanced_cards"
+          ],
+          "description": "保持图形，强调更多微观可能对应更大的熵；不以卡片面积画出具体熵值。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 69.4,
+          "end_s": 75,
+          "text": "同一种宏观分布，\n背后可以对应许多微观情况。",
+          "emphasis": [
+            "宏观分布",
+            "微观情况"
+          ]
+        },
+        {
+          "start_s": 75.5,
+          "end_s": 81.7,
+          "text": "可能的微观状态越多，\n熵越大。",
+          "emphasis": [
+            "微观状态",
+            "熵"
+          ]
+        }
+      ],
+      "end_state": "宏观类别与微观配置的关系明确，术语“熵”作为图旁标签保留。",
+      "acceptance": [
+        "术语在具体分类关系之后出现。",
+        "给定约束下的统计解释被保留；不能把任意漂亮/凌乱图形直接等同熵值。"
+      ],
+      "source_ids": [
+        "src_statistical",
+        "src_counting"
+      ],
+      "transition": {
+        "to_shot_id": "s09",
+        "description": "把六标记教学图淡出为单独的尺度示意，再引入孤立宏观系统；不声称六粒子轨迹能证明单调熵增。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "model_box",
+          "model_note",
+          "particle_a",
+          "particle_b",
+          "particle_c",
+          "particle_d",
+          "particle_e",
+          "particle_f",
+          "all_left_card",
+          "balanced_cards",
+          "count_labels",
+          "macro_group",
+          "entropy_word"
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "phase_id": "p3",
+      "start_s": 82,
+      "end_s": 94,
+      "goal": "交代宏观第二定律适用的整体边界，为冰箱并非孤立系统作铺垫。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "model_box",
+        "model_note",
+        "particle_a",
+        "particle_b",
+        "particle_c",
+        "particle_d",
+        "particle_e",
+        "particle_f",
+        "all_left_card",
+        "balanced_cards",
+        "count_labels",
+        "macro_group",
+        "entropy_word",
+        "macro_cloud",
+        "isolated_boundary",
+        "isolation_label"
+      ],
+      "initial_state": "统计教学图仍在中央，冰箱锚点仍在次要区域。",
+      "actions": [
+        {
+          "start_s": 82,
+          "end_s": 84.8,
+          "object_ids": [
+            "model_box",
+            "model_note",
+            "particle_a",
+            "particle_b",
+            "particle_c",
+            "particle_d",
+            "particle_e",
+            "particle_f",
+            "all_left_card",
+            "balanced_cards",
+            "count_labels",
+            "macro_group"
+          ],
+          "description": "原统计图整体缩小并退出，明确这是尺度和描述层次的转换，不让6颗真实分裂成大量粒子。"
+        },
+        {
+          "start_s": 83.2,
+          "end_s": 86,
+          "object_ids": [
+            "macro_cloud",
+            "isolated_boundary"
+          ],
+          "description": "出现大量粒子的宏观示意和外层边界；不绘制随粒子抖动强行单调上涨的熵计数器。"
+        },
+        {
+          "start_s": 86,
+          "end_s": 90,
+          "object_ids": [
+            "isolated_boundary",
+            "isolation_label"
+          ],
+          "description": "边界保持完整，并给出“孤立”的日常解释。",
+          "on_screen_text": "不与外界交换物质和能量"
+        },
+        {
+          "start_s": 90,
+          "end_s": 94,
+          "object_ids": [
+            "macro_cloud",
+            "isolated_boundary",
+            "isolation_label",
+            "entropy_word"
+          ],
+          "description": "保持宏观关系和限定条件，留出消化时间。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 86.2,
+          "end_s": 93.7,
+          "text": "对孤立的宏观系统，\n总熵不会减少。",
+          "emphasis": [
+            "孤立",
+            "总熵"
+          ]
+        }
+      ],
+      "end_state": "中央保留孤立宏观系统示意；冰箱锚点为下一镜回归做好准备。",
+      "acceptance": [
+        "字幕包含“孤立”“宏观”，不泛化为任意局部每一时刻都必须熵增。",
+        "不与外界交换物质和能量的条件清楚可读；没有以6粒子动画证明定律。"
+      ],
+      "source_ids": [
+        "src_secondlaw",
+        "src_statistical"
+      ],
+      "transition": {
+        "to_shot_id": "s10",
+        "description": "孤立边界退出，放大同一冰箱锚点；冰箱与外部的连接与此前模型形成对照。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "entropy_word",
+          "macro_cloud",
+          "isolated_boundary",
+          "isolation_label"
+        ]
+      }
+    },
+    {
+      "id": "s10",
+      "phase_id": "p4",
+      "start_s": 94,
+      "end_s": 106,
+      "goal": "回到开场问题，指出日常冰箱不是刚才的孤立系统。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "room",
+        "context_label",
+        "macro_cloud",
+        "isolated_boundary",
+        "isolation_label",
+        "entropy_word",
+        "power_input",
+        "heat_to_room"
+      ],
+      "initial_state": "宏观模型在中央，冰箱锚点仍是最初那台冰箱，杯中同一水样已结冰。",
+      "actions": [
+        {
+          "start_s": 94,
+          "end_s": 96.4,
+          "object_ids": [
+            "navigation"
+          ],
+          "description": "阶段全览展开，突出“看整体”，随后缩小。"
+        },
+        {
+          "start_s": 94,
+          "end_s": 97.2,
+          "object_ids": [
+            "macro_cloud",
+            "isolated_boundary",
+            "isolation_label",
+            "entropy_word"
+          ],
+          "description": "教学示意与旧边界淡出，不把孤立边界直接套到冰箱上。"
+        },
+        {
+          "start_s": 95,
+          "end_s": 99,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "fridge",
+            "freezer",
+            "room"
+          ],
+          "description": "放大原有冰箱锚点，重新看清冷冻室内的杯子和冰；沿用对象身份。"
+        },
+        {
+          "start_s": 99,
+          "end_s": 102,
+          "object_ids": [
+            "context_label"
+          ],
+          "description": "恢复冷冻室温度标签。",
+          "on_screen_text": "冷冻室示意：−18℃"
+        },
+        {
+          "start_s": 102,
+          "end_s": 106,
+          "object_ids": [
+            "power_input",
+            "heat_to_room",
+            "fridge",
+            "room"
+          ],
+          "description": "冰箱外侧逐渐显出电源线与排热路径的轮廓，此时只提示连接，下一镜再揭示流向。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 97.7,
+          "end_s": 105.7,
+          "text": "那冷冻室里的水，\n为什么还能重新结冰？",
+          "emphasis": [
+            "重新结冰"
+          ]
+        }
+      ],
+      "end_state": "同一冰箱成为主体，外部连接已可辨认，但没有熵账本。",
+      "acceptance": [
+        "回归的是原杯子与冰箱，观众能认出首尾主线。",
+        "水在这一段始终是同一份已结冰水样，不重新上演第二次冻结造成时间混乱。"
+      ],
+      "source_ids": [
+        "src_refrigerator",
+        "src_phase"
+      ],
+      "transition": {
+        "to_shot_id": "s11",
+        "description": "保留电源线和排热轮廓，将它们接入简化制冷系统并逐一说明。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "room",
+          "context_label",
+          "power_input",
+          "heat_to_room"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "phase_id": "p4",
+      "start_s": 106,
+      "end_s": 118,
+      "goal": "用不同的路径说明电能输入与热量从内部搬向外部。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "room",
+        "context_label",
+        "cooling_unit",
+        "power_input",
+        "heat_from_inside",
+        "heat_to_room"
+      ],
+      "initial_state": "生活场景稳定；电源和排热路线只有轮廓，没有流动图标。",
+      "actions": [
+        {
+          "start_s": 106,
+          "end_s": 108.3,
+          "object_ids": [
+            "cooling_unit",
+            "power_input"
+          ],
+          "description": "显出制冷系统符号，白色折线沿电源到系统的方向亮起。",
+          "on_screen_text": "电能输入\n制冷系统"
+        },
+        {
+          "start_s": 109,
+          "end_s": 112,
+          "object_ids": [
+            "heat_from_inside",
+            "cooling_unit",
+            "freezer",
+            "water_sample"
+          ],
+          "description": "琥珀色曲线由水样/冷冻室指向制冷系统，表示取走内部热量。",
+          "on_screen_text": "从内部吸热"
+        },
+        {
+          "start_s": 112,
+          "end_s": 115,
+          "object_ids": [
+            "heat_to_room",
+            "cooling_unit",
+            "room"
+          ],
+          "description": "同色热量曲线从制冷系统指向室内环境，方向始终向外。",
+          "on_screen_text": "向环境排热"
+        },
+        {
+          "start_s": 115,
+          "end_s": 118,
+          "object_ids": [
+            "power_input",
+            "heat_from_inside",
+            "heat_to_room",
+            "cooling_unit"
+          ],
+          "description": "保持三条路线，流动速度降低供观察；不显示相同颗数的能量包或熵粒子。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 106.4,
+          "end_s": 111.7,
+          "text": "因为冰箱一直在消耗电能，",
+          "emphasis": [
+            "电能"
+          ]
+        },
+        {
+          "start_s": 112,
+          "end_s": 117.7,
+          "text": "把热从里面搬到外面。",
+          "emphasis": [
+            "里面",
+            "外面"
+          ]
+        }
+      ],
+      "end_state": "电能路径、内部吸热与外部排热可区分，所有主要箭头方向固定。",
+      "acceptance": [
+        "电能用白色折线，热量用琥珀色曲线，不能画成向内部输送“冷量”。",
+        "制冷循环对外排热包含内部吸热与输入功的贡献；没有让观众误读为两条热流数值必然相等。"
+      ],
+      "source_ids": [
+        "src_refrigerator"
+      ],
+      "transition": {
+        "to_shot_id": "s12",
+        "description": "在水样外画局部边界，然后扩大观察范围，用文字记账引入熵的变化。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "room",
+          "cooling_unit",
+          "power_input",
+          "heat_from_inside",
+          "heat_to_room"
+        ]
+      }
+    },
+    {
+      "id": "s12",
+      "phase_id": "p4",
+      "start_s": 118,
+      "end_s": 133,
+      "goal": "区分水样局部熵降低与相关整体总熵增加。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "room",
+        "cooling_unit",
+        "power_input",
+        "heat_from_inside",
+        "heat_to_room",
+        "local_boundary",
+        "whole_boundary",
+        "entropy_account"
+      ],
+      "initial_state": "冰箱、冷冻室、水样及电能和热量路线保持上一镜位置关系。",
+      "actions": [
+        {
+          "start_s": 118,
+          "end_s": 120.6,
+          "object_ids": [
+            "local_boundary",
+            "water_sample",
+            "entropy_account"
+          ],
+          "description": "用细框圈住水样，旁边出现定性标签；此处只回顾重新冷却结冰这一段，不计算开场至此的水样累计熵变，也不使用流动的“熵物质”。",
+          "on_screen_text": "从水到冰：水的熵 ↓"
+        },
+        {
+          "start_s": 121.2,
+          "end_s": 125.8,
+          "object_ids": [
+            "whole_boundary",
+            "room",
+            "fridge",
+            "cooling_unit",
+            "power_input",
+            "heat_from_inside",
+            "heat_to_room"
+          ],
+          "description": "镜头拉远，展开整体记账框，纳入水、冰箱与相关环境；电力来源不能被画成无需计入的魔法外部。",
+          "on_screen_text": "水＋冰箱＋相关环境"
+        },
+        {
+          "start_s": 126.5,
+          "end_s": 130,
+          "object_ids": [
+            "entropy_account",
+            "whole_boundary"
+          ],
+          "description": "在整体框旁显示总熵增加，与这段凝固过程的局部下降同时可见；箭头只表示方向，不表示未经计算的数值。",
+          "on_screen_text": "从水到冰：水的熵 ↓\n相关整体总熵 ↑"
+        },
+        {
+          "start_s": 130,
+          "end_s": 133,
+          "object_ids": [
+            "local_boundary",
+            "whole_boundary",
+            "entropy_account"
+          ],
+          "description": "画面稳定，允许观众对照局部与整体。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 118.3,
+          "end_s": 122.4,
+          "text": "水结冰，局部的熵降低了。",
+          "emphasis": [
+            "局部",
+            "降低"
+          ]
+        },
+        {
+          "start_s": 122.8,
+          "end_s": 132.7,
+          "text": "但把冰箱和相关环境算进来，\n总熵仍然增加。",
+          "emphasis": [
+            "相关环境",
+            "总熵"
+          ]
+        }
+      ],
+      "end_state": "局部下降和整体增加并列，已回答冷冻室的表面反例；热/电路线仍在但降低强调。",
+      "acceptance": [
+        "局部框只包住水样，整体框及说明覆盖必要环境，不把水或整台冰箱误称孤立系统。",
+        "局部熵下降仅指重新冷却凝固这一段，不声称完整融化—冻结循环中水样累计熵变为负。",
+        "热量、电能、熵没有共用同一种数量条或同一组流动粒子。"
+      ],
+      "source_ids": [
+        "src_secondlaw",
+        "src_phase",
+        "src_refrigerator"
+      ],
+      "transition": {
+        "to_shot_id": "s13",
+        "description": "把记账线条收成次要记录，将同一杯冰重新放到接近开场的主构图中。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "room",
+          "cooling_unit",
+          "power_input",
+          "heat_from_inside",
+          "heat_to_room",
+          "local_boundary",
+          "whole_boundary",
+          "entropy_account"
+        ]
+      }
+    },
+    {
+      "id": "s13",
+      "phase_id": "p5",
+      "start_s": 133,
+      "end_s": 142,
+      "goal": "兑现开场：恢复固态的水样，不等于整个过程被撤销。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "room",
+        "table_line",
+        "cooling_unit",
+        "power_input",
+        "heat_from_inside",
+        "heat_to_room",
+        "local_boundary",
+        "whole_boundary",
+        "entropy_account",
+        "process_trace"
+      ],
+      "initial_state": "水样局部与相关整体记账已经清楚；画面尚是拉远的冰箱环境。",
+      "actions": [
+        {
+          "start_s": 133,
+          "end_s": 135.4,
+          "object_ids": [
+            "navigation"
+          ],
+          "description": "展开阶段全览，突出“回到冰”，再缩小。"
+        },
+        {
+          "start_s": 133,
+          "end_s": 136.4,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "table_line",
+            "fridge",
+            "freezer",
+            "room"
+          ],
+          "description": "调整画面到与开场相近的杯子尺度和构图，冰箱成为次要背景。该调整是视觉对照，不宣称温度与所有微观状态已精确复原。"
+        },
+        {
+          "start_s": 135,
+          "end_s": 138,
+          "object_ids": [
+            "power_input",
+            "heat_from_inside",
+            "heat_to_room",
+            "cooling_unit",
+            "local_boundary",
+            "whole_boundary",
+            "entropy_account",
+            "process_trace"
+          ],
+          "description": "将热/电路线收成记录性的细线，熵账本退为次要，保留环境变化的证据。",
+          "on_screen_text": "用过电 · 向环境排过热"
+        },
+        {
+          "start_s": 138,
+          "end_s": 142,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "process_trace"
+          ],
+          "description": "杯中冰稳定，环境记录不消失，让观众完成首尾对照。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 136,
+          "end_s": 141.7,
+          "text": "冰回来了，\n周围却没有回到原样。",
+          "emphasis": [
+            "冰",
+            "周围"
+          ]
+        }
+      ],
+      "end_state": "杯中冰为主，环境记录为辅；开场问题得到明确回答。",
+      "acceptance": [
+        "结尾真正回答“一切都回到原样了吗”，而非突然转为自律或人生金句。",
+        "物体恢复外观与整个过程热力学可逆性明确区分。"
+      ],
+      "source_ids": [
+        "src_secondlaw",
+        "src_refrigerator"
+      ],
+      "transition": {
+        "to_shot_id": "s14",
+        "description": "保持首尾对照构图，淡出次要标签，仅留下结论和片名所需的视觉关系。",
+        "carry_object_ids": [
+          "cup",
+          "water_sample",
+          "fridge",
+          "freezer",
+          "navigation",
+          "room",
+          "table_line",
+          "entropy_account",
+          "process_trace"
+        ]
+      }
+    },
+    {
+      "id": "s14",
+      "phase_id": "p5",
+      "start_s": 142,
+      "end_s": 150,
+      "goal": "留下准确而可复述的结论，并给予充足阅读停留。",
+      "object_ids": [
+        "cup",
+        "water_sample",
+        "fridge",
+        "freezer",
+        "navigation",
+        "room",
+        "table_line",
+        "process_trace",
+        "film_title",
+        "entropy_account"
+      ],
+      "initial_state": "杯中冰、次要冰箱和环境记录保持；不新增模型、公式或生活例子。",
+      "actions": [
+        {
+          "start_s": 142,
+          "end_s": 143.5,
+          "object_ids": [
+            "process_trace",
+            "entropy_account",
+            "navigation"
+          ],
+          "description": "压低次要记录和导航对比，给最终字幕留足注意力；保持局部与环境的可辨关系。"
+        },
+        {
+          "start_s": 142.3,
+          "end_s": 143.5,
+          "object_ids": [
+            "film_title"
+          ],
+          "description": "在主体上方或侧方显出片名，与字幕错开；不用左上角大标题。",
+          "on_screen_text": "熵增定律"
+        },
+        {
+          "start_s": 143.5,
+          "end_s": 150,
+          "object_ids": [
+            "cup",
+            "water_sample",
+            "fridge",
+            "freezer",
+            "room",
+            "table_line",
+            "film_title",
+            "process_trace"
+          ],
+          "description": "完整保持结论画面到最后一帧，不提早淡黑截断阅读。"
+        }
+      ],
+      "subtitles": [
+        {
+          "start_s": 142.2,
+          "end_s": 150,
+          "text": "熵可以在局部降低。\n但孤立整体的总熵，不会减少。",
+          "emphasis": [
+            "局部",
+            "孤立整体",
+            "总熵"
+          ]
+        }
+      ],
+      "end_state": "清晰的片名、杯中冰、环境关系和最终结论保持到片尾。",
+      "acceptance": [
+        "同屏最多两行讲解字幕，完整可读到末尾。",
+        "“总熵不会减少”没有被改成“每个局部总会变乱”或“所有过程都严格增加”。"
+      ],
+      "source_ids": [
+        "src_secondlaw"
+      ],
+      "transition": {
+        "to_shot_id": null,
+        "description": "片尾停留收束；无下一镜，不额外添加口播、音乐、关注提示或延伸议题。",
+        "carry_object_ids": []
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_statistical",
+      "title": "MIT 3.012 Lecture 22：微观态与熵（PDF第2页）",
+      "locator": "https://ocw.mit.edu/courses/3-012-fundamentals-of-materials-science-fall-2005/d3fa883afa8df7cf7aa0432fcaadde8f_lec22t.pdf#page=2",
+      "supports": [
+        "固定能量、体积和粒子数时的等概率统计图景。",
+        "熵与符合宏观约束的微观状态数存在对数联系。"
+      ],
+      "notes": "已读取资料。六标记左右分配只是有限分类教学模型，不包含水的全部位置、动量、相互作用与相变细节，也不能直接算出水的热力学熵。"
+    },
+    {
+      "id": "src_refrigerator",
+      "title": "OpenStax Physics 12.4：制冷与热泵",
+      "locator": "https://openstax.org/books/physics/pages/12-4-applications-of-thermodynamics-heat-engines-heat-pumps-and-refrigerators",
+      "supports": [
+        "制冷需要输入功，将热从冷的内部送往较暖环境。",
+        "按完整制冷循环记账，排出的热包含从内部吸收的热与输入功。"
+      ],
+      "notes": "已读取制冷相关段落。本片不讲制冷剂循环细节；不使用该页“混乱程度”的通俗说法作为熵的定义。热路径、工作输入与熵变化采用不同视觉编码。"
+    },
+    {
+      "id": "src_secondlaw",
+      "title": "OpenStax Chemistry 16.3：系统、环境与第二定律",
+      "locator": "https://openstax.org/books/chemistry/pages/16-3-the-second-and-third-laws-of-thermodynamics",
+      "supports": [
+        "判断熵变化须考虑系统与环境的总和。",
+        "宏观不可逆过程使相应孤立整体的总熵增加；可逆极限可保持不变。",
+        "局部熵下降不与整体总熵不减相矛盾。"
+      ],
+      "notes": "已读取相关理论说明。总熵不减表述用于宏观热力学，不能据六粒子瞬时涨落宣称逐帧单调。所绘整体边界是账本示意，需要覆盖相关环境和电力来源。"
+    },
+    {
+      "id": "src_phase",
+      "title": "OpenStax University Physics 2, 4.6：相变与熵变",
+      "locator": "https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy",
+      "supports": [
+        "熵变可以通过可逆参考路径计算，熔化与凝固的相变熵变符号相反。",
+        "普通常压条件下，水样冷却并凝固时水样的熵降低。"
+      ],
+      "notes": "本片室温25℃、冷冻室−18℃均为示意设定，非具体冰箱性能数据；忽略蒸发及物质损失，融化与结冰都压缩时间。"
+    },
+    {
+      "id": "src_counting",
+      "title": "六个带身份标记的左右分配：本地穷举核对",
+      "locator": "本文件 production_notes.counting_model.balanced_assignments；由 itertools.combinations(\"ABCDEF\",3) 穷举核对",
+      "supports": [
+        "全部在左只有1种左右分配。",
+        "三左三右有C(6,3)=20种左右分配。",
+        "全部左右分配有2^6=64种，因此1与20不是全部情形。"
+      ],
+      "notes": "这是直接组合计数，不把文件内数据冒充外部实验。左右两区等大；讲概率倾向时采用经典、独立标记的等可能模型；本片屏幕只比较计数，不给真实粒子等待时间。"
+    }
+  ],
+  "production_notes": {
+    "navigation": {
+      "position": "top_left",
+      "behavior": "expand_then_compact",
+      "first_visible_s": 22.6,
+      "events": [
+        {
+          "start_s": 22.6,
+          "end_s": 25.2,
+          "phase_id": "p2"
+        },
+        {
+          "start_s": 58,
+          "end_s": 60.4,
+          "phase_id": "p3"
+        },
+        {
+          "start_s": 94,
+          "end_s": 96.4,
+          "phase_id": "p4"
+        },
+        {
+          "start_s": 133,
+          "end_s": 135.4,
+          "phase_id": "p5"
+        }
+      ],
+      "detail": "引子p1不显示导航。首次导航出现时仍展示全部五个阶段并突出p2；转场时展开全览，正文保留小导航与当前项。精确像素和缓动由制作方决定，禁止每镜大标题。"
+    },
+    "dependencies": [
+      "图形均可用程序化二维轮廓、文字、路径与状态插值实现；不需要外部照片、视频、配音或音乐。",
+      "中文字体需要在渲染环境中正确加载；具体字体选择及许可由制作阶段确认。",
+      "制作方需从本稿建立任意镜头数的时间线，不能直接导入旧样片的固定六镜头播放器而丢失语义。"
+    ],
+    "confirmed_choices": [
+      "用户选定生活引子方案三：冰融化，再放进冷冻室结冰。",
+      "用户明确引子须从生活中最基本直观的经验进入，引起好奇且容易理解。",
+      "用户选定正文先解释熵，再回到冰箱回答开场问题。",
+      "用户批准150秒、14镜头、五阶段、1080p横屏、30fps、完全无声的计划。",
+      "系列采用朋友式口吻、稳定讲解短句、关键词动效和阶段导航；关键动作由脚本锁定。"
+    ],
+    "open_questions": [],
+    "implementation_notes": [
+      "所有时间均为全片绝对秒数，14镜头连续覆盖0到150秒。主字幕时窗含短淡入淡出，建议单次不超过0.2秒；不得用长动画占掉阅读停留。末镜字幕和结论画面保持到150秒，不提早淡出。",
+      "同屏讲解最多两行，文案中的换行必须保留。先让图形进入可辨状态，再让字幕解释；长句期间避免复杂对象同时快速运动。",
+      "相同ID代表同一视觉身份。carry_object_ids维持这些对象的状态，即使它们正淡出、隐藏或缩成锚点，也不应重新随机生成。",
+      "教学粒子的左右移动是配置演示，不是实时运动轨迹；快照中的A至F是对主标记的引用表示，不能当作新增的物理粒子。",
+      "所有快照组合取自counting_model，cfg_01=左ABC、cfg_02=左ABD、cfg_03=左ABE，后续按记录补齐；不得随机抽取20次替代20个不同组合。",
+      "模型只按左右分区计数；固定宏观约束、左右等可能等假设留在研究说明中，不把简化计数当作水样的真实物理微观状态数。",
+      "六粒子模型不提供实时熵曲线。宏观总熵不减在独立的尺度示意中介绍，不能伪造有限系统逐帧无涨落的验证。",
+      "电能用白色折线，热量用琥珀色曲线，熵用局部/整体边界与文字箭头。颜色必须配文字及形状区别，不能只靠颜色理解。",
+      "冰箱外部排热不等于凭空产生“熵粒子”。能量守恒按完整制冷循环理解；不使用未核算的数值条或等量粒子包暗示排热与吸热完全相等。",
+      "室温及冷冻室温度只是示意设定。忽略蒸发损失，同一份水样从固态变液态再变固态；最后的外观对应不声称恢复原温度及全部微观运动。",
+      "整体账本包括相关环境与电力来源，不能仅围住水或冰箱就标为孤立整体。现实不可逆过程中总熵增加，理想可逆极限可以不变。",
+      "s12的“水的熵降低”只针对液态水重新冷却凝固这一段；s13再回看整个过程。若水样完整热力学状态确实恢复，其自身全循环熵变为零，而不是负值；本片只承诺恢复固态外观。",
+      "允许制作方决定具体坐标、缓动、字体与工具；不允许替换已定生活引子、把冷冻室改成冷藏室、把快照改为假运动、改变热流方向或加入音轨。",
+      "本交付完成剧本与制作说明，没有编码动画或渲染影片；未声称实际画面已通过播放检查。"
+    ],
+    "counting_model": {
+      "kind": "classical_left_right_assignment_teaching_model",
+      "particle_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "assumptions": [
+        "左右两区等大。",
+        "每个标记的身份在卡片间固定。",
+        "只统计左右归属，不统计各区内部位置、动量及相互作用。",
+        "若讨论概率，采用平衡时独立、左右等可能的理想化图景。"
+      ],
+      "total_assignments": 64,
+      "all_left_assignment": {
+        "left": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "right": []
+      },
+      "balanced_count": 20,
+      "balanced_assignments": [
+        {
+          "card_id": "cfg_01",
+          "left": [
+            "A",
+            "B",
+            "C"
+          ],
+          "right": [
+            "D",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_02",
+          "left": [
+            "A",
+            "B",
+            "D"
+          ],
+          "right": [
+            "C",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_03",
+          "left": [
+            "A",
+            "B",
+            "E"
+          ],
+          "right": [
+            "C",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_04",
+          "left": [
+            "A",
+            "B",
+            "F"
+          ],
+          "right": [
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_05",
+          "left": [
+            "A",
+            "C",
+            "D"
+          ],
+          "right": [
+            "B",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_06",
+          "left": [
+            "A",
+            "C",
+            "E"
+          ],
+          "right": [
+            "B",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_07",
+          "left": [
+            "A",
+            "C",
+            "F"
+          ],
+          "right": [
+            "B",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_08",
+          "left": [
+            "A",
+            "D",
+            "E"
+          ],
+          "right": [
+            "B",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_09",
+          "left": [
+            "A",
+            "D",
+            "F"
+          ],
+          "right": [
+            "B",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_10",
+          "left": [
+            "A",
+            "E",
+            "F"
+          ],
+          "right": [
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "card_id": "cfg_11",
+          "left": [
+            "B",
+            "C",
+            "D"
+          ],
+          "right": [
+            "A",
+            "E",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_12",
+          "left": [
+            "B",
+            "C",
+            "E"
+          ],
+          "right": [
+            "A",
+            "D",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_13",
+          "left": [
+            "B",
+            "C",
+            "F"
+          ],
+          "right": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_14",
+          "left": [
+            "B",
+            "D",
+            "E"
+          ],
+          "right": [
+            "A",
+            "C",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_15",
+          "left": [
+            "B",
+            "D",
+            "F"
+          ],
+          "right": [
+            "A",
+            "C",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_16",
+          "left": [
+            "B",
+            "E",
+            "F"
+          ],
+          "right": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "card_id": "cfg_17",
+          "left": [
+            "C",
+            "D",
+            "E"
+          ],
+          "right": [
+            "A",
+            "B",
+            "F"
+          ]
+        },
+        {
+          "card_id": "cfg_18",
+          "left": [
+            "C",
+            "D",
+            "F"
+          ],
+          "right": [
+            "A",
+            "B",
+            "E"
+          ]
+        },
+        {
+          "card_id": "cfg_19",
+          "left": [
+            "C",
+            "E",
+            "F"
+          ],
+          "right": [
+            "A",
+            "B",
+            "D"
+          ]
+        },
+        {
+          "card_id": "cfg_20",
+          "left": [
+            "D",
+            "E",
+            "F"
+          ],
+          "right": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ],
+      "other_assignments_count": 43,
+      "display_rule": "屏幕只比较全左与三左三右，不暗示这两类涵盖全部64种。排列卡片是静态可能性，不是同一盒中同时发生的轨迹。"
+    },
+    "director_review": [
+      {
+        "location": "s01–s03",
+        "issue": "抽象的“越来越乱”会在引子阶段增加理解门槛。",
+        "resolution": "采用已批准的融冰—冷冻室—再结冰动作，熵和目录都延后；结尾回答一切是否复原。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "s04–s08",
+        "issue": "六个标记可能被误读为水的实际六个分子，1与20可能被当成全部物理状态。",
+        "resolution": "独立模型、持续范围标签、快照身份和完整20组合数据分离，台账明确另有43种左右分配。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "s08–s09",
+        "issue": "统计熵解释可能被误读为任意视觉凌乱或六粒子熵逐帧上升。",
+        "resolution": "术语在分类图之后出现，随后单独切换到孤立宏观系统；禁止添加伪造的实时单调熵曲线。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "s11–s12",
+        "issue": "同色流动粒子可能混淆电能、热与熵，且容易把冰箱本身误当孤立系统。",
+        "resolution": "三种图形编码分离，热流方向逐一锁定，整体边界附相关环境及电力来源说明。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "s12–s13",
+        "issue": "“水的熵下降”可能被误读为整个融化—冻结循环的累计熵变。",
+        "resolution": "s12标签明确“从水到冰”，只记重新凝固这段；s13才回到整个过程与环境变化。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "s08、s12",
+        "issue": "原计划三句文字若一起显示会超过两行。",
+        "resolution": "拆成两个字幕时窗，关键图形先形成再保持给文字阅读，不同时展示三行。",
+        "status": "已落实到稿件"
+      },
+      {
+        "location": "全片",
+        "issue": "精确构图和动效还未在成片中验证。",
+        "resolution": "本轮只报告剧本与时间安排审查，实际字体、遮挡、动作节奏与画面效果留给制作后的播放验收。",
+        "status": "制作阶段检查"
+      }
+    ]
+  }
+}

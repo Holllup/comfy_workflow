@@ -1,0 +1,3632 @@
+{
+  "id": "d4b5d51e-2eab-5dbf-9324-2025bc519ca1",
+  "revision": 0,
+  "last_node_id": 55,
+  "last_link_id": 114,
+  "nodes": [
+    {
+      "type": "ArtV3LoadFrames",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "R1",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "R2",
+          "type": "IMAGE",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "R3",
+          "type": "IMAGE",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "R4",
+          "type": "IMAGE",
+          "links": [
+            59
+          ]
+        },
+        {
+          "name": "R5",
+          "type": "IMAGE",
+          "links": [
+            85
+          ]
+        },
+        {
+          "name": "art",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "links": [
+            2,
+            20,
+            24,
+            28,
+            46,
+            50,
+            54,
+            72,
+            76,
+            80,
+            98,
+            102,
+            106,
+            111
+          ]
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "links": [
+            3,
+            21,
+            29,
+            47,
+            55,
+            73,
+            81,
+            99
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3LoadFrames",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "starry_realism_01",
+        ""
+      ],
+      "id": 1,
+      "title": "确认五张写实关键帧",
+      "pos": [
+        0,
+        0
+      ],
+      "order": 0,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "UNETLoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1,
+            9,
+            35,
+            61,
+            87
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "minimax_h3_fl2va_pruned_fp8_scaled.safetensors",
+        "default"
+      ],
+      "id": 2,
+      "title": "H3 FL2VA FP8 · cu128/cu130",
+      "pos": [
+        700,
+        -650
+      ],
+      "order": 1,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPLoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            4,
+            30,
+            56,
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax",
+        "default"
+      ],
+      "id": 3,
+      "title": "H3 编码器（并非图片生成模型）",
+      "pos": [
+        1100,
+        -650
+      ],
+      "order": 2,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAELoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            5,
+            18,
+            31,
+            44,
+            57,
+            70,
+            83,
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "id": 4,
+      "title": "H3 FP16 VAE",
+      "pos": [
+        1500,
+        -650
+      ],
+      "order": 3,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicScheduler",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            15,
+            41,
+            67,
+            93
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "simple",
+        20,
+        1
+      ],
+      "id": 5,
+      "title": "H3 20 步 simple",
+      "pos": [
+        1900,
+        -650
+      ],
+      "order": 4,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "KSamplerSelect",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            14,
+            40,
+            66,
+            92
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "res_multistep"
+      ],
+      "id": 6,
+      "title": "res_multistep",
+      "pos": [
+        2300,
+        -650
+      ],
+      "order": 5,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 2
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            11,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight1",
+        932100,
+        0
+      ],
+      "id": 7,
+      "title": "flight1 · 已确认分镜提示词",
+      "pos": [
+        700,
+        0
+      ],
+      "order": 6,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MiniMaxH3ImageToVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 5
+        },
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        124
+      ],
+      "id": 8,
+      "title": "flight1 · 首尾帧条件",
+      "pos": [
+        1100,
+        0
+      ],
+      "order": 7,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 9
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 9,
+      "title": "H3 引导",
+      "pos": [
+        1550,
+        0
+      ],
+      "order": 8,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 10,
+      "title": "H3 固定种子",
+      "pos": [
+        1550,
+        240
+      ],
+      "order": 9,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 12
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 13
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 14
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 15
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 11,
+      "title": "flight1 · H3 采样",
+      "pos": [
+        1950,
+        0
+      ],
+      "order": 10,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 17
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 12,
+      "title": "H3 原始帧",
+      "pos": [
+        2380,
+        0
+      ],
+      "order": 11,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveClip",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 20
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 21
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "corrected_frames",
+          "type": "IMAGE",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "cache_receipt",
+          "type": "STRING",
+          "links": [
+            107
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveClip",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight1",
+        0
+      ],
+      "id": 13,
+      "title": "flight1 · 无损缓存与两帧校正",
+      "pos": [
+        2780,
+        0
+      ],
+      "order": 12,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24,
+        8
+      ],
+      "id": 14,
+      "title": "flight1 · 无声预览",
+      "pos": [
+        3300,
+        0
+      ],
+      "order": 13,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "v3_flight1"
+      ],
+      "id": 15,
+      "title": "项目输出路径",
+      "pos": [
+        3800,
+        220
+      ],
+      "order": 14,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SaveVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 25
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/v3",
+        "auto",
+        "auto"
+      ],
+      "id": 16,
+      "title": "v3_flight1 · 视频预览",
+      "pos": [
+        3800,
+        0
+      ],
+      "order": 15,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 27
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 17,
+      "title": "检查后复制确认码",
+      "pos": [
+        4280,
+        0
+      ],
+      "order": 16,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 28
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            37,
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight2",
+        932100,
+        0
+      ],
+      "id": 18,
+      "title": "flight2 · 已确认分镜提示词",
+      "pos": [
+        700,
+        850
+      ],
+      "order": 17,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MiniMaxH3ImageToVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 30
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 31
+        },
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": 33
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            42
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        124
+      ],
+      "id": 19,
+      "title": "flight2 · 首尾帧条件",
+      "pos": [
+        1100,
+        850
+      ],
+      "order": 18,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 35
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 20,
+      "title": "H3 引导",
+      "pos": [
+        1550,
+        850
+      ],
+      "order": 19,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 21,
+      "title": "H3 固定种子",
+      "pos": [
+        1550,
+        1090
+      ],
+      "order": 20,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 38
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 39
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 40
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 41
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            43
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 22,
+      "title": "flight2 · H3 采样",
+      "pos": [
+        1950,
+        850
+      ],
+      "order": 21,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 43
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 23,
+      "title": "H3 原始帧",
+      "pos": [
+        2380,
+        850
+      ],
+      "order": 22,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveClip",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 45
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 46
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 47
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "corrected_frames",
+          "type": "IMAGE",
+          "links": [
+            49
+          ]
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "links": [
+            58
+          ]
+        },
+        {
+          "name": "cache_receipt",
+          "type": "STRING",
+          "links": [
+            108
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveClip",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight2",
+        0
+      ],
+      "id": 24,
+      "title": "flight2 · 无损缓存与两帧校正",
+      "pos": [
+        2780,
+        850
+      ],
+      "order": 23,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24,
+        8
+      ],
+      "id": 25,
+      "title": "flight2 · 无声预览",
+      "pos": [
+        3300,
+        850
+      ],
+      "order": 24,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            52
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "v3_flight2"
+      ],
+      "id": 26,
+      "title": "项目输出路径",
+      "pos": [
+        3800,
+        1070
+      ],
+      "order": 25,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SaveVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 51
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 52
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/v3",
+        "auto",
+        "auto"
+      ],
+      "id": 27,
+      "title": "v3_flight2 · 视频预览",
+      "pos": [
+        3800,
+        850
+      ],
+      "order": 26,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 53
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 28,
+      "title": "检查后复制确认码",
+      "pos": [
+        4280,
+        850
+      ],
+      "order": 27,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 54
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            60
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            63,
+            74
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight3",
+        932100,
+        0
+      ],
+      "id": 29,
+      "title": "flight3 · 已确认分镜提示词",
+      "pos": [
+        700,
+        1700
+      ],
+      "order": 28,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MiniMaxH3ImageToVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 56
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 57
+        },
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 58
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": 59
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            62
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        124
+      ],
+      "id": 30,
+      "title": "flight3 · 首尾帧条件",
+      "pos": [
+        1100,
+        1700
+      ],
+      "order": 29,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 61
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 31,
+      "title": "H3 引导",
+      "pos": [
+        1550,
+        1700
+      ],
+      "order": 30,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 32,
+      "title": "H3 固定种子",
+      "pos": [
+        1550,
+        1940
+      ],
+      "order": 31,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 64
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 65
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 66
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 67
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            69
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 33,
+      "title": "flight3 · H3 采样",
+      "pos": [
+        1950,
+        1700
+      ],
+      "order": 32,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 69
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 34,
+      "title": "H3 原始帧",
+      "pos": [
+        2380,
+        1700
+      ],
+      "order": 33,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveClip",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 71
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 72
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 73
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "corrected_frames",
+          "type": "IMAGE",
+          "links": [
+            75
+          ]
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "links": [
+            84
+          ]
+        },
+        {
+          "name": "cache_receipt",
+          "type": "STRING",
+          "links": [
+            109
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveClip",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight3",
+        0
+      ],
+      "id": 35,
+      "title": "flight3 · 无损缓存与两帧校正",
+      "pos": [
+        2780,
+        1700
+      ],
+      "order": 34,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24,
+        8
+      ],
+      "id": 36,
+      "title": "flight3 · 无声预览",
+      "pos": [
+        3300,
+        1700
+      ],
+      "order": 35,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "v3_flight3"
+      ],
+      "id": 37,
+      "title": "项目输出路径",
+      "pos": [
+        3800,
+        1920
+      ],
+      "order": 36,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SaveVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 77
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 78
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/v3",
+        "auto",
+        "auto"
+      ],
+      "id": 38,
+      "title": "v3_flight3 · 视频预览",
+      "pos": [
+        3800,
+        1700
+      ],
+      "order": 37,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 79
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 39,
+      "title": "检查后复制确认码",
+      "pos": [
+        4280,
+        1700
+      ],
+      "order": 38,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 80
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            86
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            89,
+            100
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight4",
+        932100,
+        0
+      ],
+      "id": 40,
+      "title": "flight4 · 已确认分镜提示词",
+      "pos": [
+        700,
+        2550
+      ],
+      "order": 39,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MiniMaxH3ImageToVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 82
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 83
+        },
+        {
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 84
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": 85
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 86
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            88
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            94
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "",
+        1344,
+        768,
+        124
+      ],
+      "id": 41,
+      "title": "flight4 · 首尾帧条件",
+      "pos": [
+        1100,
+        2550
+      ],
+      "order": 40,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 87
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            91
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 42,
+      "title": "H3 引导",
+      "pos": [
+        1550,
+        2550
+      ],
+      "order": 41,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            90
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 43,
+      "title": "H3 固定种子",
+      "pos": [
+        1550,
+        2790
+      ],
+      "order": 42,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 90
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 91
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 92
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 93
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 94
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            95
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 44,
+      "title": "flight4 · H3 采样",
+      "pos": [
+        1950,
+        2550
+      ],
+      "order": 43,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 95
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 96
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            97
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 45,
+      "title": "H3 原始帧",
+      "pos": [
+        2380,
+        2550
+      ],
+      "order": 44,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveClip",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 97
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 98
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 99
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 100
+        }
+      ],
+      "outputs": [
+        {
+          "name": "corrected_frames",
+          "type": "IMAGE",
+          "links": [
+            101
+          ]
+        },
+        {
+          "name": "last_frame",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "name": "cache_receipt",
+          "type": "STRING",
+          "links": [
+            110
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            105
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveClip",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "flight4",
+        0
+      ],
+      "id": 46,
+      "title": "flight4 · 无损缓存与两帧校正",
+      "pos": [
+        2780,
+        2550
+      ],
+      "order": 45,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CreateVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 101
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        24,
+        8
+      ],
+      "id": 47,
+      "title": "flight4 · 无声预览",
+      "pos": [
+        3300,
+        2550
+      ],
+      "order": 46,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 102
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "v3_flight4"
+      ],
+      "id": 48,
+      "title": "项目输出路径",
+      "pos": [
+        3800,
+        2770
+      ],
+      "order": 47,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SaveVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 103
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/v3",
+        "auto",
+        "auto"
+      ],
+      "id": 49,
+      "title": "v3_flight4 · 视频预览",
+      "pos": [
+        3800,
+        2550
+      ],
+      "order": 48,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 105
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 50,
+      "title": "检查后复制确认码",
+      "pos": [
+        4280,
+        2550
+      ],
+      "order": 49,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Finish",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 106
+        },
+        {
+          "name": "flight1",
+          "type": "STRING",
+          "link": 107
+        },
+        {
+          "name": "flight2",
+          "type": "STRING",
+          "link": 108
+        },
+        {
+          "name": "flight3",
+          "type": "STRING",
+          "link": 109
+        },
+        {
+          "name": "flight4",
+          "type": "STRING",
+          "link": 110
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            112
+          ]
+        },
+        {
+          "name": "final_report",
+          "type": "STRING",
+          "links": [
+            114
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Finish",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [],
+      "id": 51,
+      "title": "复用已确认渐变并流式合成 640 帧",
+      "pos": [
+        4800,
+        0
+      ],
+      "order": 50,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtOutputPrefix",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prefix",
+          "type": "STRING",
+          "links": [
+            113
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtOutputPrefix",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "v3_final"
+      ],
+      "id": 52,
+      "title": "项目输出路径",
+      "pos": [
+        5250,
+        220
+      ],
+      "order": 51,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SaveVideo",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 112
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "masterpiece_flight2/v3",
+        "auto",
+        "auto"
+      ],
+      "id": 53,
+      "title": "v3_final · 视频预览",
+      "pos": [
+        5250,
+        0
+      ],
+      "order": 52,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 114
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 54,
+      "title": "最终路径与帧数",
+      "pos": [
+        5700,
+        0
+      ],
+      "order": 53,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MarkdownNote",
+      "size": [
+        620,
+        500
+      ],
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "填入项目 ID 和已检查全部关键帧的 frames_approval_code。\n只生成四段写实飞行，复用第二阶段的渐变缓存，再追加一秒扩展原画定格。原画不会进入四段飞行条件。"
+      ],
+      "id": 55,
+      "title": "使用步骤",
+      "pos": [
+        0,
+        -600
+      ],
+      "order": 54,
+      "flags": {},
+      "mode": 0
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      6,
+      7,
+      0,
+      "STRING"
+    ],
+    [
+      3,
+      1,
+      7,
+      7,
+      1,
+      "STRING"
+    ],
+    [
+      4,
+      3,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      5,
+      4,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      6,
+      1,
+      0,
+      8,
+      2,
+      "IMAGE"
+    ],
+    [
+      7,
+      1,
+      1,
+      8,
+      3,
+      "IMAGE"
+    ],
+    [
+      8,
+      7,
+      0,
+      8,
+      4,
+      "STRING"
+    ],
+    [
+      9,
+      2,
+      0,
+      9,
+      0,
+      "MODEL"
+    ],
+    [
+      10,
+      8,
+      0,
+      9,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      11,
+      7,
+      1,
+      10,
+      0,
+      "INT"
+    ],
+    [
+      12,
+      10,
+      0,
+      11,
+      0,
+      "NOISE"
+    ],
+    [
+      13,
+      9,
+      0,
+      11,
+      1,
+      "GUIDER"
+    ],
+    [
+      14,
+      6,
+      0,
+      11,
+      2,
+      "SAMPLER"
+    ],
+    [
+      15,
+      5,
+      0,
+      11,
+      3,
+      "SIGMAS"
+    ],
+    [
+      16,
+      8,
+      1,
+      11,
+      4,
+      "LATENT"
+    ],
+    [
+      17,
+      11,
+      0,
+      12,
+      0,
+      "LATENT"
+    ],
+    [
+      18,
+      4,
+      0,
+      12,
+      1,
+      "VAE"
+    ],
+    [
+      19,
+      12,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      1,
+      6,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      21,
+      1,
+      7,
+      13,
+      2,
+      "STRING"
+    ],
+    [
+      22,
+      7,
+      1,
+      13,
+      3,
+      "INT"
+    ],
+    [
+      23,
+      13,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      1,
+      6,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      25,
+      14,
+      0,
+      16,
+      0,
+      "VIDEO"
+    ],
+    [
+      26,
+      15,
+      0,
+      16,
+      1,
+      "STRING"
+    ],
+    [
+      27,
+      13,
+      3,
+      17,
+      0,
+      "STRING"
+    ],
+    [
+      28,
+      1,
+      6,
+      18,
+      0,
+      "STRING"
+    ],
+    [
+      29,
+      1,
+      7,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      30,
+      3,
+      0,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      31,
+      4,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      32,
+      13,
+      1,
+      19,
+      2,
+      "IMAGE"
+    ],
+    [
+      33,
+      1,
+      2,
+      19,
+      3,
+      "IMAGE"
+    ],
+    [
+      34,
+      18,
+      0,
+      19,
+      4,
+      "STRING"
+    ],
+    [
+      35,
+      2,
+      0,
+      20,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      19,
+      0,
+      20,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      37,
+      18,
+      1,
+      21,
+      0,
+      "INT"
+    ],
+    [
+      38,
+      21,
+      0,
+      22,
+      0,
+      "NOISE"
+    ],
+    [
+      39,
+      20,
+      0,
+      22,
+      1,
+      "GUIDER"
+    ],
+    [
+      40,
+      6,
+      0,
+      22,
+      2,
+      "SAMPLER"
+    ],
+    [
+      41,
+      5,
+      0,
+      22,
+      3,
+      "SIGMAS"
+    ],
+    [
+      42,
+      19,
+      1,
+      22,
+      4,
+      "LATENT"
+    ],
+    [
+      43,
+      22,
+      0,
+      23,
+      0,
+      "LATENT"
+    ],
+    [
+      44,
+      4,
+      0,
+      23,
+      1,
+      "VAE"
+    ],
+    [
+      45,
+      23,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      1,
+      6,
+      24,
+      1,
+      "STRING"
+    ],
+    [
+      47,
+      1,
+      7,
+      24,
+      2,
+      "STRING"
+    ],
+    [
+      48,
+      18,
+      1,
+      24,
+      3,
+      "INT"
+    ],
+    [
+      49,
+      24,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ],
+    [
+      50,
+      1,
+      6,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      51,
+      25,
+      0,
+      27,
+      0,
+      "VIDEO"
+    ],
+    [
+      52,
+      26,
+      0,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      53,
+      24,
+      3,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      54,
+      1,
+      6,
+      29,
+      0,
+      "STRING"
+    ],
+    [
+      55,
+      1,
+      7,
+      29,
+      1,
+      "STRING"
+    ],
+    [
+      56,
+      3,
+      0,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      57,
+      4,
+      0,
+      30,
+      1,
+      "VAE"
+    ],
+    [
+      58,
+      24,
+      1,
+      30,
+      2,
+      "IMAGE"
+    ],
+    [
+      59,
+      1,
+      3,
+      30,
+      3,
+      "IMAGE"
+    ],
+    [
+      60,
+      29,
+      0,
+      30,
+      4,
+      "STRING"
+    ],
+    [
+      61,
+      2,
+      0,
+      31,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      30,
+      0,
+      31,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      63,
+      29,
+      1,
+      32,
+      0,
+      "INT"
+    ],
+    [
+      64,
+      32,
+      0,
+      33,
+      0,
+      "NOISE"
+    ],
+    [
+      65,
+      31,
+      0,
+      33,
+      1,
+      "GUIDER"
+    ],
+    [
+      66,
+      6,
+      0,
+      33,
+      2,
+      "SAMPLER"
+    ],
+    [
+      67,
+      5,
+      0,
+      33,
+      3,
+      "SIGMAS"
+    ],
+    [
+      68,
+      30,
+      1,
+      33,
+      4,
+      "LATENT"
+    ],
+    [
+      69,
+      33,
+      0,
+      34,
+      0,
+      "LATENT"
+    ],
+    [
+      70,
+      4,
+      0,
+      34,
+      1,
+      "VAE"
+    ],
+    [
+      71,
+      34,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      72,
+      1,
+      6,
+      35,
+      1,
+      "STRING"
+    ],
+    [
+      73,
+      1,
+      7,
+      35,
+      2,
+      "STRING"
+    ],
+    [
+      74,
+      29,
+      1,
+      35,
+      3,
+      "INT"
+    ],
+    [
+      75,
+      35,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      76,
+      1,
+      6,
+      37,
+      0,
+      "STRING"
+    ],
+    [
+      77,
+      36,
+      0,
+      38,
+      0,
+      "VIDEO"
+    ],
+    [
+      78,
+      37,
+      0,
+      38,
+      1,
+      "STRING"
+    ],
+    [
+      79,
+      35,
+      3,
+      39,
+      0,
+      "STRING"
+    ],
+    [
+      80,
+      1,
+      6,
+      40,
+      0,
+      "STRING"
+    ],
+    [
+      81,
+      1,
+      7,
+      40,
+      1,
+      "STRING"
+    ],
+    [
+      82,
+      3,
+      0,
+      41,
+      0,
+      "CLIP"
+    ],
+    [
+      83,
+      4,
+      0,
+      41,
+      1,
+      "VAE"
+    ],
+    [
+      84,
+      35,
+      1,
+      41,
+      2,
+      "IMAGE"
+    ],
+    [
+      85,
+      1,
+      4,
+      41,
+      3,
+      "IMAGE"
+    ],
+    [
+      86,
+      40,
+      0,
+      41,
+      4,
+      "STRING"
+    ],
+    [
+      87,
+      2,
+      0,
+      42,
+      0,
+      "MODEL"
+    ],
+    [
+      88,
+      41,
+      0,
+      42,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      89,
+      40,
+      1,
+      43,
+      0,
+      "INT"
+    ],
+    [
+      90,
+      43,
+      0,
+      44,
+      0,
+      "NOISE"
+    ],
+    [
+      91,
+      42,
+      0,
+      44,
+      1,
+      "GUIDER"
+    ],
+    [
+      92,
+      6,
+      0,
+      44,
+      2,
+      "SAMPLER"
+    ],
+    [
+      93,
+      5,
+      0,
+      44,
+      3,
+      "SIGMAS"
+    ],
+    [
+      94,
+      41,
+      1,
+      44,
+      4,
+      "LATENT"
+    ],
+    [
+      95,
+      44,
+      0,
+      45,
+      0,
+      "LATENT"
+    ],
+    [
+      96,
+      4,
+      0,
+      45,
+      1,
+      "VAE"
+    ],
+    [
+      97,
+      45,
+      0,
+      46,
+      0,
+      "IMAGE"
+    ],
+    [
+      98,
+      1,
+      6,
+      46,
+      1,
+      "STRING"
+    ],
+    [
+      99,
+      1,
+      7,
+      46,
+      2,
+      "STRING"
+    ],
+    [
+      100,
+      40,
+      1,
+      46,
+      3,
+      "INT"
+    ],
+    [
+      101,
+      46,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      1,
+      6,
+      48,
+      0,
+      "STRING"
+    ],
+    [
+      103,
+      47,
+      0,
+      49,
+      0,
+      "VIDEO"
+    ],
+    [
+      104,
+      48,
+      0,
+      49,
+      1,
+      "STRING"
+    ],
+    [
+      105,
+      46,
+      3,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      106,
+      1,
+      6,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      107,
+      13,
+      2,
+      51,
+      1,
+      "STRING"
+    ],
+    [
+      108,
+      24,
+      2,
+      51,
+      2,
+      "STRING"
+    ],
+    [
+      109,
+      35,
+      2,
+      51,
+      3,
+      "STRING"
+    ],
+    [
+      110,
+      46,
+      2,
+      51,
+      4,
+      "STRING"
+    ],
+    [
+      111,
+      1,
+      6,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      112,
+      51,
+      0,
+      53,
+      0,
+      "VIDEO"
+    ],
+    [
+      113,
+      52,
+      0,
+      53,
+      1,
+      "STRING"
+    ],
+    [
+      114,
+      51,
+      1,
+      54,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": []
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        120,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

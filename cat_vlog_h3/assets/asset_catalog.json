@@ -1,0 +1,62 @@
+{
+  "protagonist_front": {
+    "path": "character/front.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "front"
+  },
+  "protagonist_side": {
+    "path": "character/side.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "side"
+  },
+  "protagonist_back": {
+    "path": "character/back.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "back"
+  },
+  "protagonist_left45": {
+    "path": "character/left45.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "left45"
+  },
+  "protagonist_right45": {
+    "path": "character/right45.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "right45"
+  },
+  "protagonist_face": {
+    "path": "character/face.png",
+    "purpose": "identity",
+    "owner": "protagonist",
+    "view": "face"
+  },
+  "roommate_front": {
+    "path": "roommate/front.png",
+    "purpose": "identity",
+    "owner": "roommate",
+    "view": "front"
+  },
+  "roommate_side": {
+    "path": "roommate/side.png",
+    "purpose": "identity",
+    "owner": "roommate",
+    "view": "side"
+  },
+  "roommate_back": {
+    "path": "roommate/back.png",
+    "purpose": "identity",
+    "owner": "roommate",
+    "view": "back"
+  },
+  "roommate_face": {
+    "path": "roommate/face.png",
+    "purpose": "identity",
+    "owner": "roommate",
+    "view": "face"
+  }
+}

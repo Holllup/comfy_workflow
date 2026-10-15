@@ -1,0 +1,250 @@
+{
+  "schema_version": 2,
+  "conditioning_mode": "spatial_style_seed",
+  "artwork": {
+    "title": "The Starry Night",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "place": "Saint-Rémy-de-Provence, France"
+  },
+  "source_links": [
+    {
+      "label": "MoMA collection page: The Starry Night",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    {
+      "label": "Van Gogh Letters: Letter 777",
+      "url": "https://vangoghletters.org/vg/letters/let777/letter.html"
+    },
+    {
+      "label": "Van Gogh Letters: Letter 783",
+      "url": "https://vangoghletters.org/vg/letters/let783/letter.html"
+    }
+  ],
+  "verified_context": [
+    "The artwork is The Starry Night by Vincent van Gogh, painted in 1889 and held by The Museum of Modern Art, New York.",
+    "MoMA states that the painting was inspired by the view from van Gogh's room at the asylum in Saint-Rémy while also being transformed through invention and memory.",
+    "The village in the painting is not treated by MoMA as a strict documentary record of Saint-Rémy and includes imaginative construction.",
+    "Van Gogh described a bright morning star seen from his window in letter 777; scholarly annotation identifies it as Venus.",
+    "Van Gogh discussed cypresses as powerful dark vertical forms in letter 783, supporting the cypress as a major visual anchor."
+  ],
+  "imagined_context": [
+    "This film invents a traversable nighttime village inside the painted world, including streets, houses, and villagers in period dress; these details are cinematic inventions rather than documented facts of the original scene.",
+    "The camera begins at human scale inside the village, then rises to an aerial view, skims a painted hill, circles back over the settlement, approaches the church steeple, and uses a star halo as a transition into the final approach.",
+    "The hill-surface transition treats Van Gogh's blue painted mountain shoulder as a close flying surface rather than a literal realistic landscape.",
+    "The church-steeple transition is invented for the film: the spire aligns with a glowing star halo, and the camera passes through that halo into the broader sky view before settling into the original composition.",
+    "The four generated views are treated as locations inside one traversable painted environment. The uploaded painting provides a shuffled color-style seed and the exact final hold; its complete composition is never a background plate in the early shots."
+  ],
+  "visual_anchors": [
+    "The dark flame-like cypress mass on the left side of the composition",
+    "The slender church steeple rising from the village",
+    "The rolling blue hills and horizon line behind the village",
+    "The large central sky swirl made of curved blue and white brushstrokes",
+    "The crescent moon with a broad yellow halo in the upper right",
+    "Bright circular stars with visible halos",
+    "The clustered village rooftops and yellow-lit windows",
+    "Short directional oil-brush strokes, visible impasto, and a painted rather than photoreal surface"
+  ],
+  "keyframes": [
+    {
+      "id": 1,
+      "beat_zh": "第一段首帧：在村庄内部一条狭窄街道中低空穿梭，两侧是房屋、院墙和暖黄色窗光，少量村民在街上或门口，前方远处能看到教堂尖塔，头顶只露出一小片旋动夜空。",
+      "image_prompt_en": "INPUT IMAGE A is the generated KF2 hill-side view, a later view of the same invented painted world. There is no second image. Move the camera backward and down into a narrow village lane. Solid cobalt houses, walls, doors and roof eaves overlap close to the lens; warm yellow windows and three to six tiny period-dressed villagers belong to the street. The church is a small distant landmark ahead, not a picture behind the houses. Only a narrow irregular gap of night sky appears between roofs. Rebuild every visible element for this lower camera position with strong near/far occlusion. Full-bleed oil-painted space; no flat original painting, rectangular canvas, mural, static sky plate, pasted foreground or sidebars.",
+      "camera_position": "low in a narrow village lane, below the rooflines",
+      "camera_direction": "forward through the street toward a small distant church steeple",
+      "camera_path_from_next_frame": "reverse away from the right-side hill, descend over the same roofs and settle inside the lane",
+      "shared_landmarks": [
+        "small church steeple ahead",
+        "clustered blue roofs",
+        "warm yellow windows",
+        "blue hill beyond the village"
+      ],
+      "transition_object": "street opening leading toward the right-side blue hill",
+      "transition_object_screen_position": "street vanishing point near center; distant hill appears only in a narrow gap above the roofs",
+      "entry_state": "unobstructed low street view with close walls on both sides",
+      "exit_state": "the camera can rise between the same roofs toward the right-side hill",
+      "end_frame_constraints": [
+        "solid nearby walls and roofs overlap at different depths",
+        "only a narrow irregular strip of sky is visible"
+      ],
+      "must_preserve": [
+        "cobalt and ultramarine with warm yellow nocturnal accents",
+        "thick directional oil strokes attached to surfaces and atmospheric light",
+        "solid buildings, terrain and sky separated by depth and occlusion",
+        "the same church and hill remain distant navigation landmarks"
+      ],
+      "must_not_generate": [
+        "flat original painting used as a background",
+        "rectangular canvas edge, frame, mural or pasted image",
+        "beige sidebars or a fixed sky plate",
+        "modern vehicles, visible drone, readable text or logos",
+        "a full panoramic copy of the famous sky behind the street"
+      ]
+    },
+    {
+      "id": 2,
+      "beat_zh": "第二段首帧：镜头已经从村中升起并贴近山头蓝色坡面，几乎擦着山脊飞行；远处可见被俯瞰的整个村庄、教堂尖塔和上方的星空，像刚从山体转场后绕出来。",
+      "image_prompt_en": "INPUT IMAGE A is KF3 beside the steeple, a later view in the same imagined painted space. There is no second image. Reverse away and upward toward a rounded blue hill. Its solid near slope sweeps across the right and center, covering 35 to 55 percent of the frame and genuinely occluding part of the village. On the open left side, show roofs at varied depths and the church as the next flight target. Reproject landmarks for this high oblique viewpoint instead of retaining their pixel positions from Image A. Brushstrokes follow the curved hill surface; the sky has depth and is only partially visible. Full-bleed scene, without a fixed painting backdrop, canvas edge, mural or sidebars.",
+      "camera_position": "high above village roofs, skimming the near side of a rounded blue hill shoulder",
+      "camera_direction": "along the hill contour toward the village and reachable church beyond it",
+      "camera_path_from_next_frame": "reverse upward and outward from the steeple toward the same blue hill until its right-side slope hides part of the village",
+      "shared_landmarks": [
+        "same curved blue hill shoulder",
+        "village rooftops below and beyond",
+        "church steeple visible on the open side"
+      ],
+      "transition_object": "near blue hill shoulder",
+      "transition_object_screen_position": "hill occupies 35%–55% of the right and center; village and church remain partly visible on the left",
+      "entry_state": "the same right-side hill occlusion reached at the end of shot 1",
+      "exit_state": "the camera can arc out from this hill toward the visible church",
+      "end_frame_constraints": [
+        "the hill is a close landform, not a flat painted patch",
+        "its edge occludes roofs while the church remains reachable"
+      ],
+      "must_preserve": [
+        "cobalt and ultramarine with warm yellow nocturnal accents",
+        "thick directional oil strokes attached to surfaces and atmospheric light",
+        "solid buildings, terrain and sky separated by depth and occlusion",
+        "the same church, village and hill geography as KF1 and KF3"
+      ],
+      "must_not_generate": [
+        "flat original painting used as a background",
+        "rectangular canvas edge, frame, mural or pasted image",
+        "beige sidebars or a fixed sky plate",
+        "modern vehicles, visible drone, readable text or logos",
+        "a clean, fully visible copy of the whole painting in the distant sky"
+      ]
+    },
+    {
+      "id": 3,
+      "beat_zh": "第三段首帧：镜头已经逼近教堂并悬在尖塔旁，正在教堂周围盘旋；塔尖、屋脊和周围屋顶占据近景，村庄在下方铺开，背后是带星晕的夜空。",
+      "image_prompt_en": "INPUT IMAGE A is KF4 after the halo passage, a later view of this invented painted world. There is no second image. Reverse the camera down toward the church and stop close beside the same side of its steeple reached from the blue hill. The pale spire and roof occupy near foreground, village roofs and ridge step back at different depths, and only part of the turbulent blue sky remains visible. One white-yellow painted star halo sits beyond and above the tip along a reachable upward camera path. Rebuild the geometry at this intimate scale; brushwork follows each solid surface. Full-bleed space, without the whole original painting as a fixed background, canvas border, mural or cutout.",
+      "camera_position": "very close beside the church steeple, reached from the village-facing side of the hill",
+      "camera_direction": "past the tower tip toward one white-yellow star halo above and beyond it",
+      "camera_path_from_next_frame": "reverse down and out of the selected halo toward the same side of the steeple, stopping close to its roof",
+      "shared_landmarks": [
+        "same pale steeple",
+        "blue village roofs below",
+        "ridge behind the village",
+        "one selected halo beyond the tower tip"
+      ],
+      "transition_object": "church steeple silhouette aligned with one star halo",
+      "transition_object_screen_position": "spire near center-right in strong foreground; selected halo above its tip, with only partial sky visible",
+      "entry_state": "spire is already close and approached from the same side as shot 2",
+      "exit_state": "a clear short upward path from the tower tip into the selected halo",
+      "end_frame_constraints": [
+        "tower and roof have readable solid volume",
+        "selected halo remains one reachable star, not a portal"
+      ],
+      "must_preserve": [
+        "cobalt and ultramarine with warm yellow nocturnal accents",
+        "thick directional oil strokes attached to surfaces and atmospheric light",
+        "solid buildings, terrain and sky separated by depth and occlusion",
+        "same steeple outline and approach side as KF2"
+      ],
+      "must_not_generate": [
+        "flat original painting used as a background",
+        "rectangular canvas edge, frame, mural or pasted image",
+        "beige sidebars or a fixed sky plate",
+        "modern vehicles, visible drone, readable text or logos",
+        "the full original composition behind the enlarged steeple",
+        "a science-fiction portal"
+      ]
+    },
+    {
+      "id": 4,
+      "beat_zh": "第四段首帧：刚从教堂塔尖对准的同一颗白黄色星晕中穿出；画面上缘偏左仍有一段较大的弧形光晕笔触，左侧柏树、下方村庄、中央旋涡与右上月亮已接近原画布局，但仍留少量后退校正距离。",
+      "image_prompt_en": "INPUT IMAGE A is an abstract shuffled palette seed. It contains no original composition or brushstroke geometry to copy, and there is no second image. Use its cobalt and yellow colors while creating thick directional oil strokes on the surfaces of a traversable world. Place the camera just outside the selected white-yellow star halo: its near arc covers about 25 to 35 percent of the upper center-left sky. Beyond it, a left foreground cypress overlaps the low village and church, blue hills recede behind, and the central swirl and upper-right moon occupy separate depths. The camera is slightly closer and offset from the final original viewpoint, leaving a short settling move. Full-bleed scene; no complete painting rectangle, flat sky plate, canvas edge, mural, pasted pixels or sidebars. The uploaded original is reserved for the exact final endpoint and hold.",
+      "camera_position": "just outside the selected halo, slightly closer to the village than the final original viewpoint",
+      "camera_direction": "toward the near-final cypress, village, ridge, sky swirl and moon arrangement",
+      "camera_path_from_next_frame": "reverse forward from the original viewpoint and shift slightly into the selected star halo until its curved rim occludes the upper center-left",
+      "shared_landmarks": [
+        "left foreground cypress",
+        "low village and church",
+        "blue ridge",
+        "central swirling sky",
+        "upper-right crescent moon"
+      ],
+      "transition_object": "the same white-yellow painted star halo crossed in shot 3",
+      "transition_object_screen_position": "large near halo arc covers 25%–35% of the upper center-left sky; other landmarks remain in near-final screen regions",
+      "entry_state": "still partly obscured by the selected halo after shot 3",
+      "exit_state": "a short backward drift and lateral correction remain before the exact original viewpoint",
+      "end_frame_constraints": [
+        "retain the same halo arc across the shot 3 to shot 4 join",
+        "view is close to but not a clean copy of the uploaded artwork"
+      ],
+      "must_preserve": [
+        "cobalt and ultramarine with warm yellow nocturnal accents",
+        "thick directional oil strokes attached to surfaces and atmospheric light",
+        "solid buildings, terrain and sky separated by depth and occlusion",
+        "left cypress, low village, ridge, central swirl and upper-right moon in their near-final order"
+      ],
+      "must_not_generate": [
+        "flat original painting used as a background",
+        "rectangular canvas edge, frame, mural or pasted image",
+        "beige sidebars or a fixed sky plate",
+        "modern vehicles, visible drone, readable text or logos",
+        "the untouched original artwork as a rectangular background before the final endpoint",
+        "a science-fiction portal"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "beat_zh": "1→2：在村庄街道间穿梭，掠过房屋和村民，随后抬升越过屋顶，俯瞰整个村落，并向山头加速贴近，用山体蓝色坡面做转场。",
+      "motion_prompt_en": "One continuous first-person flight through solid oil-painted streets and terrain. Let nearby structures truly occlude distant ones as the camera rises. No visible drone, cut, canvas, rectangular original painting, static sky plate or pasted foreground.",
+      "transition_zh": "转场依靠山头本身完成。第一镜末尾从俯瞰村庄转向山脊，让蓝色坡面迅速贴近并占满画面，形成连续遮挡。第二镜从这片同样的蓝色山体表面近距离飞出，保持相同方向和色调。",
+      "start_state": "low inside the KF1 village lane, walls and warm windows close on both sides",
+      "camera_path": "0–40% glide forward between houses; 40–75% rise through the same roofs; 75–100% bank toward and approach the right-side blue hill",
+      "speed_profile": "smooth low flight, a decisive but controlled lift, then gentle acceleration into hill occlusion",
+      "parallax": "walls, people and roofs sweep fastest; church and hill grow more slowly; sky remains behind them",
+      "environment_motion": "tiny villagers move subtly, window light flickers, and painted strokes stay attached to their surfaces",
+      "transition_approach": "the same right-side blue hill grows to cover 35%–55% of the view while village remains visible left",
+      "final_quarter_target_state": "arrive at the exact KF2 hill side, orientation and partial village reveal",
+      "transition_type": "hill_occlusion"
+    },
+    {
+      "id": 2,
+      "beat_zh": "2→3：贴着山头飞出后，沿山肩绕出一个大弧线，再次俯瞰村庄，像绕了一圈回看整个聚落，然后俯冲对准教堂尖塔，逼近教堂。",
+      "motion_prompt_en": "Continue the same flight around one solid blue hill into a real painted village, then descend toward the church. Keep the village legible as spatial depth; never reveal a complete painting hanging behind the foreground.",
+      "transition_zh": "接点由教堂尖塔接管。第二镜后半段把视线从山肩回到村庄，再主动俯冲向教堂，让尖塔在末尾迅速放大、占据近景。第三镜从同一侧近距离贴着尖塔开始，像同一条飞行路径没有中断。",
+      "start_state": "the KF2 blue hill still fills 35%–55% of the right and center, village open on the left",
+      "camera_path": "0–25% skim out from the same hill edge; 25–65% make a broad partial arc over the village; 65–100% descend on the church from the established side",
+      "speed_profile": "steady skimming arc, then a focused controlled descent that eases before the tower",
+      "parallax": "near hill slides rapidly past slower roofs, church and ridge; steeple enlarges continuously during approach",
+      "environment_motion": "painted lights and sky strokes remain subtle while architecture and terrain keep stable identity",
+      "transition_approach": "bring the same church steeple into center-right foreground from the village-facing side",
+      "final_quarter_target_state": "KF3 spire is close, solid and on the same approach side, with roofs and ridge behind",
+      "transition_type": "steeple_match"
+    },
+    {
+      "id": 3,
+      "beat_zh": "3→4：在教堂尖塔旁做平滑小弧线绕行，掠过屋脊与塔尖，再沿塔尖上升对准一颗带白黄色光晕的星；镜头进入光晕，末尾刚从同一光晕边缘穿出，保留弧形遮挡供第四镜接续。",
+      "motion_prompt_en": "One short continuous climb from the church to a single painted star halo. The halo briefly occludes the view and its same curved edge remains at the cut. No portal, fixed backdrop, complete original composition or flat image pan.",
+      "transition_zh": "第三镜始终追踪同一颗星晕：塔尖与光晕对齐后进入白黄色圆形笔触，末尾只从光晕中部分穿出，让画面上缘偏左仍留大块弧形光晕。KF4 就是这一接点帧；第四镜从完全相同的残余光晕继续飞出。",
+      "start_state": "beside the KF3 steeple, with its roof close and one selected halo above the tip",
+      "camera_path": "0–55% trace a limited arc beside the spire; 55–75% climb along its tip; 75–100% pass through the selected halo and begin emerging from its curved rim",
+      "speed_profile": "measured arc, brief rise, gentle acceleration into the halo and easing at the shared exit",
+      "parallax": "spire shifts fastest against roofs, village and ridge; the selected star stays beyond the tower",
+      "environment_motion": "the selected halo shimmers as painted starlight without becoming a digital portal",
+      "transition_approach": "carry the same white-yellow halo rim into KF4 at the upper center-left edge",
+      "final_quarter_target_state": "KF4 retains 25%–35% near halo coverage while cypress, village, ridge, swirl and moon begin to resolve beyond it",
+      "transition_type": "radial_star_halo"
+    },
+    {
+      "id": 4,
+      "beat_zh": "4→原画：从上一镜同一段残余星晕弧形笔触下继续飞出，光晕退回天空中的那颗星；镜头缓慢后退并微调横移，将柏树、村庄、尖塔、山脊、旋涡和月亮收束到原画构图。",
+      "motion_prompt_en": "Remain inside one traversable oil-painted space while retreating to the canonical view. Show real foreground-to-background parallax for most of the flight. The complete original image appears only at the final endpoint and static hold, without an earlier canvas rectangle or fixed sky plate.",
+      "transition_zh": "第四镜从 KF4 保留的同一块白黄色光晕弧线中继续飞出；光晕缩回原来的星位。随后用后退与轻微横移完成原画地标对齐，最后接未经 AI 重画的完整原画定格。",
+      "start_state": "the exact KF4 shared exit with the same near halo arc across the upper center-left",
+      "camera_path": "0–30% move clear of the halo; 30–75% drift backward with a slight lateral correction; 75–100% slow to align with the supplied original viewpoint",
+      "speed_profile": "visible gentle motion first, progressive deceleration, almost still only at the end",
+      "parallax": "near cypress and village settle at different rates against distant ridge and sky as the camera backs away",
+      "environment_motion": "surface brushstrokes and painted light calm gradually as the final composition locks",
+      "transition_approach": "let the selected halo recede to its star position; align landmarks only near the end, then enter the exact uploaded artwork hold",
+      "final_quarter_target_state": "match the original cypress, village, church, ridge, swirl, stars and moon from its viewpoint; the untouched supplied painting becomes the final frame",
+      "transition_type": "final_artwork_alignment"
+    }
+  ]
+}

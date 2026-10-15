@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09",
+  "schema_version": 4,
+  "local_unit_tests": {
+    "passed": 82,
+    "failed": 0
+  },
+  "skill_format": "valid_project_and_personal_copy",
+  "offline_artifact_preflight_errors": [],
+  "workflow_nodes": 174,
+  "workflow_links": 603,
+  "gpu_inference_performed": false,
+  "autodl_runtime_node_check": "not_performed",
+  "new_model_download_performed": false,
+  "model_quality": "pending_user_sample_review",
+  "wardrobe_sample_status": "not_tested_no_actual_wardrobe_asset",
+  "media_checks": "synthetic variable-length H264/AAC clips and audio cut order; total error <= one frame"
+}

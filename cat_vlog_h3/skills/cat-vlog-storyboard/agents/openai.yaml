@@ -1,0 +1,6 @@
+interface:
+  display_name: "小猫 Vlog 编剧导演"
+  short_description: "先追问素材并严格审稿，再设计钩子、共鸣和可导入工作流的十镜 JSON"
+  default_prompt: "请用 $cat-vlog-storyboard 和我共创一期小猫 Vlog，先询问我的场景想法，再审稿并生成适配工作流的十镜 JSON。"
+policy:
+  allow_implicit_invocation: true

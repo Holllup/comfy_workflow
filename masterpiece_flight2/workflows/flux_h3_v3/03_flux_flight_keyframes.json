@@ -1,0 +1,3535 @@
+{
+  "id": "eb2763df-1759-592f-a4b7-5f1733ec643e",
+  "revision": 0,
+  "last_node_id": 65,
+  "last_link_id": 96,
+  "nodes": [
+    {
+      "type": "ArtV3KeyframeStart",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "R5",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "links": [
+            1,
+            21,
+            25,
+            45,
+            49,
+            69,
+            73,
+            93
+          ]
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "links": [
+            2,
+            22,
+            26,
+            46,
+            50,
+            70,
+            74,
+            94
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3KeyframeStart",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "starry_realism_01",
+        ""
+      ],
+      "id": 1,
+      "title": "确认渐变试片并读取 R5",
+      "pos": [
+        0,
+        0
+      ],
+      "order": 0,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "UNETLoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            10,
+            34,
+            58,
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "models": [
+          {
+            "name": "flux2_dev_fp8mixed.safetensors",
+            "directory": "diffusion_models",
+            "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/diffusion_models/flux2_dev_fp8mixed.safetensors"
+          }
+        ]
+      },
+      "widgets_values": [
+        "flux2_dev_fp8mixed.safetensors",
+        "default"
+      ],
+      "id": 2,
+      "title": "FLUX.2 dev FP8 mixed",
+      "pos": [
+        700,
+        -620
+      ],
+      "order": 1,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPLoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            27,
+            51,
+            75
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "models": [
+          {
+            "name": "mistral_3_small_flux2_bf16.safetensors",
+            "directory": "text_encoders",
+            "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/text_encoders/mistral_3_small_flux2_bf16.safetensors"
+          }
+        ]
+      },
+      "widgets_values": [
+        "mistral_3_small_flux2_bf16.safetensors",
+        "flux2",
+        "default"
+      ],
+      "id": 3,
+      "title": "FLUX Mistral BF16",
+      "pos": [
+        1100,
+        -620
+      ],
+      "order": 2,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAELoader",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7,
+            19,
+            31,
+            43,
+            55,
+            67,
+            79,
+            91
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "models": [
+          {
+            "name": "flux2-vae.safetensors",
+            "directory": "vae",
+            "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors"
+          }
+        ]
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "id": 4,
+      "title": "FLUX.2 VAE",
+      "pos": [
+        1500,
+        -620
+      ],
+      "order": 3,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "frame4",
+        487201,
+        0
+      ],
+      "id": 5,
+      "title": "frame4 · 已确认分镜提示词",
+      "pos": [
+        700,
+        0
+      ],
+      "order": 4,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPTextEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "id": 6,
+      "title": "r4 · FLUX 提示词",
+      "pos": [
+        1100,
+        0
+      ],
+      "order": 5,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "FluxGuidance",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 7,
+      "title": "FLUX guidance 4",
+      "pos": [
+        1500,
+        0
+      ],
+      "order": 6,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 8,
+      "title": "r4 · 唯一图像参考",
+      "pos": [
+        1100,
+        230
+      ],
+      "order": 7,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ReferenceLatent",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 9,
+      "title": "FLUX 单参考条件",
+      "pos": [
+        1500,
+        230
+      ],
+      "order": 8,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 10
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 10,
+      "title": "FLUX 引导",
+      "pos": [
+        1900,
+        0
+      ],
+      "order": 9,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 11,
+      "title": "可复现种子",
+      "pos": [
+        1900,
+        220
+      ],
+      "order": 10,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "KSamplerSelect",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "id": 12,
+      "title": "euler",
+      "pos": [
+        2300,
+        220
+      ],
+      "order": 11,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "Flux2Scheduler",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Flux2Scheduler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        20,
+        1344,
+        768
+      ],
+      "id": 13,
+      "title": "FLUX 原生 20 步",
+      "pos": [
+        2300,
+        0
+      ],
+      "order": 12,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "EmptyFlux2LatentImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1344,
+        768,
+        1
+      ],
+      "id": 14,
+      "title": "1344×768",
+      "pos": [
+        2300,
+        440
+      ],
+      "order": 13,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 13
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 14
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 15
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 16
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            18
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 15,
+      "title": "r4 · FLUX 采样",
+      "pos": [
+        2750,
+        0
+      ],
+      "order": 14,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 18
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 16,
+      "title": "FLUX 解码",
+      "pos": [
+        3200,
+        0
+      ],
+      "order": 15,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 20
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 21
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "saved_image",
+          "type": "IMAGE",
+          "links": [
+            23,
+            30
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveImage",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "r4"
+      ],
+      "id": 17,
+      "title": "r4 · 保存待审素材",
+      "pos": [
+        3650,
+        0
+      ],
+      "order": 16,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        420,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 18,
+      "title": "检查关键帧",
+      "pos": [
+        4150,
+        0
+      ],
+      "order": 17,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        440,
+        250
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 24
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 19,
+      "title": "复制下一阶段确认码",
+      "pos": [
+        4620,
+        0
+      ],
+      "order": 18,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 25
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            28
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "frame3",
+        487201,
+        0
+      ],
+      "id": 20,
+      "title": "frame3 · 已确认分镜提示词",
+      "pos": [
+        700,
+        950
+      ],
+      "order": 19,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPTextEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 27
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "id": 21,
+      "title": "r3 · FLUX 提示词",
+      "pos": [
+        1100,
+        950
+      ],
+      "order": 20,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "FluxGuidance",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 22,
+      "title": "FLUX guidance 4",
+      "pos": [
+        1500,
+        950
+      ],
+      "order": 21,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 30
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 23,
+      "title": "r3 · 唯一图像参考",
+      "pos": [
+        1100,
+        1180
+      ],
+      "order": 22,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ReferenceLatent",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 32
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 24,
+      "title": "FLUX 单参考条件",
+      "pos": [
+        1500,
+        1180
+      ],
+      "order": 23,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 34
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 25,
+      "title": "FLUX 引导",
+      "pos": [
+        1900,
+        950
+      ],
+      "order": 24,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 26,
+      "title": "可复现种子",
+      "pos": [
+        1900,
+        1170
+      ],
+      "order": 25,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "KSamplerSelect",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "id": 27,
+      "title": "euler",
+      "pos": [
+        2300,
+        1170
+      ],
+      "order": 26,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "Flux2Scheduler",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Flux2Scheduler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        20,
+        1344,
+        768
+      ],
+      "id": 28,
+      "title": "FLUX 原生 20 步",
+      "pos": [
+        2300,
+        950
+      ],
+      "order": 27,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "EmptyFlux2LatentImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1344,
+        768,
+        1
+      ],
+      "id": 29,
+      "title": "1344×768",
+      "pos": [
+        2300,
+        1390
+      ],
+      "order": 28,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 37
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 38
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 39
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 40
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            42
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 30,
+      "title": "r3 · FLUX 采样",
+      "pos": [
+        2750,
+        950
+      ],
+      "order": 29,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 42
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 31,
+      "title": "FLUX 解码",
+      "pos": [
+        3200,
+        950
+      ],
+      "order": 30,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 44
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 45
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "saved_image",
+          "type": "IMAGE",
+          "links": [
+            47,
+            54
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveImage",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "r3"
+      ],
+      "id": 32,
+      "title": "r3 · 保存待审素材",
+      "pos": [
+        3650,
+        950
+      ],
+      "order": 31,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        420,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 47
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 33,
+      "title": "检查关键帧",
+      "pos": [
+        4150,
+        950
+      ],
+      "order": 32,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        440,
+        250
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 48
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 34,
+      "title": "复制下一阶段确认码",
+      "pos": [
+        4620,
+        950
+      ],
+      "order": 33,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 49
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            52
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "frame2",
+        487201,
+        0
+      ],
+      "id": 35,
+      "title": "frame2 · 已确认分镜提示词",
+      "pos": [
+        700,
+        1900
+      ],
+      "order": 34,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPTextEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 51
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 52
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "id": 36,
+      "title": "r2 · FLUX 提示词",
+      "pos": [
+        1100,
+        1900
+      ],
+      "order": 35,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "FluxGuidance",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 37,
+      "title": "FLUX guidance 4",
+      "pos": [
+        1500,
+        1900
+      ],
+      "order": 36,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 54
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            57
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 38,
+      "title": "r2 · 唯一图像参考",
+      "pos": [
+        1100,
+        2130
+      ],
+      "order": 37,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ReferenceLatent",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 56
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 39,
+      "title": "FLUX 单参考条件",
+      "pos": [
+        1500,
+        2130
+      ],
+      "order": 38,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 58
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 40,
+      "title": "FLUX 引导",
+      "pos": [
+        1900,
+        1900
+      ],
+      "order": 39,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 41,
+      "title": "可复现种子",
+      "pos": [
+        1900,
+        2120
+      ],
+      "order": 40,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "KSamplerSelect",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "id": 42,
+      "title": "euler",
+      "pos": [
+        2300,
+        2120
+      ],
+      "order": 41,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "Flux2Scheduler",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Flux2Scheduler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        20,
+        1344,
+        768
+      ],
+      "id": 43,
+      "title": "FLUX 原生 20 步",
+      "pos": [
+        2300,
+        1900
+      ],
+      "order": 42,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "EmptyFlux2LatentImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1344,
+        768,
+        1
+      ],
+      "id": 44,
+      "title": "1344×768",
+      "pos": [
+        2300,
+        2340
+      ],
+      "order": 43,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 61
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 62
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 63
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 64
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            66
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 45,
+      "title": "r2 · FLUX 采样",
+      "pos": [
+        2750,
+        1900
+      ],
+      "order": 44,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 66
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 46,
+      "title": "FLUX 解码",
+      "pos": [
+        3200,
+        1900
+      ],
+      "order": 45,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 68
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 69
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "saved_image",
+          "type": "IMAGE",
+          "links": [
+            71,
+            78
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            72
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveImage",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "r2"
+      ],
+      "id": 47,
+      "title": "r2 · 保存待审素材",
+      "pos": [
+        3650,
+        1900
+      ],
+      "order": 46,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        420,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 71
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 48,
+      "title": "检查关键帧",
+      "pos": [
+        4150,
+        1900
+      ],
+      "order": 47,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        440,
+        250
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 72
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 49,
+      "title": "复制下一阶段确认码",
+      "pos": [
+        4620,
+        1900
+      ],
+      "order": 48,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3Prompt",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 73
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            76
+          ]
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": [
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3Prompt",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "frame1",
+        487201,
+        0
+      ],
+      "id": 50,
+      "title": "frame1 · 已确认分镜提示词",
+      "pos": [
+        700,
+        2850
+      ],
+      "order": 49,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "CLIPTextEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "id": 51,
+      "title": "r1 · FLUX 提示词",
+      "pos": [
+        1100,
+        2850
+      ],
+      "order": 50,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "FluxGuidance",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            80
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        4
+      ],
+      "id": 52,
+      "title": "FLUX guidance 4",
+      "pos": [
+        1500,
+        2850
+      ],
+      "order": 51,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEEncode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 78
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 53,
+      "title": "r1 · 唯一图像参考",
+      "pos": [
+        1100,
+        3080
+      ],
+      "order": 52,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ReferenceLatent",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 80
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            83
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 54,
+      "title": "FLUX 单参考条件",
+      "pos": [
+        1500,
+        3080
+      ],
+      "order": 53,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "BasicGuider",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 82
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            86
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 55,
+      "title": "FLUX 引导",
+      "pos": [
+        1900,
+        2850
+      ],
+      "order": 54,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "RandomNoise",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "id": 56,
+      "title": "可复现种子",
+      "pos": [
+        1900,
+        3070
+      ],
+      "order": 55,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "KSamplerSelect",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            87
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "id": 57,
+      "title": "euler",
+      "pos": [
+        2300,
+        3070
+      ],
+      "order": 56,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "Flux2Scheduler",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            88
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Flux2Scheduler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        20,
+        1344,
+        768
+      ],
+      "id": 58,
+      "title": "FLUX 原生 20 步",
+      "pos": [
+        2300,
+        2850
+      ],
+      "order": 57,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "EmptyFlux2LatentImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            89
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1344,
+        768,
+        1
+      ],
+      "id": 59,
+      "title": "1344×768",
+      "pos": [
+        2300,
+        3290
+      ],
+      "order": 58,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "SamplerCustomAdvanced",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 85
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 86
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 87
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 88
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            90
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 60,
+      "title": "r1 · FLUX 采样",
+      "pos": [
+        2750,
+        2850
+      ],
+      "order": 59,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "VAEDecode",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 90
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 91
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            92
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 61,
+      "title": "FLUX 解码",
+      "pos": [
+        3200,
+        2850
+      ],
+      "order": 60,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "ArtV3SaveImage",
+      "size": [
+        350,
+        200
+      ],
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 92
+        },
+        {
+          "name": "project_id",
+          "type": "STRING",
+          "link": 93
+        },
+        {
+          "name": "project_token",
+          "type": "STRING",
+          "link": 94
+        }
+      ],
+      "outputs": [
+        {
+          "name": "saved_image",
+          "type": "IMAGE",
+          "links": [
+            95
+          ]
+        },
+        {
+          "name": "review_report",
+          "type": "STRING",
+          "links": [
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ArtV3SaveImage",
+        "cnr_id": "masterpiece_flight2"
+      },
+      "widgets_values": [
+        "r1"
+      ],
+      "id": 62,
+      "title": "r1 · 保存待审素材",
+      "pos": [
+        3650,
+        2850
+      ],
+      "order": 61,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewImage",
+      "size": [
+        420,
+        300
+      ],
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 95
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 63,
+      "title": "检查关键帧",
+      "pos": [
+        4150,
+        2850
+      ],
+      "order": 62,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "PreviewAny",
+      "size": [
+        440,
+        250
+      ],
+      "inputs": [
+        {
+          "name": "source",
+          "type": "STRING",
+          "link": 96
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [],
+      "id": 64,
+      "title": "复制下一阶段确认码",
+      "pos": [
+        4620,
+        2850
+      ],
+      "order": 63,
+      "flags": {},
+      "mode": 0
+    },
+    {
+      "type": "MarkdownNote",
+      "size": [
+        620,
+        500
+      ],
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "填入项目 ID 与已检查渐变试片的 morph_approval_code。\n逆向生成 R4→R3→R2→R1。检查五个视角与地形遮挡接点，复制最后显示的 frames_approval_code 到第四阶段。"
+      ],
+      "id": 65,
+      "title": "使用步骤",
+      "pos": [
+        0,
+        -600
+      ],
+      "order": 64,
+      "flags": {},
+      "mode": 0
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      1,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      1,
+      2,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      3,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      4,
+      5,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      6,
+      0,
+      7,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      1,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      4,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      7,
+      0,
+      9,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      1,
+      "LATENT"
+    ],
+    [
+      10,
+      2,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      11,
+      9,
+      0,
+      10,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      12,
+      5,
+      1,
+      11,
+      0,
+      "INT"
+    ],
+    [
+      13,
+      11,
+      0,
+      15,
+      0,
+      "NOISE"
+    ],
+    [
+      14,
+      10,
+      0,
+      15,
+      1,
+      "GUIDER"
+    ],
+    [
+      15,
+      12,
+      0,
+      15,
+      2,
+      "SAMPLER"
+    ],
+    [
+      16,
+      13,
+      0,
+      15,
+      3,
+      "SIGMAS"
+    ],
+    [
+      17,
+      14,
+      0,
+      15,
+      4,
+      "LATENT"
+    ],
+    [
+      18,
+      15,
+      0,
+      16,
+      0,
+      "LATENT"
+    ],
+    [
+      19,
+      4,
+      0,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      20,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      1,
+      1,
+      17,
+      1,
+      "STRING"
+    ],
+    [
+      22,
+      1,
+      2,
+      17,
+      2,
+      "STRING"
+    ],
+    [
+      23,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      17,
+      1,
+      19,
+      0,
+      "STRING"
+    ],
+    [
+      25,
+      1,
+      1,
+      20,
+      0,
+      "STRING"
+    ],
+    [
+      26,
+      1,
+      2,
+      20,
+      1,
+      "STRING"
+    ],
+    [
+      27,
+      3,
+      0,
+      21,
+      0,
+      "CLIP"
+    ],
+    [
+      28,
+      20,
+      0,
+      21,
+      1,
+      "STRING"
+    ],
+    [
+      29,
+      21,
+      0,
+      22,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      30,
+      17,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      4,
+      0,
+      23,
+      1,
+      "VAE"
+    ],
+    [
+      32,
+      22,
+      0,
+      24,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      33,
+      23,
+      0,
+      24,
+      1,
+      "LATENT"
+    ],
+    [
+      34,
+      2,
+      0,
+      25,
+      0,
+      "MODEL"
+    ],
+    [
+      35,
+      24,
+      0,
+      25,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      36,
+      20,
+      1,
+      26,
+      0,
+      "INT"
+    ],
+    [
+      37,
+      26,
+      0,
+      30,
+      0,
+      "NOISE"
+    ],
+    [
+      38,
+      25,
+      0,
+      30,
+      1,
+      "GUIDER"
+    ],
+    [
+      39,
+      27,
+      0,
+      30,
+      2,
+      "SAMPLER"
+    ],
+    [
+      40,
+      28,
+      0,
+      30,
+      3,
+      "SIGMAS"
+    ],
+    [
+      41,
+      29,
+      0,
+      30,
+      4,
+      "LATENT"
+    ],
+    [
+      42,
+      30,
+      0,
+      31,
+      0,
+      "LATENT"
+    ],
+    [
+      43,
+      4,
+      0,
+      31,
+      1,
+      "VAE"
+    ],
+    [
+      44,
+      31,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      45,
+      1,
+      1,
+      32,
+      1,
+      "STRING"
+    ],
+    [
+      46,
+      1,
+      2,
+      32,
+      2,
+      "STRING"
+    ],
+    [
+      47,
+      32,
+      0,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      48,
+      32,
+      1,
+      34,
+      0,
+      "STRING"
+    ],
+    [
+      49,
+      1,
+      1,
+      35,
+      0,
+      "STRING"
+    ],
+    [
+      50,
+      1,
+      2,
+      35,
+      1,
+      "STRING"
+    ],
+    [
+      51,
+      3,
+      0,
+      36,
+      0,
+      "CLIP"
+    ],
+    [
+      52,
+      35,
+      0,
+      36,
+      1,
+      "STRING"
+    ],
+    [
+      53,
+      36,
+      0,
+      37,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      54,
+      32,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      55,
+      4,
+      0,
+      38,
+      1,
+      "VAE"
+    ],
+    [
+      56,
+      37,
+      0,
+      39,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      38,
+      0,
+      39,
+      1,
+      "LATENT"
+    ],
+    [
+      58,
+      2,
+      0,
+      40,
+      0,
+      "MODEL"
+    ],
+    [
+      59,
+      39,
+      0,
+      40,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      60,
+      35,
+      1,
+      41,
+      0,
+      "INT"
+    ],
+    [
+      61,
+      41,
+      0,
+      45,
+      0,
+      "NOISE"
+    ],
+    [
+      62,
+      40,
+      0,
+      45,
+      1,
+      "GUIDER"
+    ],
+    [
+      63,
+      42,
+      0,
+      45,
+      2,
+      "SAMPLER"
+    ],
+    [
+      64,
+      43,
+      0,
+      45,
+      3,
+      "SIGMAS"
+    ],
+    [
+      65,
+      44,
+      0,
+      45,
+      4,
+      "LATENT"
+    ],
+    [
+      66,
+      45,
+      0,
+      46,
+      0,
+      "LATENT"
+    ],
+    [
+      67,
+      4,
+      0,
+      46,
+      1,
+      "VAE"
+    ],
+    [
+      68,
+      46,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      69,
+      1,
+      1,
+      47,
+      1,
+      "STRING"
+    ],
+    [
+      70,
+      1,
+      2,
+      47,
+      2,
+      "STRING"
+    ],
+    [
+      71,
+      47,
+      0,
+      48,
+      0,
+      "IMAGE"
+    ],
+    [
+      72,
+      47,
+      1,
+      49,
+      0,
+      "STRING"
+    ],
+    [
+      73,
+      1,
+      1,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      74,
+      1,
+      2,
+      50,
+      1,
+      "STRING"
+    ],
+    [
+      75,
+      3,
+      0,
+      51,
+      0,
+      "CLIP"
+    ],
+    [
+      76,
+      50,
+      0,
+      51,
+      1,
+      "STRING"
+    ],
+    [
+      77,
+      51,
+      0,
+      52,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      78,
+      47,
+      0,
+      53,
+      0,
+      "IMAGE"
+    ],
+    [
+      79,
+      4,
+      0,
+      53,
+      1,
+      "VAE"
+    ],
+    [
+      80,
+      52,
+      0,
+      54,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      81,
+      53,
+      0,
+      54,
+      1,
+      "LATENT"
+    ],
+    [
+      82,
+      2,
+      0,
+      55,
+      0,
+      "MODEL"
+    ],
+    [
+      83,
+      54,
+      0,
+      55,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      84,
+      50,
+      1,
+      56,
+      0,
+      "INT"
+    ],
+    [
+      85,
+      56,
+      0,
+      60,
+      0,
+      "NOISE"
+    ],
+    [
+      86,
+      55,
+      0,
+      60,
+      1,
+      "GUIDER"
+    ],
+    [
+      87,
+      57,
+      0,
+      60,
+      2,
+      "SAMPLER"
+    ],
+    [
+      88,
+      58,
+      0,
+      60,
+      3,
+      "SIGMAS"
+    ],
+    [
+      89,
+      59,
+      0,
+      60,
+      4,
+      "LATENT"
+    ],
+    [
+      90,
+      60,
+      0,
+      61,
+      0,
+      "LATENT"
+    ],
+    [
+      91,
+      4,
+      0,
+      61,
+      1,
+      "VAE"
+    ],
+    [
+      92,
+      61,
+      0,
+      62,
+      0,
+      "IMAGE"
+    ],
+    [
+      93,
+      1,
+      1,
+      62,
+      1,
+      "STRING"
+    ],
+    [
+      94,
+      1,
+      2,
+      62,
+      2,
+      "STRING"
+    ],
+    [
+      95,
+      62,
+      0,
+      63,
+      0,
+      "IMAGE"
+    ],
+    [
+      96,
+      62,
+      1,
+      64,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": []
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        120,
+        80
+      ]
+    }
+  },
+  "version": 0.4
+}

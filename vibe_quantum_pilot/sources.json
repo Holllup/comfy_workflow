@@ -1,0 +1,26 @@
+{
+  "checked_on": "2026-10-14",
+  "sources": [
+    {
+      "title": "Double-slit experiment — Hitachi Quantum Measurement",
+      "url": "https://www.hitachi.com/rd/research/materials/quantum/doubleslit/index.html",
+      "supports": "单个电子的探测事件累积后可以呈现干涉条纹。",
+      "distinction": "日立介绍的实验使用电子双棱镜；本片装置为教学用简化双缝，不是该实验装置的复刻。"
+    },
+    {
+      "title": "Quantum information — IBM Quantum Learning",
+      "url": "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/quantum-information",
+      "supports": "Born 规则通过振幅的绝对值平方给出测量结果的概率。"
+    }
+  ],
+  "simulation": {
+    "type": "对称、相干、远场双缝的一维简化干涉分布",
+    "domain": "u ∈ [-1,1]，探测屏的无量纲横向位置",
+    "unnormalized_density": "[sin(1.1πu)/(1.1πu)]² × cos²(5πu)，u=0 处取连续极限",
+    "normalization": "在展示窗口 [-1,1] 内归一化；纵向位置均匀抽样，仅作示意。",
+    "sampling": "固定种子 613；数值 CDF 反演；最多 12000 个事件。",
+    "timing": "累积段压缩时间，单次演示段放慢时间；发射与探测的 0.45 秒间隔是动画编排，不是物理飞行时间。",
+    "limitations": "不展示确定的狭缝后轨迹，不演示路径探测，不借此证明任何量子诠释或宇宙决定论结论。"
+  },
+  "assets": "所有图形由本项目代码绘制；使用本机系统字体。没有复制参考视频画面，没有外部音乐或音效。"
+}

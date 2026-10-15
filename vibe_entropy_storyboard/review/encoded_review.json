@@ -1,0 +1,275 @@
+{
+  "encoded_frames_visually_sampled": [
+    0,
+    90,
+    180,
+    270,
+    360,
+    450,
+    540,
+    630,
+    720,
+    810,
+    900,
+    990,
+    1080,
+    1170,
+    1260,
+    1350,
+    1440,
+    1530,
+    1620,
+    1710,
+    1770,
+    1800,
+    1890,
+    1950,
+    1980,
+    2070,
+    2160,
+    2250,
+    2340,
+    2430,
+    2520,
+    2610,
+    2700,
+    2790,
+    2880,
+    2970,
+    3060,
+    3150,
+    3240,
+    3330,
+    3420,
+    3510,
+    3600,
+    3690,
+    3780,
+    3870,
+    3960,
+    4050,
+    4140,
+    4230,
+    4320,
+    4410,
+    4499
+  ],
+  "source_comparison": [
+    {
+      "frame": 0,
+      "rgb_mean_absolute_error": 2.086
+    },
+    {
+      "frame": 90,
+      "rgb_mean_absolute_error": 2.0985
+    },
+    {
+      "frame": 180,
+      "rgb_mean_absolute_error": 2.0901
+    },
+    {
+      "frame": 270,
+      "rgb_mean_absolute_error": 2.0872
+    },
+    {
+      "frame": 360,
+      "rgb_mean_absolute_error": 2.0755
+    },
+    {
+      "frame": 450,
+      "rgb_mean_absolute_error": 2.0759
+    },
+    {
+      "frame": 540,
+      "rgb_mean_absolute_error": 2.0868
+    },
+    {
+      "frame": 630,
+      "rgb_mean_absolute_error": 2.0924
+    },
+    {
+      "frame": 720,
+      "rgb_mean_absolute_error": 2.1007
+    },
+    {
+      "frame": 810,
+      "rgb_mean_absolute_error": 2.1105
+    },
+    {
+      "frame": 900,
+      "rgb_mean_absolute_error": 2.0874
+    },
+    {
+      "frame": 990,
+      "rgb_mean_absolute_error": 2.077
+    },
+    {
+      "frame": 1080,
+      "rgb_mean_absolute_error": 2.0802
+    },
+    {
+      "frame": 1170,
+      "rgb_mean_absolute_error": 2.1011
+    },
+    {
+      "frame": 1260,
+      "rgb_mean_absolute_error": 2.1009
+    },
+    {
+      "frame": 1350,
+      "rgb_mean_absolute_error": 2.1059
+    },
+    {
+      "frame": 1440,
+      "rgb_mean_absolute_error": 2.1074
+    },
+    {
+      "frame": 1530,
+      "rgb_mean_absolute_error": 2.1236
+    },
+    {
+      "frame": 1620,
+      "rgb_mean_absolute_error": 2.1198
+    },
+    {
+      "frame": 1710,
+      "rgb_mean_absolute_error": 2.1264
+    },
+    {
+      "frame": 1770,
+      "rgb_mean_absolute_error": 2.1306
+    },
+    {
+      "frame": 1800,
+      "rgb_mean_absolute_error": 2.1922
+    },
+    {
+      "frame": 1890,
+      "rgb_mean_absolute_error": 2.255
+    },
+    {
+      "frame": 1950,
+      "rgb_mean_absolute_error": 2.2734
+    },
+    {
+      "frame": 1980,
+      "rgb_mean_absolute_error": 2.2734
+    },
+    {
+      "frame": 2070,
+      "rgb_mean_absolute_error": 2.2536
+    },
+    {
+      "frame": 2160,
+      "rgb_mean_absolute_error": 2.291
+    },
+    {
+      "frame": 2250,
+      "rgb_mean_absolute_error": 2.256
+    },
+    {
+      "frame": 2340,
+      "rgb_mean_absolute_error": 2.2868
+    },
+    {
+      "frame": 2430,
+      "rgb_mean_absolute_error": 2.2872
+    },
+    {
+      "frame": 2520,
+      "rgb_mean_absolute_error": 2.0952
+    },
+    {
+      "frame": 2610,
+      "rgb_mean_absolute_error": 2.0913
+    },
+    {
+      "frame": 2700,
+      "rgb_mean_absolute_error": 2.1078
+    },
+    {
+      "frame": 2790,
+      "rgb_mean_absolute_error": 2.1019
+    },
+    {
+      "frame": 2880,
+      "rgb_mean_absolute_error": 2.0417
+    },
+    {
+      "frame": 2970,
+      "rgb_mean_absolute_error": 2.0974
+    },
+    {
+      "frame": 3060,
+      "rgb_mean_absolute_error": 2.0921
+    },
+    {
+      "frame": 3150,
+      "rgb_mean_absolute_error": 2.092
+    },
+    {
+      "frame": 3240,
+      "rgb_mean_absolute_error": 2.0926
+    },
+    {
+      "frame": 3330,
+      "rgb_mean_absolute_error": 2.1034
+    },
+    {
+      "frame": 3420,
+      "rgb_mean_absolute_error": 2.1163
+    },
+    {
+      "frame": 3510,
+      "rgb_mean_absolute_error": 2.1151
+    },
+    {
+      "frame": 3600,
+      "rgb_mean_absolute_error": 2.1259
+    },
+    {
+      "frame": 3690,
+      "rgb_mean_absolute_error": 2.1384
+    },
+    {
+      "frame": 3780,
+      "rgb_mean_absolute_error": 2.1247
+    },
+    {
+      "frame": 3870,
+      "rgb_mean_absolute_error": 2.1306
+    },
+    {
+      "frame": 3960,
+      "rgb_mean_absolute_error": 2.1325
+    },
+    {
+      "frame": 4050,
+      "rgb_mean_absolute_error": 2.0869
+    },
+    {
+      "frame": 4140,
+      "rgb_mean_absolute_error": 2.0919
+    },
+    {
+      "frame": 4230,
+      "rgb_mean_absolute_error": 2.0919
+    },
+    {
+      "frame": 4320,
+      "rgb_mean_absolute_error": 2.1092
+    },
+    {
+      "frame": 4410,
+      "rgb_mean_absolute_error": 2.108
+    },
+    {
+      "frame": 4499,
+      "rgb_mean_absolute_error": 2.1094
+    }
+  ],
+  "max_sample_mean_absolute_error": 2.291,
+  "note": "抽样图直接取自最终MP4；误差比较使用缩小后的RGB画面，仅辅助检查编码结果是否与源帧一致。",
+  "video_sha256": "d6cce7c41821ede3f184c2d68ff8beaffea77b31ad60ee56aeb1e18ec34ab9ce",
+  "color_metadata_note": "最终色彩标记补齐前后，全部解码图像哈希一致；本抽帧比较仍对应相同的画面内容。"
+}

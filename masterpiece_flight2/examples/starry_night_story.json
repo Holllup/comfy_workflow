@@ -1,0 +1,230 @@
+{
+  "schema_version": 2,
+  "artwork": {
+    "title": "The Starry Night",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "place": "Saint-Rémy-de-Provence, France"
+  },
+  "source_links": [
+    {
+      "label": "MoMA collection record",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    {
+      "label": "Wikimedia Commons image file",
+      "url": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+    }
+  ],
+  "verified_context": [
+    "The painting was inspired by the view from the artist's room at Saint-Paul-de-Mausole in Saint-Rémy.",
+    "The village in the painting could not be seen from the artist's window."
+  ],
+  "imagined_context": [
+    "The village streets, small rural figures, blue-hill flight route, church orbit and star-halo passage are invented for this film. They are not a documented 1889 route."
+  ],
+  "visual_anchors": [
+    "left-side dark cypress",
+    "low village and recognizable church steeple below a blue ridge",
+    "central cobalt spiral, white-yellow circular star halos and upper-right moon"
+  ],
+  "keyframes": [
+    {
+      "id": 1,
+      "beat_zh": "低空村庄街道，建立飞行方向与时代氛围。",
+      "camera_position": "eye-level to low drone height over a narrow painted village lane",
+      "camera_direction": "forward toward a tiny distant church steeple and blue ridge",
+      "camera_path_from_next_frame": "reverse down from the hill and rooftops into this street",
+      "shared_landmarks": [
+        "same distant church",
+        "same blue ridge",
+        "warm yellow village windows"
+      ],
+      "transition_object": "street vanishing point",
+      "transition_object_screen_position": "near center, with blue hill small beyond roofs",
+      "entry_state": "low unobstructed lane",
+      "exit_state": "beginning of a climb above roofs",
+      "end_frame_constraints": [
+        "clear forward vanishing line",
+        "three to six tiny rural figures without readable faces"
+      ],
+      "must_preserve": [
+        "The Starry Night cobalt and warm yellow palette",
+        "thick visible oil brushstrokes",
+        "same village, ridge and church geography"
+      ],
+      "must_not_generate": [
+        "modern vehicles",
+        "visible drone",
+        "large faces",
+        "text or logos",
+        "photorealism",
+        "unrelated modern landmarks"
+      ],
+      "image_prompt_en": "An imagined late-19th-century village street inside the oil-painted world. Cobalt houses on both sides, warm yellow windows, three to six tiny people, no face closeups. Rooftops lead toward a tiny church and the same distant blue ridge. Wide horizontal painted composition."
+    },
+    {
+      "id": 2,
+      "beat_zh": "第一镜蓝色山体遮挡后的自然出口。",
+      "camera_position": "very close to the near side of the blue mountain shoulder, just above village roofs",
+      "camera_direction": "along the hill toward the village on its far side",
+      "camera_path_from_next_frame": "reverse away from the church along the same blue hill until the hill obscures the view",
+      "shared_landmarks": [
+        "same cobalt mountain shoulder",
+        "same village roof pattern",
+        "same visible church steeple"
+      ],
+      "transition_object": "blue mountain shoulder",
+      "transition_object_screen_position": "hill covers about 35%–55% of image, mostly right and center; village and church visible at left",
+      "entry_state": "emerging from shot 1 hill occlusion",
+      "exit_state": "hill starts to clear so the church is reachable",
+      "end_frame_constraints": [
+        "retain large hill foreground",
+        "church recognizable and unobstructed"
+      ],
+      "must_preserve": [
+        "The Starry Night cobalt and warm yellow palette",
+        "thick visible oil brushstrokes",
+        "same village, ridge and church geography"
+      ],
+      "must_not_generate": [
+        "modern vehicles",
+        "visible drone",
+        "large faces",
+        "text or logos",
+        "photorealism",
+        "unrelated modern landmarks"
+      ],
+      "image_prompt_en": "Interface frame: the same blue hill is still a large foreground occluder, not a clean panorama. Its far side reveals only part of the painted village; the church steeple is recognizable and can be approached next."
+    },
+    {
+      "id": 3,
+      "beat_zh": "从同侧抵达教堂尖塔近景，塔尖可与一颗星晕对齐。",
+      "camera_position": "close beside the church steeple on the same approach side as shot 2",
+      "camera_direction": "past the spire toward a white-yellow halo star above it",
+      "camera_path_from_next_frame": "reverse downward and backward from the selected star halo to the steeple side",
+      "shared_landmarks": [
+        "strong steeple foreground",
+        "roofs behind",
+        "same ridge",
+        "one selected star above spire"
+      ],
+      "transition_object": "steeple silhouette and selected star halo",
+      "transition_object_screen_position": "spire near center-right in strong foreground; chosen white-yellow halo visibly above spire tip",
+      "entry_state": "spire already close on same side as shot 2",
+      "exit_state": "clear upward path from tip into halo",
+      "end_frame_constraints": [
+        "spire remains recognizable",
+        "village and ridge visible behind"
+      ],
+      "must_preserve": [
+        "The Starry Night cobalt and warm yellow palette",
+        "thick visible oil brushstrokes",
+        "same village, ridge and church geography"
+      ],
+      "must_not_generate": [
+        "modern vehicles",
+        "visible drone",
+        "large faces",
+        "text or logos",
+        "photorealism",
+        "unrelated modern landmarks"
+      ],
+      "image_prompt_en": "The painted church steeple is near the camera from the same side as the previous approach. Roofs and ridge remain behind it. One bright circular white-yellow star halo sits above its tip, ready for a short camera rise and alignment. It is a painted star, not a portal."
+    },
+    {
+      "id": 4,
+      "beat_zh": "刚从同一星晕穿出，边缘仍受光晕遮挡。",
+      "camera_position": "a short retreat and slight lateral correction before the exact final painting view",
+      "camera_direction": "toward final composition: cypress left, village low, spiral center, moon upper right",
+      "camera_path_from_next_frame": "reverse forward into the same halo from the exact original painting viewpoint",
+      "shared_landmarks": [
+        "left cypress",
+        "low village and church",
+        "blue ridge",
+        "central spiral",
+        "upper-right moon"
+      ],
+      "transition_object": "same circular painted star halo as shot 3",
+      "transition_object_screen_position": "large white-yellow halo arc still occludes one frame edge; the rest reveals near-final layout",
+      "entry_state": "emerging from halo with shared curved edge",
+      "exit_state": "only a small retreat and lateral correction remain",
+      "end_frame_constraints": [
+        "not a clean copy of the painting",
+        "all major landmarks in approximately correct screen regions"
+      ],
+      "must_preserve": [
+        "The Starry Night cobalt and warm yellow palette",
+        "thick visible oil brushstrokes",
+        "same village, ridge and church geography"
+      ],
+      "must_not_generate": [
+        "modern vehicles",
+        "visible drone",
+        "large faces",
+        "text or logos",
+        "photorealism",
+        "unrelated modern landmarks"
+      ],
+      "image_prompt_en": "Just beyond the selected painted star halo. Its large curved white-yellow brushstroke rim still occupies one frame edge. Beyond it, the original arrangement begins to resolve: left cypress, village and church low, blue ridge, central spiral, moon upper right. Keep a little camera distance for the last shot; do not output the exact painting yet."
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "beat_zh": "街道低飞、抬升越屋顶、俯瞰村庄，主动冲向蓝色山肩。",
+      "start_state": "KF1: low street toward church and hill",
+      "camera_path": "0–35% low forward street flight; 35–65% climb smoothly over roofs; 65–80% overview village; 80–100% approach blue mountain shoulder",
+      "speed_profile": "brisk then rising, slow near hill",
+      "parallax": "near walls move fastest, roofs slower, distant church and ridge slowest",
+      "environment_motion": "tiny people move subtly and warm windows glow within thick blue paint",
+      "transition_approach": "blue hill progressively covers most of view from the same side as KF2",
+      "final_quarter_target_state": "the same blue mountain shoulder occupies much of the last view, with village beginning to appear beyond it",
+      "transition_type": "hill_occlusion",
+      "motion_prompt_en": "One continuous drone-like subjective flight in thick cobalt and yellow oil paint. No cut, modern object, visible drone, readable text or photorealism.",
+      "transition_zh": "蓝山肩近景遮挡，再从同一山肩另一侧显露。"
+    },
+    {
+      "id": 2,
+      "beat_zh": "沿山肩约 100～140 度弧线滑出，再俯瞰村庄并下降到尖塔。",
+      "start_state": "same blue shoulder still covers 35%–55%, village beginning to show",
+      "camera_path": "0–20% slide out from hill; 20–65% travel a 100–140 degree arc along shoulder, not a 360 orbit; 65–100% lock church and descend on one side",
+      "speed_profile": "steady lateral arc then smooth descent and ease-in",
+      "parallax": "hill slides quickly against slower village and ridge; steeple grows continuously",
+      "environment_motion": "painted sky and village lights move subtly without geography changes",
+      "transition_approach": "approach the same side of the spire shown in KF3 and preserve its outline",
+      "final_quarter_target_state": "spire is large, close and on the same approach side, with roofs and ridge behind",
+      "transition_type": "steeple_match",
+      "motion_prompt_en": "Keep one uninterrupted camera move, stable steeple geometry and the original village layout. No architecture melting or teleportation.",
+      "transition_zh": "尖塔轮廓匹配，保持同侧抵达。"
+    },
+    {
+      "id": 3,
+      "beat_zh": "围绕尖塔小弧线运动，沿塔尖对齐星晕并飞入。",
+      "start_state": "close to same side of steeple, roofs and ridge behind",
+      "camera_path": "0–55% limited arc beside spire; 55–75% rise along tip and align to one painted star halo; 75–100% fly straight into that halo",
+      "speed_profile": "controlled orbit, short rise, steady entry",
+      "parallax": "spire shifts against slower roofs, village and ridge; star stays fixed in sky",
+      "environment_motion": "white-yellow circular brushstrokes shimmer like paint, not digital effects",
+      "transition_approach": "the chosen star halo fills frame; next shot exits through same curved edge",
+      "final_quarter_target_state": "painted halo dominates as a natural occluder and KF4 retains its rim",
+      "transition_type": "radial_star_halo",
+      "motion_prompt_en": "A single poetic camera move through the painting's own circular star brushstrokes. No science-fiction portal, cut, text or distorted church.",
+      "transition_zh": "以原画星晕笔触遮挡并从同一笔触中穿出。"
+    },
+    {
+      "id": 4,
+      "beat_zh": "从星晕中飞出，建立原画空间关系，减速抵达原画。",
+      "start_state": "same oversized halo arc touches edge at opening",
+      "camera_path": "0–20% emerge; 20–70% establish left cypress, low village and steeple, ridge, central spiral and upper-right moon; 70–100% slow retreat and tiny lateral correction",
+      "speed_profile": "moderate exit, progressively slower, nearly still at end",
+      "parallax": "near halo edge recedes fastest while cypress, village and sky settle",
+      "environment_motion": "painterly sky remains gently alive until the original painting freeze",
+      "transition_approach": "align with the canonical uploaded painting; exact original follows for 24 frames",
+      "final_quarter_target_state": "match the original viewpoint and stop without changing its landmarks",
+      "transition_type": "final_artwork_alignment",
+      "motion_prompt_en": "The painted world resolves into The Starry Night. Preserve every major original shape and finish on supplied last-frame painting. No extra object, text or cut.",
+      "transition_zh": "细微后退横移，对齐同一原画后进入 24 帧静止。"
+    }
+  ]
+}

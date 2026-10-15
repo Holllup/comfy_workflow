@@ -1,0 +1,4 @@
+interface:
+  display_name: "小猫电影导演与生成提示词"
+  short_description: "把定稿剧情转成电影式镜头、人物调度和声画设计，交付逐镜首帧图与视频提示词"
+  default_prompt: "使用 $cat-vlog-director-prompts，把我的定稿剧情转成写实横屏的导演方案，先给关键镜头的完整首帧图与即梦视频提示词样稿。"

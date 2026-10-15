@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>上帝会不会掷骰子？ · 视觉样片</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d17;color:#edf3f8;font-family:"Heiti SC","STHeiti",sans-serif}
+    body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:28px}
+    .shell{width:min(1280px,100%)}.film{position:relative;overflow:hidden;aspect-ratio:16/9;border:1px solid #25313c;box-shadow:0 24px 100px #0008}
+    canvas{display:block;width:100%;height:100%;aspect-ratio:16/9}
+    .controls{display:flex;gap:18px;align-items:center;padding:20px 0;flex-wrap:wrap}button{background:#15232d;color:#e4f5fc;border:1px solid #314650;border-radius:30px;padding:11px 22px;cursor:pointer;font:inherit}
+    button:hover{background:#254352}button:focus-visible,input:focus-visible{outline:2px solid #65dbed;outline-offset:4px}
+    input{accent-color:#65dbed;flex:1;min-width:160px;cursor:pointer}.time{font:14px monospace;color:#a6beca;min-width:130px}.hint{font-size:13px;color:#78909f;line-height:1.8;margin:0}
+    .chapter-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}.chapter-nav button{font-size:13px;padding:7px 12px;background:transparent;border-color:#22333e;color:#9eb5c4}
+    .capture{padding:0;display:block;overflow:hidden;width:1920px;height:1080px;min-height:0}.capture .shell{width:1920px}.capture .film{width:1920px;height:1080px;border:0;box-shadow:none}.capture .controls,.capture .hint,.capture .chapter-nav{display:none}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="film"><canvas id="film" width="1920" height="1080" aria-label="双缝实验无声知识动画"></canvas></div>
+    <div class="controls"><button id="play" aria-label="播放或暂停">播放</button><input id="seek" aria-label="视频位置" type="range" min="0" max="1649" value="0" step="1"><output id="time" class="time">00:00.00 / 00:55</output><button id="restart">从头播放</button></div>
+    <nav class="chapter-nav" aria-label="跳转章节"></nav>
+    <p class="hint">55 秒无声样片 · 空格播放 / 暂停 · 左右方向键逐帧 · 拖动进度条可检查任意时刻。画面为原理示意。</p>
+  </main>
+  <script>if(new URLSearchParams(location.search).has('capture'))document.body.classList.add('capture');</script>
+  <script src="model.js"></script>
+  <script src="film.js"></script>
+</body>
+</html>

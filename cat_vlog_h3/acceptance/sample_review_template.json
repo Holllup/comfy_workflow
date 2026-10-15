@@ -1,0 +1,61 @@
+{
+  "model_quality": "pending",
+  "gpu_test_run": false,
+  "cases": [
+    {
+      "shot_id": 1,
+      "output_file": "",
+      "seconds_spent": null,
+      "peak_vram_mb": null,
+      "status": "pending",
+      "criteria": {
+        "identity": "pending",
+        "paws_and_body": "pending",
+        "composition": "pending",
+        "expression": "pending",
+        "closed_mouth": "pending",
+        "motion_order": "pending",
+        "static_camera": "pending",
+        "sound": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "shot_id": 4,
+      "output_file": "",
+      "seconds_spent": null,
+      "peak_vram_mb": null,
+      "status": "pending",
+      "criteria": {
+        "identity": "pending",
+        "paws_and_body": "pending",
+        "composition": "pending",
+        "expression": "pending",
+        "closed_mouth": "pending",
+        "motion_order": "pending",
+        "static_camera": "pending",
+        "sound": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "shot_id": 7,
+      "output_file": "",
+      "seconds_spent": null,
+      "peak_vram_mb": null,
+      "status": "pending",
+      "criteria": {
+        "identity": "pending",
+        "paws_and_body": "pending",
+        "composition": "pending",
+        "expression": "pending",
+        "closed_mouth": "pending",
+        "motion_order": "pending",
+        "static_camera": "pending",
+        "sound": "pending"
+      },
+      "notes": ""
+    }
+  ],
+  "wardrobe_reference_accuracy": "not_tested_no_actual_wardrobe_asset"
+}

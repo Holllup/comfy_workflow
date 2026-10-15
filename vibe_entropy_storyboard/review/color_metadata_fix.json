@@ -1,0 +1,9 @@
+{
+  "operation": "lossless H.264 color metadata correction",
+  "decoded_pixels_unchanged": true,
+  "before_decoded_hash": "SHA256=2dd73553b67c4472375ad4bb2b43a5f6b2face125442bb3974303b884298970f",
+  "after_decoded_hash": "SHA256=2dd73553b67c4472375ad4bb2b43a5f6b2face125442bb3974303b884298970f",
+  "color_space": "bt709",
+  "color_transfer": "bt709",
+  "color_primaries": "bt709"
+}

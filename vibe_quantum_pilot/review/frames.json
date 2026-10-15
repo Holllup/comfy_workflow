@@ -1,0 +1,362 @@
+[
+  {
+    "frame": 0,
+    "seconds": 0.0,
+    "file": "frame_0000.png"
+  },
+  {
+    "frame": 30,
+    "seconds": 1.0,
+    "file": "frame_0030.png"
+  },
+  {
+    "frame": 60,
+    "seconds": 2.0,
+    "file": "frame_0060.png"
+  },
+  {
+    "frame": 90,
+    "seconds": 3.0,
+    "file": "frame_0090.png"
+  },
+  {
+    "frame": 120,
+    "seconds": 4.0,
+    "file": "frame_0120.png"
+  },
+  {
+    "frame": 150,
+    "seconds": 5.0,
+    "file": "frame_0150.png"
+  },
+  {
+    "frame": 180,
+    "seconds": 6.0,
+    "file": "frame_0180.png"
+  },
+  {
+    "frame": 209,
+    "seconds": 6.966666666666667,
+    "file": "frame_0209.png"
+  },
+  {
+    "frame": 210,
+    "seconds": 7.0,
+    "file": "frame_0210.png"
+  },
+  {
+    "frame": 211,
+    "seconds": 7.033333333333333,
+    "file": "frame_0211.png"
+  },
+  {
+    "frame": 240,
+    "seconds": 8.0,
+    "file": "frame_0240.png"
+  },
+  {
+    "frame": 270,
+    "seconds": 9.0,
+    "file": "frame_0270.png"
+  },
+  {
+    "frame": 300,
+    "seconds": 10.0,
+    "file": "frame_0300.png"
+  },
+  {
+    "frame": 330,
+    "seconds": 11.0,
+    "file": "frame_0330.png"
+  },
+  {
+    "frame": 360,
+    "seconds": 12.0,
+    "file": "frame_0360.png"
+  },
+  {
+    "frame": 390,
+    "seconds": 13.0,
+    "file": "frame_0390.png"
+  },
+  {
+    "frame": 420,
+    "seconds": 14.0,
+    "file": "frame_0420.png"
+  },
+  {
+    "frame": 449,
+    "seconds": 14.966666666666667,
+    "file": "frame_0449.png"
+  },
+  {
+    "frame": 450,
+    "seconds": 15.0,
+    "file": "frame_0450.png"
+  },
+  {
+    "frame": 451,
+    "seconds": 15.033333333333333,
+    "file": "frame_0451.png"
+  },
+  {
+    "frame": 480,
+    "seconds": 16.0,
+    "file": "frame_0480.png"
+  },
+  {
+    "frame": 510,
+    "seconds": 17.0,
+    "file": "frame_0510.png"
+  },
+  {
+    "frame": 540,
+    "seconds": 18.0,
+    "file": "frame_0540.png"
+  },
+  {
+    "frame": 570,
+    "seconds": 19.0,
+    "file": "frame_0570.png"
+  },
+  {
+    "frame": 600,
+    "seconds": 20.0,
+    "file": "frame_0600.png"
+  },
+  {
+    "frame": 630,
+    "seconds": 21.0,
+    "file": "frame_0630.png"
+  },
+  {
+    "frame": 660,
+    "seconds": 22.0,
+    "file": "frame_0660.png"
+  },
+  {
+    "frame": 690,
+    "seconds": 23.0,
+    "file": "frame_0690.png"
+  },
+  {
+    "frame": 720,
+    "seconds": 24.0,
+    "file": "frame_0720.png"
+  },
+  {
+    "frame": 749,
+    "seconds": 24.966666666666665,
+    "file": "frame_0749.png"
+  },
+  {
+    "frame": 750,
+    "seconds": 25.0,
+    "file": "frame_0750.png"
+  },
+  {
+    "frame": 751,
+    "seconds": 25.033333333333335,
+    "file": "frame_0751.png"
+  },
+  {
+    "frame": 779,
+    "seconds": 25.966666666666665,
+    "file": "frame_0779.png"
+  },
+  {
+    "frame": 780,
+    "seconds": 26.0,
+    "file": "frame_0780.png"
+  },
+  {
+    "frame": 810,
+    "seconds": 27.0,
+    "file": "frame_0810.png"
+  },
+  {
+    "frame": 824,
+    "seconds": 27.466666666666665,
+    "file": "frame_0824.png"
+  },
+  {
+    "frame": 840,
+    "seconds": 28.0,
+    "file": "frame_0840.png"
+  },
+  {
+    "frame": 869,
+    "seconds": 28.966666666666665,
+    "file": "frame_0869.png"
+  },
+  {
+    "frame": 870,
+    "seconds": 29.0,
+    "file": "frame_0870.png"
+  },
+  {
+    "frame": 900,
+    "seconds": 30.0,
+    "file": "frame_0900.png"
+  },
+  {
+    "frame": 914,
+    "seconds": 30.466666666666665,
+    "file": "frame_0914.png"
+  },
+  {
+    "frame": 930,
+    "seconds": 31.0,
+    "file": "frame_0930.png"
+  },
+  {
+    "frame": 959,
+    "seconds": 31.966666666666665,
+    "file": "frame_0959.png"
+  },
+  {
+    "frame": 960,
+    "seconds": 32.0,
+    "file": "frame_0960.png"
+  },
+  {
+    "frame": 990,
+    "seconds": 33.0,
+    "file": "frame_0990.png"
+  },
+  {
+    "frame": 1004,
+    "seconds": 33.46666666666667,
+    "file": "frame_1004.png"
+  },
+  {
+    "frame": 1019,
+    "seconds": 33.96666666666667,
+    "file": "frame_1019.png"
+  },
+  {
+    "frame": 1020,
+    "seconds": 34.0,
+    "file": "frame_1020.png"
+  },
+  {
+    "frame": 1021,
+    "seconds": 34.03333333333333,
+    "file": "frame_1021.png"
+  },
+  {
+    "frame": 1050,
+    "seconds": 35.0,
+    "file": "frame_1050.png"
+  },
+  {
+    "frame": 1080,
+    "seconds": 36.0,
+    "file": "frame_1080.png"
+  },
+  {
+    "frame": 1110,
+    "seconds": 37.0,
+    "file": "frame_1110.png"
+  },
+  {
+    "frame": 1140,
+    "seconds": 38.0,
+    "file": "frame_1140.png"
+  },
+  {
+    "frame": 1170,
+    "seconds": 39.0,
+    "file": "frame_1170.png"
+  },
+  {
+    "frame": 1200,
+    "seconds": 40.0,
+    "file": "frame_1200.png"
+  },
+  {
+    "frame": 1230,
+    "seconds": 41.0,
+    "file": "frame_1230.png"
+  },
+  {
+    "frame": 1260,
+    "seconds": 42.0,
+    "file": "frame_1260.png"
+  },
+  {
+    "frame": 1290,
+    "seconds": 43.0,
+    "file": "frame_1290.png"
+  },
+  {
+    "frame": 1320,
+    "seconds": 44.0,
+    "file": "frame_1320.png"
+  },
+  {
+    "frame": 1350,
+    "seconds": 45.0,
+    "file": "frame_1350.png"
+  },
+  {
+    "frame": 1379,
+    "seconds": 45.96666666666667,
+    "file": "frame_1379.png"
+  },
+  {
+    "frame": 1380,
+    "seconds": 46.0,
+    "file": "frame_1380.png"
+  },
+  {
+    "frame": 1381,
+    "seconds": 46.03333333333333,
+    "file": "frame_1381.png"
+  },
+  {
+    "frame": 1410,
+    "seconds": 47.0,
+    "file": "frame_1410.png"
+  },
+  {
+    "frame": 1440,
+    "seconds": 48.0,
+    "file": "frame_1440.png"
+  },
+  {
+    "frame": 1470,
+    "seconds": 49.0,
+    "file": "frame_1470.png"
+  },
+  {
+    "frame": 1500,
+    "seconds": 50.0,
+    "file": "frame_1500.png"
+  },
+  {
+    "frame": 1530,
+    "seconds": 51.0,
+    "file": "frame_1530.png"
+  },
+  {
+    "frame": 1560,
+    "seconds": 52.0,
+    "file": "frame_1560.png"
+  },
+  {
+    "frame": 1590,
+    "seconds": 53.0,
+    "file": "frame_1590.png"
+  },
+  {
+    "frame": 1620,
+    "seconds": 54.0,
+    "file": "frame_1620.png"
+  },
+  {
+    "frame": 1649,
+    "seconds": 54.96666666666667,
+    "file": "frame_1649.png"
+  }
+]

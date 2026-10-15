@@ -1,0 +1,123 @@
+{
+  "duration_s": 150,
+  "frames_decoded": 4500,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "color_space": "bt709",
+  "color_transfer": "bt709",
+  "color_primaries": "bt709",
+  "audio_streams": 0,
+  "blank_frames": [],
+  "mean_luminance_range": [
+    20.485,
+    24.597
+  ],
+  "largest_frame_changes": [
+    {
+      "frame": 1760,
+      "seconds": 58.667,
+      "mean_absolute_difference": 1.33101
+    },
+    {
+      "frame": 1759,
+      "seconds": 58.633,
+      "mean_absolute_difference": 1.32776
+    },
+    {
+      "frame": 1757,
+      "seconds": 58.567,
+      "mean_absolute_difference": 1.32741
+    },
+    {
+      "frame": 1761,
+      "seconds": 58.7,
+      "mean_absolute_difference": 1.32102
+    },
+    {
+      "frame": 1758,
+      "seconds": 58.6,
+      "mean_absolute_difference": 1.29905
+    },
+    {
+      "frame": 1756,
+      "seconds": 58.533,
+      "mean_absolute_difference": 1.28542
+    },
+    {
+      "frame": 1762,
+      "seconds": 58.733,
+      "mean_absolute_difference": 1.14873
+    },
+    {
+      "frame": 1763,
+      "seconds": 58.767,
+      "mean_absolute_difference": 1.14568
+    },
+    {
+      "frame": 1764,
+      "seconds": 58.8,
+      "mean_absolute_difference": 1.14366
+    },
+    {
+      "frame": 1767,
+      "seconds": 58.9,
+      "mean_absolute_difference": 1.13769
+    },
+    {
+      "frame": 1765,
+      "seconds": 58.833,
+      "mean_absolute_difference": 1.13714
+    },
+    {
+      "frame": 1766,
+      "seconds": 58.867,
+      "mean_absolute_difference": 1.13104
+    },
+    {
+      "frame": 1774,
+      "seconds": 59.133,
+      "mean_absolute_difference": 1.12991
+    },
+    {
+      "frame": 1768,
+      "seconds": 58.933,
+      "mean_absolute_difference": 1.11444
+    },
+    {
+      "frame": 1770,
+      "seconds": 59.0,
+      "mean_absolute_difference": 1.10653
+    },
+    {
+      "frame": 1755,
+      "seconds": 58.5,
+      "mean_absolute_difference": 1.10651
+    },
+    {
+      "frame": 1769,
+      "seconds": 58.967,
+      "mean_absolute_difference": 1.10422
+    },
+    {
+      "frame": 1781,
+      "seconds": 59.367,
+      "mean_absolute_difference": 1.08214
+    },
+    {
+      "frame": 1786,
+      "seconds": 59.533,
+      "mean_absolute_difference": 1.08207
+    },
+    {
+      "frame": 1771,
+      "seconds": 59.033,
+      "mean_absolute_difference": 1.05658
+    }
+  ],
+  "longest_nearly_static_run_s": 6.6,
+  "video_sha256": "d6cce7c41821ede3f184c2d68ff8beaffea77b31ad60ee56aeb1e18ec34ab9ce",
+  "scope": "自动检查覆盖全部编码帧和文件规格。变化量是诊断指标，文字阅读停留不视为故障；视觉审查见 visual_review.md。"
+}

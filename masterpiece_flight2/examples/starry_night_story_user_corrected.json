@@ -1,0 +1,93 @@
+{
+  "artwork": {
+    "title": "The Starry Night",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "place": "Saint-Rémy-de-Provence, France"
+  },
+  "source_links": [
+    {
+      "label": "MoMA collection page: The Starry Night",
+      "url": "https://www.moma.org/collection/works/79802"
+    },
+    {
+      "label": "Van Gogh Letters: Letter 777",
+      "url": "https://vangoghletters.org/vg/letters/let777/letter.html"
+    },
+    {
+      "label": "Van Gogh Letters: Letter 783",
+      "url": "https://vangoghletters.org/vg/letters/let783/letter.html"
+    }
+  ],
+  "verified_context": [
+    "The artwork is The Starry Night by Vincent van Gogh, painted in 1889 and held by The Museum of Modern Art, New York.",
+    "MoMA states that the painting was inspired by the view from van Gogh's room at the asylum in Saint-Rémy while also being transformed through invention and memory.",
+    "The village in the painting is not treated by MoMA as a strict documentary record of Saint-Rémy and includes imaginative construction.",
+    "Van Gogh described a bright morning star seen from his window in letter 777; scholarly annotation identifies it as Venus.",
+    "Van Gogh discussed cypresses as powerful dark vertical forms in letter 783, supporting the cypress as a major visual anchor."
+  ],
+  "imagined_context": [
+    "This film invents a traversable nighttime village inside the painted world, including streets, houses, and villagers in period dress; these details are cinematic inventions rather than documented facts of the original scene.",
+    "The camera begins at human scale inside the village, then rises to an aerial view, skims a painted hill, circles back over the settlement, approaches the church steeple, and uses a star halo as a transition into the final approach.",
+    "The hill-surface transition treats Van Gogh's blue painted mountain shoulder as a close flying surface rather than a literal realistic landscape.",
+    "The church-steeple transition is invented for the film: the spire aligns with a glowing star halo, and the camera passes through that halo into the broader sky view before settling into the original composition."
+  ],
+  "visual_anchors": [
+    "The dark flame-like cypress mass on the left side of the composition",
+    "The slender church steeple rising from the village",
+    "The rolling blue hills and horizon line behind the village",
+    "The large central sky swirl made of curved blue and white brushstrokes",
+    "The crescent moon with a broad yellow halo in the upper right",
+    "Bright circular stars with visible halos",
+    "The clustered village rooftops and yellow-lit windows",
+    "Short directional oil-brush strokes, visible impasto, and a painted rather than photoreal surface"
+  ],
+  "keyframes": [
+    {
+      "id": 1,
+      "beat_zh": "第一段首帧：在村庄内部一条狭窄街道中低空穿梭，两侧是房屋、院墙和暖黄色窗光，少量村民在街上或门口，前方远处能看到教堂尖塔，头顶只露出一小片旋动夜空。",
+      "image_prompt_en": "Create a 16:9 silent cinematic keyframe in the oil-painted visual language of Vincent van Gogh's The Starry Night, with no text, no modern objects, and no visible drone. For this reverse keyframe generation step, Image A is the nearer-to-the-original previous keyframe and must be treated as the continuity guide for palette, direction, and landmarks; Image B is the original painting and must be treated as the style and landmark anchor. Move the camera much farther away from the original viewpoint and place it deep inside the imagined village at night, at low altitude in a narrow street. Show clustered village houses on both sides, painted in Van Gogh-like strokes, with blue-black walls, slanted roofs, and warm yellow window light. Include a few small villagers in late-19th-century rural clothing as tiny painted figures standing or walking along the street or near doorways, integrated naturally into the oil-painted world. The church steeple should be visible ahead in the distance above the rooftops, acting as a directional landmark. Only a limited slice of the swirling night sky should be visible above, so the scene feels embedded within the village rather than already aerial. The composition must imply forward movement down the lane and a future upward lift: keep the street opening forward, the roofs framing the path, and the sky beginning to widen above. Preserve strong painterly brush texture, blue nocturnal palette, and no photorealism."
+    },
+    {
+      "id": 2,
+      "beat_zh": "第二段首帧：镜头已经从村中升起并贴近山头蓝色坡面，几乎擦着山脊飞行；远处可见被俯瞰的整个村庄、教堂尖塔和上方的星空，像刚从山体转场后绕出来。",
+      "image_prompt_en": "Create a 16:9 silent cinematic keyframe in the oil-painted visual language of Vincent van Gogh's The Starry Night, with no text, no modern objects, and no visible drone. For this reverse keyframe generation step, Image A is the nearer-to-the-original previous keyframe and must be the main continuity source; Image B is the original painting and must stabilize the landmark arrangement and painterly style. Move the camera to an earlier stage of the journey and place it very close to a rounded blue hill shoulder, as if the viewer has just skimmed across the painted mountain surface after rising from the village. The near foreground should be dominated on one side by the same blue hill shoulder that obscured the previous shot's exit, covering about 35 to 55 percent of the frame with visible oil strokes and dark-blue contour bands. Leave the other side open enough to reveal the village and a reachable church steeple. Beyond that near slope, reveal an aerial overview of the village below: rooftops, yellow windows, and the church steeple clearly visible, with the larger swirling night sky above. The camera should feel mid-transition between hill contact and open overlook, as though it has just emerged around the mountain's contour and is about to arc outward over the village. Keep the orientation continuous and readable: village below, hill close to camera, church as a target, stars and moon above. Preserve Van Gogh-like brushwork and avoid realistic geology."
+    },
+    {
+      "id": 3,
+      "beat_zh": "第三段首帧：镜头已经逼近教堂并悬在尖塔旁，正在教堂周围盘旋；塔尖、屋脊和周围屋顶占据近景，村庄在下方铺开，背后是带星晕的夜空。",
+      "image_prompt_en": "Create a 16:9 silent cinematic keyframe in the oil-painted visual language of Vincent van Gogh's The Starry Night, with no text, no modern objects, and no visible drone. For this reverse keyframe generation step, Image A is the nearer-to-the-original previous keyframe and must guide composition continuity and direction of travel; Image B is the original painting and must anchor the steeple shape, village palette, and sky language. Move the camera earlier in the journey to a much closer position beside the church steeple. The steeple should be tall and near, with its pale painted surface and sharp triangular tip clearly visible. Part of the church roof and nearby rooftops should appear below and beside it, while the village spreads outward beneath. Keep the swirling night sky behind. Place one clear white-yellow circular star halo above and beyond the steeple tip along the camera's upcoming climb, so the tip can align with that same halo before the camera enters it. The camera should feel as if it has just descended from a village overlook and is now entering a smooth orbit around the steeple. Preserve the broader landmark order of the original painting, but this is a much more intimate vantage. Maintain thick brushstrokes, painterly edges, and the same blue-yellow nocturnal atmosphere."
+    },
+    {
+      "id": 4,
+      "beat_zh": "第四段首帧：刚从教堂塔尖对准的同一颗白黄色星晕中穿出；画面上缘偏左仍有一段较大的弧形光晕笔触，左侧柏树、下方村庄、中央旋涡与右上月亮已接近原画布局，但仍留少量后退校正距离。",
+      "image_prompt_en": "Edit from Image A, the untouched original painting The Starry Night, to make the shared exit frame of shot 3 and entry frame of shot 4. Create a 16:9 silent oil-painted cinematic keyframe with no text, no modern objects, no visible drone, and no photorealism. The camera has just passed through the same white-yellow circular star halo aligned above the church steeple in the preceding shot. Retain a broad partial arc of that star's white-yellow painted halo entering from the upper center-left edge and covering roughly 25 to 35 percent of the sky, like a near foreground brushstroke veil; this is painted starlight, never a science-fiction portal. The viewer is beginning to emerge beyond the arc, so the left cypress, lower village, recognizable church steeple, blue ridge, central sky swirl, and upper-right crescent moon are already visible in nearly the original relative arrangement. Keep the cypress a little larger and the village slightly closer than in the final original viewpoint, leaving a gentle backward and slight lateral settling move for shot 4. Preserve the original painting's blue-yellow palette, thick directional oil strokes, and recognizable landmark shapes. Do not produce a clean unobstructed copy of the final painting yet, and do not redraw or replace the original painting itself."
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "beat_zh": "1→2：在村庄街道间穿梭，掠过房屋和村民，随后抬升越过屋顶，俯瞰整个村落，并向山头加速贴近，用山体蓝色坡面做转场。",
+      "motion_prompt_en": "A silent 5-second first-person flight through the oil-painted world of The Starry Night, with no modern objects and no visible drone. Begin at low altitude inside a narrow village street. Fly forward through the lane, threading between painted houses and walls, with warm yellow windows glowing on both sides and a few small villagers in period dress glimpsed near doorways or in the street. Keep the motion smooth and low at first, emphasizing close parallax from walls, roof edges, doors, and figures. The church steeple should stay ahead as a guide. Then begin a decisive lift: rise above the street, clear the rooftops, and reveal the village from above in a single continuous upward movement. As the settlement opens beneath, bank toward a rounded blue hill shoulder. In the final second, accelerate gently toward that hill, letting the curved blue painted slope swell larger and larger until it occupies most of the frame, with only a partial glimpse of the village still visible beyond it. The camera should clearly aim into this same slope so the next shot can begin already attached to the mountain surface.",
+      "transition_zh": "转场依靠山头本身完成。第一镜末尾从俯瞰村庄转向山脊，让蓝色坡面迅速贴近并占满画面，形成连续遮挡。第二镜从这片同样的蓝色山体表面近距离飞出，保持相同方向和色调。"
+    },
+    {
+      "id": 2,
+      "beat_zh": "2→3：贴着山头飞出后，沿山肩绕出一个大弧线，再次俯瞰村庄，像绕了一圈回看整个聚落，然后俯冲对准教堂尖塔，逼近教堂。",
+      "motion_prompt_en": "A silent 5-second first-person flight in the painted world of The Starry Night, continuing seamlessly from a close hill-surface view. Start with the camera skimming along the rounded blue mountain shoulder, so the near painted slope slides fast across one side of the frame while the village lies below. Then arc outward around the hill in a broad smooth curve, revealing the village again from above as if the camera has looped around and rediscovered it from a higher vantage. Keep the church steeple readable in the settlement and let it become the new target. The sky above should remain filled with Van Gogh-like swirls and star halos, but the village must stay central to the action. After the wide arcing reveal, tilt and descend toward the church, converting the broad overlook into a more focused approach. In the final second, the steeple should rise large in the frame, with rooflines and neighboring houses rushing past below. End with the spire very close, slightly off-center, and clearly aligned as the continuation point for the next shot.",
+      "transition_zh": "接点由教堂尖塔接管。第二镜后半段把视线从山肩回到村庄，再主动俯冲向教堂，让尖塔在末尾迅速放大、占据近景。第三镜从同一侧近距离贴着尖塔开始，像同一条飞行路径没有中断。"
+    },
+    {
+      "id": 3,
+      "beat_zh": "3→4：在教堂尖塔旁做平滑小弧线绕行，掠过屋脊与塔尖，再沿塔尖上升对准一颗带白黄色光晕的星；镜头进入光晕，末尾刚从同一光晕边缘穿出，保留弧形遮挡供第四镜接续。",
+      "motion_prompt_en": "A silent 5-second first-person flight in the oil-painted world of The Starry Night, with no modern objects and no visible drone. START STATE: begin very close beside the church steeple, from the same side reached at the end of shot 2. CAMERA PATH: make a smooth limited arc around the steeple rather than a full spin, then climb along its pointed tip toward one specific white-yellow circular star halo above it. SPEED PROFILE: orbit steadily, accelerate gently toward the halo, and soften the movement as the brushstroke ring fills the view. PARALLAX: the pale spire, roof ridges, village below, blue hills, and sky separate clearly as the camera moves. ENVIRONMENT MOTION: oil-painted stars and swirling blue strokes move subtly without changing their identity. TRANSITION APPROACH: align the steeple tip with the center of that same star, pass into its luminous painted brushstrokes, and begin to emerge beyond the ring. FINAL 25% TARGET STATE: the halo briefly dominates the view, then recedes only partly to a large white-yellow arc along the upper center-left edge, still covering roughly 25 to 35 percent of the sky. The cypress, village, steeple, ridge, swirl, and moon begin to appear in the same near-original arrangement as KF4. End on KF4's partially halo-obscured view; do not end on a clean open-sky panorama or the untouched original painting. The light is Van Gogh-like painted starlight, not a science-fiction portal.",
+      "transition_zh": "第三镜始终追踪同一颗星晕：塔尖与光晕对齐后进入白黄色圆形笔触，末尾只从光晕中部分穿出，让画面上缘偏左仍留大块弧形光晕。KF4 就是这一接点帧；第四镜从完全相同的残余光晕继续飞出。"
+    },
+    {
+      "id": 4,
+      "beat_zh": "4→原画：从上一镜同一段残余星晕弧形笔触下继续飞出，光晕退回天空中的那颗星；镜头缓慢后退并微调横移，将柏树、村庄、尖塔、山脊、旋涡和月亮收束到原画构图。",
+      "motion_prompt_en": "A silent 5-second final approach in the oil-painted world of The Starry Night, with no modern objects and no visible drone. START STATE: begin on the exact shared KF4 view from shot 3, with a broad white-yellow partial arc of the same star halo still veiling roughly 25 to 35 percent of the upper center-left sky. CAMERA PATH: fly gently out beyond that painted ring, let it recede into its original star position, then drift backward with a slight lateral correction toward the untouched painting's viewpoint. SPEED PROFILE: move clearly during the first part, decelerate steadily, and make only tiny corrections in the final quarter. PARALLAX: the foreground cypress settles against the more distant village, steeple, blue ridge, central swirl, and upper-right crescent moon. ENVIRONMENT MOTION: painterly brushstrokes calm as the composition locks into place. TRANSITION APPROACH: preserve the identity and position of the same halo across the shot 3 to shot 4 join; do not cut to a clean new sky. FINAL 25% TARGET STATE: align the cypress, village, church steeple, hills, central swirl, star halos, and moon precisely with the canonical original painting. End on the untouched original artwork viewpoint, ready for its static hold.",
+      "transition_zh": "第四镜从 KF4 保留的同一块白黄色光晕弧线中继续飞出；光晕缩回原来的星位。随后用后退与轻微横移完成原画地标对齐，最后接未经 AI 重画的完整原画定格。"
+    }
+  ]
+}

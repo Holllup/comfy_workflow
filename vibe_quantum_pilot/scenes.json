@@ -1,0 +1,16 @@
+{
+  "title": "上帝会不会掷骰子？",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 55,
+  "seed": 613,
+  "scenes": [
+    {"start": 0, "end": 7, "heading": "一个点", "lines": ["这些点，是一个一个出现的。"], "emphasis": ["一个一个"]},
+    {"start": 7, "end": 15, "heading": "一片条纹", "lines": ["积累起来，却显出了条纹。"], "emphasis": ["条纹"]},
+    {"start": 15, "end": 25, "heading": "一个电子", "lines": ["更奇怪的是：", "电子也是一个一个发出的。"], "emphasis": ["一个一个"]},
+    {"start": 25, "end": 34, "heading": "一次探测", "lines": ["每次探测，只留下一个点。"], "emphasis": ["一个点"]},
+    {"start": 34, "end": 46, "heading": "概率", "lines": ["量子理论能算出，", "它落在各处的概率。"], "emphasis": ["概率"]},
+    {"start": 46, "end": 55, "heading": "规律", "lines": ["单次落点无法预言，", "整体分布却有规律。"], "emphasis": ["单次", "整体", "规律"]}
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "video": "/Users/zhwh/Desktop/sd_workflow/vibe_quantum_pilot/output/quantum_pilot.mp4",
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "duration_seconds": 55,
+  "fps": 30,
+  "frames_decoded": 1650,
+  "audio_streams": 0,
+  "blank_frames": [],
+  "mean_luminance_range": [
+    17.172,
+    22.469
+  ],
+  "largest_frame_changes": [
+    {
+      "frame": 479,
+      "mean_abs_delta": 1.30135
+    },
+    {
+      "frame": 477,
+      "mean_abs_delta": 1.24311
+    },
+    {
+      "frame": 481,
+      "mean_abs_delta": 1.20969
+    },
+    {
+      "frame": 476,
+      "mean_abs_delta": 1.19535
+    },
+    {
+      "frame": 480,
+      "mean_abs_delta": 1.18075
+    },
+    {
+      "frame": 482,
+      "mean_abs_delta": 1.16769
+    },
+    {
+      "frame": 484,
+      "mean_abs_delta": 1.16655
+    },
+    {
+      "frame": 483,
+      "mean_abs_delta": 1.16399
+    },
+    {
+      "frame": 485,
+      "mean_abs_delta": 1.16387
+    },
+    {
+      "frame": 486,
+      "mean_abs_delta": 1.15983
+    },
+    {
+      "frame": 487,
+      "mean_abs_delta": 1.15375
+    },
+    {
+      "frame": 488,
+      "mean_abs_delta": 1.15219
+    }
+  ],
+  "longest_nearly_static_run_seconds": 3.2,
+  "sha256": "c76ee82f257242180bcb109601a377e484c5d2603abe08b220b48e134b112d97",
+  "review_method": "所有编码帧完成解码与空帧扫描；关键画面、转场与字幕另以联系表检查。静止停留用于阅读，变化量仅作诊断。"
+}

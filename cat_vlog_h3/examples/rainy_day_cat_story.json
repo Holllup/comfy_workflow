@@ -1,0 +1,595 @@
+{
+  "schema_version": 4,
+  "episode": {
+    "title_zh": "团团的雨后小冒险",
+    "theme_zh": "一只好奇的狸花白猫在雨停前后发现十个小惊喜",
+    "arc_zh": "从卧室里的雨声开始，独立的小探险逐渐走向放晴，最后带着一片小叶子回家休息"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "beat_zh": "雨声把团团叫醒，它从柔软的被子里探头观察窗外。",
+      "time_of_day_zh": "清晨",
+      "location_zh": "有雨窗的卧室",
+      "camera_mode": "follow",
+      "start_image_prompt_en": "A wide horizontal cinematic view of the same kitten on a rumpled white bed in a softly lit bedroom. A rain-speckled window is on the right, the kitten sits near the lower center and looks toward the window. Realistic fur, soft gray morning light, no writing in the room.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Quiet rainfall on glass, soft bedding rustle, tiny paw steps, distant indoor room tone.",
+      "must_preserve_en": [
+        "the same white bed and right-side rainy window",
+        "the kitten's white facial blaze and striped tail"
+      ],
+      "must_avoid_en": [
+        "human hands lifting the cat",
+        "a second cat",
+        "speaking or singing"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "front",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。阴雨上午的卧室，右侧雨窗、白色床铺，小猫在画面下方中部坐着看窗，真实毛发与柔和灰色日光，横屏宽景。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "A wide horizontal cinematic view of the same kitten on a rumpled white bed in a softly lit bedroom. A rain-speckled window is on the right, the kitten sits near the lower center and looks toward the window. Realistic fur, soft gray morning light, no writing in the room.",
+        "end": "The kitten is paused by the rainy window after two small steps."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A gentle low follow-camera glides beside the kitten as it wakes, walks two small steps across the bedding, and pauses at the rainy window. The cat remains visible throughout; one slow continuous camera movement, subtle head and ear motion.",
+          "action_zh": "0–25% 团团醒来抬头；25–75% 穿过被子缓慢走向窗边；75–100% 停下望着雨滴"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 2,
+      "beat_zh": "团团贴近镜头，第一次发现窗上的雨滴会跟着爪尖滑动。",
+      "time_of_day_zh": "清晨",
+      "location_zh": "窗台近景",
+      "camera_mode": "selfie",
+      "start_image_prompt_en": "Close, intimate horizontal vlog framing of the same kitten beside a rain-streaked window. The face occupies the left third, a single clear droplet is visible on the glass to the right. Keep its pink nose, round eyes, white blaze and realistic whiskers recognizable.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Soft rain ticking on the window, one faint paw tap on glass, a gentle curious kitten chirp, indoor hush.",
+      "must_preserve_en": [
+        "one rain-streaked window on the right",
+        "the exact kitten face markings and pink nose"
+      ],
+      "must_avoid_en": [
+        "human fingers",
+        "a speaking mouth",
+        "visible words on the glass"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "face",
+            "left45"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。雨窗旁近景，小猫脸在左三分之一，右侧玻璃上一颗雨滴清晰；粉鼻、白额鼻与胡须可辨，前爪尚未伸出。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Close, intimate horizontal vlog framing of the same kitten beside a rain-streaked window. The face occupies the left third, a single clear droplet is visible on the glass to the right. Keep its pink nose, round eyes, white blaze and realistic whiskers recognizable.",
+        "end": "The paw is lowered after watching the droplet slide and tilting the head."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A close handheld vlog shot with very small natural sway. The kitten looks into the lens, reaches one normal paw toward a raindrop, then tracks the drop sliding down the pane and tilts its head. No jump cuts within this shot.",
+          "action_zh": "0–25% 团团的脸贴近镜头；25–75% 抬起一只前爪轻碰玻璃；75–100% 看着雨滴滑下并歪头"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 3,
+      "beat_zh": "镜头像团团的眼睛一样贴地穿过走廊，寻找响了一声的小玩具。",
+      "time_of_day_zh": "上午",
+      "location_zh": "家中走廊",
+      "camera_mode": "pov",
+      "start_image_prompt_en": "A first-person cat-eye-height view down a warm apartment hallway, a tiny felt ball near the far skirting board. Only a subtle tip of the same kitten's ears may appear at the bottom edge; realistic low perspective, no person in the hall.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Quiet hallway air, soft pads on wood, one gentle bell-like rattle from the felt toy.",
+      "must_preserve_en": [
+        "the same hallway vanishing point and small felt ball",
+        "a normal white feline paw if visible"
+      ],
+      "must_avoid_en": [
+        "human hands",
+        "extra paws",
+        "a visible phone or camera"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "side",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。家中暖色走廊，猫眼高度的主观视角，远处踢脚线旁有小毡球，画面下缘最多露一点猫耳，走廊无人。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "A first-person cat-eye-height view down a warm apartment hallway, a tiny felt ball near the far skirting board. Only a subtle tip of the same kitten's ears may appear at the bottom edge; realistic low perspective, no person in the hall.",
+        "end": "The paw has gently tapped the felt ball and the viewpoint pauses."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "One continuous low point-of-view move along the floor toward a small felt ball. The camera advances a short, plausible distance, pauses, and a single white feline paw gently taps the ball. Mild natural head-bob, no flying camera or sudden teleport.",
+          "action_zh": "0–25% 低视角发现走廊尽头的小球；25–75% 贴地缓慢接近；75–100% 一只白爪伸入画面碰到小球"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 4,
+      "beat_zh": "团团从小篮子里选出一条红丝带，像认真准备出门的小导演。",
+      "time_of_day_zh": "上午",
+      "location_zh": "客厅地毯与玩具篮",
+      "camera_mode": "follow",
+      "start_image_prompt_en": "Wide horizontal living room floor view. The same kitten stands beside a low woven toy basket on a soft rug; one loose red ribbon lies at the basket edge. Daylight is diffused by clouds. Cat proportions and original white paws remain natural.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Soft rug footsteps, wicker rustle, a faint ribbon swish, quiet room tone.",
+      "must_preserve_en": [
+        "one low wicker basket and one red ribbon",
+        "four normal feline paws and fixed coat markings"
+      ],
+      "must_avoid_en": [
+        "cat using human hands",
+        "ribbon turning into clothing",
+        "extra toys appearing"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "front",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。阴天柔光下的客厅地面，低编织玩具篮放在柔软地毯上，一条红丝带在篮边；小猫四脚站在篮旁，尚未叼丝带。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Wide horizontal living room floor view. The same kitten stands beside a low woven toy basket on a soft rug; one loose red ribbon lies at the basket edge. Daylight is diffused by clouds. Cat proportions and original white paws remain natural.",
+        "end": "The kitten has stepped back once with the ribbon tip held lightly and looks toward the lens."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A calm floor-level follow shot. The kitten sniffs the basket, gently takes the ribbon tip in its mouth, steps back once and looks at the lens. It remains four-legged; the action is lightly playful, never human mime.",
+          "action_zh": "0–25% 团团嗅闻矮篮子；25–75% 用嘴轻轻叼出一条红丝带；75–100% 回头看向镜头"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "expressive"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 5,
+      "beat_zh": "雨渐小，团团在门口对着镜头犹豫片刻，决定迈出去。",
+      "time_of_day_zh": "中午",
+      "location_zh": "半开的家门口",
+      "camera_mode": "selfie",
+      "start_image_prompt_en": "Close horizontal vlog composition of the same kitten at the inside of a half-open home doorway. Damp pavement and soft daylight are visible beyond the threshold. The kitten fills the center-left and looks into the lens; no human is present.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Rain fading outside, distant birds beginning to sing, soft paw touch on the doorway wood.",
+      "must_preserve_en": [
+        "the half-open doorway and damp outside",
+        "same kitten scale and facial markings"
+      ],
+      "must_avoid_en": [
+        "human opening the door on screen",
+        "visible camera rig",
+        "speech"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "left45",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。半开的家门内侧，小猫居中偏左看镜头，门外是潮湿地面和柔和日光；猫仍在门槛内，近景有轻微自拍感。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Close horizontal vlog composition of the same kitten at the inside of a half-open home doorway. Damp pavement and soft daylight are visible beyond the threshold. The kitten fills the center-left and looks into the lens; no human is present.",
+        "end": "The kitten has taken one careful step to the threshold and remains grounded."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A nearly stationary intimate camera with slight natural handheld sway. The kitten looks at the lens, sniffs the air through the open door, pauses, and confidently takes one careful step toward the damp threshold.",
+          "action_zh": "0–25% 团团在门槛前看镜头；25–75% 轻轻嗅闻门外空气；75–100% 向外迈出一小步"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 6,
+      "beat_zh": "团团发现一小片倒映天空的积水，试着轻轻跳过。",
+      "time_of_day_zh": "下午",
+      "location_zh": "安静的小巷积水旁",
+      "camera_mode": "follow",
+      "start_image_prompt_en": "A quiet pedestrian alley after rain, horizontal wide shot from kitten height. The same kitten stands side-on beside a small shallow puddle reflecting pale clouds; no traffic. Keep recognizable tabby saddle, white legs, and ringed tail.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Soft alley breeze, four paws pattering on damp stone, one small water splash, distant city hush.",
+      "must_preserve_en": [
+        "one narrow shallow puddle",
+        "same cat coat pattern and striped tail"
+      ],
+      "must_avoid_en": [
+        "deep water",
+        "giant leap",
+        "extra limbs or another cat"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "side",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。雨后安静小巷，小猫侧身站在窄浅水坑旁准备跃过，水面映出浅云；宽景猫眼高度，四爪与尾巴可辨，无车流。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "A quiet pedestrian alley after rain, horizontal wide shot from kitten height. The same kitten stands side-on beside a small shallow puddle reflecting pale clouds; no traffic. Keep recognizable tabby saddle, white legs, and ringed tail.",
+        "end": "The kitten has landed on all four paws beyond the narrow puddle and looks back."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A low side-follow camera tracks one brief, physically plausible hop across a narrow puddle, then slows as the kitten looks back. Show natural four-paw takeoff and landing, a tiny splash, no slow-motion flying.",
+          "action_zh": "0–25% 团团停在小水洼旁；25–75% 轻轻跃过不足一步宽的水面；75–100% 落地后回望倒影"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 7,
+      "beat_zh": "猫眼视角钻进雨后的草丛，发现叶尖上一颗闪亮水珠。",
+      "time_of_day_zh": "下午",
+      "location_zh": "小公园的草边",
+      "camera_mode": "pov",
+      "start_image_prompt_en": "A realistic cat-eye-height point of view inside a modest city park after rain. Wet leaves frame the edges, a single clear bead of water rests on one leaf tip in the midground. A subtle edge of striped ear may be visible low in frame, no full cat body.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Quiet leaves moving after rain, one close water drip, faint birdsong and a delicate leaf rustle.",
+      "must_preserve_en": [
+        "one identifiable leaf-tip droplet",
+        "cat-eye camera height"
+      ],
+      "must_avoid_en": [
+        "human hand",
+        "fantasy glowing orb",
+        "rain turning into a storm"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "side",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。雨后小公园，猫眼高度主观视角，湿叶环绕，一片叶尖的水珠是中景重点；下缘可有一点虎斑猫耳，没有整只猫身。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "A realistic cat-eye-height point of view inside a modest city park after rain. Wet leaves frame the edges, a single clear bead of water rests on one leaf tip in the midground. A subtle edge of striped ear may be visible low in frame, no full cat body.",
+        "end": "The paw has brushed the stem and the water bead trembles without falling."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "One careful low point-of-view glide between wet leaves, stopping close to a water bead. A single white cat paw brushes the stem gently; the droplet trembles in place. Shallow natural parallax, no high drone flight.",
+          "action_zh": "0–25% 贴地看见湿叶；25–75% 慢慢推近叶尖水珠；75–100% 白爪轻碰叶片，水珠微颤"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 8,
+      "beat_zh": "阳光出来了，团团在小花园里追逐一只蝴蝶，但最后只是安静地看它飞走。",
+      "time_of_day_zh": "傍晚前",
+      "location_zh": "雨后的小花园",
+      "camera_mode": "follow",
+      "start_image_prompt_en": "Wide horizontal garden shot after rainfall. The same kitten stands among short flowers and wet stepping stones; one small pale butterfly hovers just ahead. Warm late-afternoon sun breaks through, cat remains large enough to recognize its face and coat.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Light garden breeze, soft paws on stone, leaves brushing, gentle birds nearby; no voice or song.",
+      "must_preserve_en": [
+        "one pale butterfly and wet stepping stones",
+        "same kitten face and tail markings"
+      ],
+      "must_avoid_en": [
+        "a swarm of insects",
+        "cat catching or harming butterfly",
+        "human-like running posture"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "right45",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。雨后花园宽景，小猫站在矮花与湿踏石之间，一只小淡色蝴蝶在前方；午后日光刚从云中露出，猫脸与毛色仍可辨。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Wide horizontal garden shot after rainfall. The same kitten stands among short flowers and wet stepping stones; one small pale butterfly hovers just ahead. Warm late-afternoon sun breaks through, cat remains large enough to recognize its face and coat.",
+        "end": "The kitten stops and looks upward as the butterfly flies away."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A gentle follow shot moves with the kitten for two playful short steps toward a butterfly, then stops as the cat lets it fly away and looks upward. Natural feline gait, warm sun glints on still-wet leaves.",
+          "action_zh": "0–25% 团团注意到一只蝴蝶；25–75% 小跑两步追过去；75–100% 停下仰头看蝴蝶离开"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "closed"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    },
+    {
+      "id": 9,
+      "beat_zh": "团团在安静咖啡馆窗外像小主播一样面对镜头，发现玻璃里还有自己的倒影。",
+      "time_of_day_zh": "傍晚",
+      "location_zh": "安静咖啡馆的窗外",
+      "camera_mode": "selfie",
+      "start_image_prompt_en": "Close horizontal vlog framing of the same kitten sitting safely outside a quiet cafe window at dusk. The kitten's face is prominent, warm interior lights reflect faintly on glass to the right; no readable signs or people.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Muted outdoor evening air, soft window-side city murmur, one quiet natural cat meow, faint glass-side paw shuffle.",
+      "must_preserve_en": [
+        "one real cat and its faint reflection",
+        "warm cafe window on the right"
+      ],
+      "must_avoid_en": [
+        "duplicate physical cats",
+        "readable storefront text",
+        "human speech"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "face",
+            "left45"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": "Only the cat vocalizations explicitly described in the action and ambience: A close handheld vlog shot with minimal sway. The kitten blinks into the lens, notices its own faint reflection, turns its head to the right, then looks back and gives a small natural meow. No spoken words. Muted outdoor evening air, soft window-side city murmur, one quiet natural cat meow, faint glass-side paw shuffle."
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。黄昏安静咖啡馆窗外，小猫安全坐着，脸部为近景重点，右侧玻璃有很淡的室内暖光与自身反光，没有招牌文字和人物。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Close horizontal vlog framing of the same kitten sitting safely outside a quiet cafe window at dusk. The kitten's face is prominent, warm interior lights reflect faintly on glass to the right; no readable signs or people.",
+        "end": "The kitten has returned its gaze after one small natural meow."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "A close handheld vlog shot with minimal sway. The kitten blinks into the lens, notices its own faint reflection, turns its head to the right, then looks back and gives a small natural meow. No spoken words.",
+          "action_zh": "0–25% 团团朝镜头眨眼；25–75% 转头看窗中倒影；75–100% 再转回镜头轻轻喵一声"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "expressive"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。第九镜只允许一次自然轻喵。"
+    },
+    {
+      "id": 10,
+      "beat_zh": "小冒险结束，团团叼着一片落叶回到卧室，在床边蜷起来休息。",
+      "time_of_day_zh": "夜晚",
+      "location_zh": "温暖卧室的床边",
+      "camera_mode": "follow",
+      "start_image_prompt_en": "Wide horizontal view of the same cozy bedroom at night, now lit by a soft warm bedside lamp. The same kitten enters near a low bed carrying one small fallen leaf lightly in its mouth. Keep the kitten fully visible and anatomically natural.",
+      "motion_prompt_en": "Begin at the approved first frame and keep one continuous shot. Perform the full action below.",
+      "ambience_prompt_en": "Quiet night room tone, tiny paw steps, a soft leaf rustle, one calm kitten breath and distant rain nearly gone.",
+      "must_preserve_en": [
+        "one small fallen leaf and one low bed",
+        "the same cat coat pattern and normal curled body"
+      ],
+      "must_avoid_en": [
+        "human hands or clothes",
+        "multiple leaves multiplying",
+        "dialogue or music"
+      ],
+      "cast": [
+        {
+          "character_id": "protagonist",
+          "views": [
+            "front",
+            "face"
+          ]
+        }
+      ],
+      "audio": {
+        "utterances": [],
+        "diegetic_music_prompt_en": "",
+        "background_music_prompt_en": "",
+        "cat_vocalizations_prompt_en": ""
+      },
+      "duration_seconds": 7.291666666666667,
+      "reference_assets": [],
+      "background_prompt_en": "",
+      "first_frame_zh": "横屏16:9，真实摄影质感，保持注册狸花白主角的脸、毛色、白爪、粉鼻和环纹尾巴，不新增服饰。夜晚暖灯的同一卧室，小猫在低床旁进入，嘴里轻叼一片小落叶，整只猫可见，尚未放下叶子或蜷卧。 只画一个动作尚未发生的静态瞬间；除第十镜轻叼叶子外嘴自然闭合，无牙舌、字幕、水印和额外猫肢。",
+      "states": {
+        "start": "Wide horizontal view of the same cozy bedroom at night, now lit by a soft warm bedside lamp. The same kitten enters near a low bed carrying one small fallen leaf lightly in its mouth. Keep the kitten fully visible and anatomically natural.",
+        "end": "The leaf is set down and the kitten is curled naturally with eyes slowly closed."
+      },
+      "action_segments": [
+        {
+          "start_seconds": 0,
+          "end_seconds": 7.291666666666667,
+          "from_state": "start",
+          "to_state": "end",
+          "action_en": "One gentle low follow camera accompanies the kitten a short distance to the bed. It puts down one little leaf, sits, curls up naturally and slowly closes its eyes. The camera eases to a stop; no fade to a different room.",
+          "action_zh": "0–25% 团团从画面边缘走到床边；25–75% 放下一片小叶子并坐下；75–100% 在暖光下蜷起身慢慢闭眼"
+        }
+      ],
+      "mouth_policy": {
+        "protagonist": "expressive"
+      },
+      "video_overview_zh": "以本镜首帧的地点、光线、猫身份和起始姿态继续，保持本镜既定跟拍、自拍感或猫主观视角。动作轻度拟人而保持猫的四肢结构，不变成人类工具操作，不切到别的地点。",
+      "sound_notes_zh": "保留与本镜场景对应的雨声、微风、室内或室外环境声及细小爪声；无对白、旁白和音乐。无未要求的猫叫。"
+    }
+  ],
+  "characters": {
+    "protagonist": {
+      "name_zh": "团团",
+      "identity_prompt_en": "The exact same small brown-gray tabby and white kitten from the approved reference photos: broad white blaze between the eyes, white muzzle, chest, belly and all four paws, soft brown tabby saddle and crown, round warm hazel-green eyes, pink nose, and a fluffy dark ringed tail. Normal four-legged feline anatomy and stable coat markings.",
+      "must_not_change_en": [
+        "the white blaze and tabby face markings",
+        "the white chest and four white paws",
+        "the fluffy dark ringed tail and round eyes",
+        "the kitten's size and natural feline anatomy"
+      ],
+      "reference_set": "protagonist",
+      "voice_prompt_en": "",
+      "wardrobe": null
+    }
+  }
+}
